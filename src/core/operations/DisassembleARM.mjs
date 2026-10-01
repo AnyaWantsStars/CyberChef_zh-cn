@@ -1,0 +1,195 @@
+/**
+ * @author MedjedThomasXM
+ * @copyright Crown Copyright 2024
+ * @license Apache-2.0
+ */
+
+import Operation from "../Operation.mjs";
+import OperationError from "../errors/OperationError.mjs";
+import { isWorkerEnvironment } from "../Utils.mjs";
+import cs from "@alexaltea/capstone-js/dist/capstone.min.js";
+
+/**
+ * Disassemble ARM operation
+ */
+class DisassembleARM extends Operation {
+
+    /**
+     * DisassembleARM constructor
+     */
+    constructor() {
+        super();
+
+        this.name = "ARM 反汇编";
+        this.module = "Shellcode";
+        this.description = "将 ARM 机器码反汇编为汇编语言。<br><br>使用 Capstone 反汇编框架支持 ARM（32 位）、Thumb 和 ARM64（AArch64）架构。<br><br>输入应为十六进制格式。";
+        this.infoURL = "https://wikipedia.org/wiki/ARM_architecture_family";
+        this.inputType = "string";
+        this.outputType = "string";
+        this.args = [
+            {
+                "name": "架构",
+                "type": "option",
+                "value": ["ARM (32-bit)", "ARM64 (AArch64)"]
+            },
+            {
+                "name": "模式", "type": "option",
+                "value": ["ARM", "Thumb", "Thumb + Cortex-M", "ARMv8"]
+            },
+            {
+                "name": "字节序",
+                "type": "option",
+                "value": [
+                    {name: "小端序", value: "Little Endian"},
+                    {name: "大端序", value: "Big Endian"}
+                ]
+            },
+            {
+                "name": "起始地址（十六进制）",
+                "type": "number",
+                "value": 0
+            },
+            {
+                "name": "显示指令十六进制",
+                "type": "boolean",
+                "value": true
+            },
+            {
+                "name": "显示指令位置",
+                "type": "boolean",
+                "value": true
+            }
+        ];
+    }
+
+    /**
+     * @param {string} input
+     * @param {Object[]} args
+     * @returns {string}
+     */
+    async run(input, args) {
+        const [
+            architecture,
+            mode,
+            endianness,
+            startAddress,
+            showHex,
+            showPosition
+        ] = args;
+
+        // Remove whitespace from input
+        const hexInput = input.replace(/\s/g, "");
+
+        // Validate hex input
+        if (!/^[0-9a-fA-F]*$/.test(hexInput)) {
+            throw new OperationError("无效的十六进制输入。请仅提供有效的十六进制字符。");
+        }
+
+        if (hexInput.length === 0) {
+            return "";
+        }
+
+        if (hexInput.length % 2 !== 0) {
+            throw new OperationError("无效的十六进制输入。长度必须为偶数。");
+        }
+
+        // Convert hex string to byte array
+        const bytes = [];
+        for (let i = 0; i < hexInput.length; i += 2) {
+            bytes.push(parseInt(hexInput.substr(i, 2), 16));
+        }
+
+        // Determine architecture constant
+        let arch;
+        if (architecture === "ARM64 (AArch64)") {
+            arch = cs.ARCH_ARM64;
+        } else {
+            arch = cs.ARCH_ARM;
+        }
+
+        // Determine mode constant
+        let modeValue = cs.MODE_LITTLE_ENDIAN;
+
+        if (architecture === "ARM (32-bit)") {
+            switch (mode) {
+                case "ARM":
+                    modeValue = cs.MODE_ARM;
+                    break;
+                case "Thumb":
+                    modeValue = cs.MODE_THUMB;
+                    break;
+                case "Thumb + Cortex-M":
+                    modeValue = cs.MODE_THUMB | cs.MODE_MCLASS;
+                    break;
+                case "ARMv8":
+                    modeValue = cs.MODE_ARM | cs.MODE_V8;
+                    break;
+                default:
+                    modeValue = cs.MODE_ARM;
+            }
+        } else {
+            // ARM64 only has one mode (ARM mode is default for ARM64)
+            modeValue = cs.MODE_ARM;
+        }
+
+        // Add endianness
+        if (endianness === "Big Endian") {
+            modeValue |= cs.MODE_BIG_ENDIAN;
+        }
+
+        if (isWorkerEnvironment()) {
+            self.sendStatusMessage("正在反汇编...");
+        }
+
+        let disassembler;
+        try {
+            disassembler = new cs.Capstone(arch, modeValue);
+        } catch (e) {
+            throw new OperationError(`初始化 Capstone 反汇编器失败：${e}`);
+        }
+
+        let instructions;
+        try {
+            instructions = disassembler.disasm(bytes, startAddress);
+        } catch (e) {
+            disassembler.close();
+            // Check if it's a "no valid instructions" error (code 0 means OK but nothing decoded)
+            if (e && e.includes && e.includes("code 0:")) {
+                throw new OperationError(`输入中未找到有效的 ${architecture} 指令。这些字节可能属于其他架构或模式。`);
+            }
+            throw new OperationError(`反汇编失败：${e}`);
+        }
+
+        // Format output
+        const output = [];
+        for (const insn of instructions) {
+            let line = "";
+
+            if (showPosition) {
+                // Format address as hex with 0x prefix
+                const addrHex = "0x" + insn.address.toString(16).padStart(8, "0");
+                line += addrHex + "  ";
+            }
+
+            if (showHex) {
+                // Format instruction bytes as hex
+                const bytesHex = insn.bytes.map(b => b.toString(16).padStart(2, "0")).join("");
+                line += bytesHex.padEnd(16, " ") + "  ";
+            }
+
+            line += insn.mnemonic;
+            if (insn.op_str) {
+                line += " " + insn.op_str;
+            }
+
+            output.push(line);
+        }
+
+        disassembler.close();
+
+        return output.join("\n");
+    }
+
+}
+
+export default DisassembleARM;

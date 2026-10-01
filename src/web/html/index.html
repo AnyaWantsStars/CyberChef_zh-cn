@@ -1,0 +1,892 @@
+<!-- htmlmin:ignore --><!--
+    CyberChef - The Cyber Swiss Army Knife
+
+    @copyright Crown Copyright 2016-<%= htmlWebpackPlugin.options.compileYear %>
+    @license Apache-2.0
+
+      Copyright 2016-<%= htmlWebpackPlugin.options.compileYear %> Crown Copyright
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+<!-- htmlmin:ignore -->
+<!DOCTYPE html>
+<html lang="zh-CN" class="classic">
+    <head>
+        <meta charset="UTF-8">
+        <title>CyberChef</title>
+
+        <meta name="copyright" content="Crown Copyright 2016-<%= htmlWebpackPlugin.options.compileYear %>" />
+        <meta name="description" content="网络瑞士军刀 —— 一个用于加密、编码、压缩与数据分析的 Web 应用">
+        <meta name="keywords" content="base64, hex, decode, encode, encrypt, decrypt, compress, decompress, regex, regular expressions, hash, crypt, hexadecimal, user agent, url, certificate, x.509, parser, JSON, gzip,  md5, sha1, aes, des, blowfish, xor" />
+
+        <link rel="icon" type="image/ico" href="<%- require('../static/images/favicon.ico') %>" />
+
+        <script type="application/javascript">
+            "use strict";
+
+            // Load theme before the preloader is shown
+            try {
+                document.querySelector(":root").className = (JSON.parse(localStorage.getItem("options")) || {}).theme;
+            } catch (err) {
+                // LocalStorage access is denied by security settings
+            }
+
+            // Define loading messages
+            var loadingMsgs = [
+                "正在证明 P = NP...",
+                "正在计算 6 x 9...",
+                "正在挖掘比特币...",
+                "正在除以 0...",
+                "正在初始化天网...",
+                "[已编辑]",
+                "正在下载更多内存...",
+                "正在排列 1 和 0...",
+                "正在浏览神经网络...",
+                "正在导入机器学习...",
+                "正在为 Alice 和 Bob 发放一次性密码本...",
+                "正在挖掘比特币现金...",
+                "试图逃离 vim 以生成密钥材料...",
+                "for i in range(additional): 铁塔()",
+                "（正在制造悬念...",
+                "正在将 emacs 和 vim 符号链接到 ed...",
+                "正在训练分支预测器...",
+                "正在测量缓存命中...",
+                "正在推测执行流程...",
+                "正在添加 LLM 幻觉...",
+                "正在解压缩恶意软件..."
+            ];
+
+            // Shuffle array using Durstenfeld algorithm
+            for (let i = loadingMsgs.length - 1; i > 0; --i) {
+                var j = Math.floor(Math.random() * (i + 1));
+                var temp = loadingMsgs[i];
+                loadingMsgs[i] = loadingMsgs[j];
+                loadingMsgs[j] = temp;
+            }
+
+            // Show next loading message and move it to the end of the array
+            function changeLoadingMsg() {
+                var msg = loadingMsgs.shift();
+                loadingMsgs.push(msg);
+                try {
+                    var el = document.getElementById("preloader-msg");
+                    if (!el.classList.contains("loading"))
+                        el.classList.add("loading"); // Causes CSS transition on first message
+                    el.innerHTML = msg;
+                } catch (err) {
+                    // This error was likely caused by the DOM not being ready yet,
+                    // so we wait another second and then try again.
+                    setTimeout(changeLoadingMsg, 1000);
+                }
+            }
+
+            changeLoadingMsg();
+            window.loadingMsgsInt = setInterval(changeLoadingMsg, (Math.random() * 2000) + 1500);
+
+            // If any errors are thrown during loading, handle them here
+            function loadingErrorHandler(e) {
+                function escapeHtml(str) {
+                    var HTML_CHARS = {
+                        "&": "&amp;",
+                        "<": "&lt;",
+                        ">": "&gt;",
+                        '"': "&quot;",
+                        "'": "&#x27;", // &apos; not recommended because it's not in the HTML spec
+                        "/": "&#x2F;", // forward slash is included as it helps end an HTML entity
+                        "`": "&#x60;"
+                    };
+
+                    return str.replace(/[&<>"'/`]/g, function (match) {
+                        return HTML_CHARS[match];
+                    });
+                }
+
+                var msg = e.message +
+                    (e.filename ? "\n文件名：" + e.filename : "") +
+                    (e.lineno ? "\n行号：" + e.lineno : "") +
+                    (e.colno ? "\n列号：" + e.colno : "") +
+                    (e.error ? "\n错误：" + e.error : "") +
+                    "\n用户代理：" + navigator.userAgent +
+                    "\nCyberChef 版本：<%= htmlWebpackPlugin.options.version %>";
+
+                clearInterval(window.loadingMsgsInt);
+                document.getElementById("preloader").remove();
+                document.getElementById("preloader-msg").remove();
+                document.getElementById("preloader-error").innerHTML =
+                    "CyberChef 加载时遇到错误。<br><br>" +
+                    "支持以下浏览器版本：" +
+                    "<ul><li>Google Chrome 50+</li><li>Mozilla Firefox 38+</li></ul>" +
+                    "你的用户代理为：<br>" + escapeHtml(navigator.userAgent) + "<br><br>" +
+                    "如果你的浏览器受支持，请<a href='https://github.com/gchq/CyberChef/issues/new/choose'>" +
+                    "提交一个问题</a>，并附上以下详细信息：<br><br>" +
+                    "<pre>" + escapeHtml(msg) + "</pre>";
+            };
+            window.addEventListener("error", loadingErrorHandler);
+        </script>
+    </head>
+    <body>
+        <!-- Preloader overlay -->
+        <div id="loader-wrapper">
+            <div id="preloader" class="loader"></div>
+            <div id="preloader-msg" class="loading-msg"></div>
+            <div id="preloader-error" class="loading-error"></div>
+        </div>
+        <!-- End preloader overlay -->
+        <button type="button" aria-label="编辑收藏" class="btn btn-warning bmd-btn-icon" id="edit-favourites" data-toggle="tooltip" title="编辑收藏">
+            <i class="material-icons" aria-hidden="true">star</i>
+        </button>
+        <div tabindex="0" id="content-wrapper">
+            <div id="banner" class="row">
+                <div class="col" style="text-align: left; padding-left: 10px;">
+                    <a href="#" data-toggle="modal" data-target="#download-modal" style="color: inherit; text-decoration: none; cursor: pointer;">
+                        <span id="banner-app-title" class="banner-app-title"><%= htmlWebpackPlugin.options.bannerTitle %></span>
+                    </a>
+                </div>
+                <div class="col-md-6" id="notice-wrapper">
+                    <span id="notice">
+                        <script type="text/javascript">
+                            // Must be text/javascript rather than application/javascript otherwise IE won't recognise it...
+                            if (navigator.userAgent && navigator.userAgent.match(/Trident/)) {
+                                document.getElementById("notice").innerHTML += "不支持 Internet Explorer，请改用 Firefox 或 Chrome";
+                                alert("不支持 Internet Explorer，请改用 Firefox 或 Chrome");
+                            }
+                        </script>
+                        <noscript>未启用 JavaScript，祝你好运。</noscript>
+                    </span>
+                </div>
+                <div class="col" style="text-align: right; padding-right: 0;">
+                    <a href="#" id="options" data-help-title="选项与设置" data-help="可配置的选项，用于改变 CyberChef 的行为方式。这些设置存储在浏览器的本地存储中，在使用同一浏览器配置文件的会话之间会保持持久。">选项 <i class="material-icons">settings</i></a>
+                    <a href="#" id="support" data-toggle="modal" data-target="#support-modal" data-help-title="关于 / 支持" data-help="此面板提供有关 CyberChef Web 应用的信息、部分功能的使用方法以及如何提交错误报告。">关于 / 支持 <i class="material-icons">help</i></a>
+                </div>
+            </div>
+            <div id="workspace-wrapper">
+                <div id="operations" class="split split-horizontal no-select">
+                    <div class="title no-select" data-help-title="操作列表" data-help="<p>操作列表包含 CyberChef 中按类别排列的所有操作。部分操作可能出现在多个类别中。您可以使用搜索框搜索操作。</p><p>要使用某个操作，双击它或将其拖入流程面板即可。随后您可以配置它的参数（在 CyberChef 术语中称为“配料”）。</p>">操作 <span class="op-count"></span></div>
+                    <input id="search" type="search" class="form-control" placeholder="搜索..." autocomplete="off" tabindex="0" data-help-title="搜索操作" data-help="<p>使用搜索框查找有用的操作。</p><p>操作名称和描述都会通过模糊匹配算法进行查询。</p>" aria-owns="search-results">
+                    <ul id="search-results" class="op-list"></ul>
+                    <div id="categories" class="panel-group no-select"></div>
+                </div>
+
+                <div id="recipe" class="split split-horizontal no-select" data-help-title="流程面板" data-help="<p>流程面板用于配置您选择的操作。如果您是程序员，可以把这些操作看作函数；如果您不是程序员，可以把它理解为做蛋糕的步骤。输入数据将根据流程中的操作依次处理。</p><ul><li>要调整顺序，直接拖放操作到您需要的顺序即可</li><li>要移除操作，双击它或将其拖出流程面板</li></ul><p>可以配置参数（CyberChef 术语中称为“配料”）来改变操作处理数据的方式。</p>">
+                    <div class="title no-select">流程 <span class="pane-controls hide-on-maximised-output">
+                            <button type="button" aria-label="隐藏参数" class="btn btn-primary bmd-btn-icon" id="hide-icon" data-toggle="tooltip" title="隐藏参数" hide-args="false" data-help-title="在流程中隐藏所有操作的参数视图" data-help="点击“隐藏参数”将隐藏流程中每个操作的所有参数视图，以便在流程中操作过多时节省空间。">
+                                <i class="material-icons">keyboard_arrow_up</i>
+                            </button>
+                            <button type="button" aria-label="保存流程" class="btn btn-primary bmd-btn-icon" id="save" data-toggle="tooltip" title="保存流程" data-help-title="保存流程" data-help="<p>流程可以用几种不同的格式表示并保存，供以后使用。您可以复制流程配置并离线保存，也可以使用浏览器的本地存储。</p><ul><li><b>深链接：</b>分享 CyberChef 流程最简单的方法是复制深链接，可以从地址栏（会随流程或输入的变化而更新）或从“保存流程”面板复制。访问该链接时，流程和输入会从您离开的地方自动填充。</li><li><b>Chef 格式：</b>这种自定义格式设计得紧凑且易于阅读。它是 CyberChef URL 中使用的格式，因此大量使用无需在 URL 编码中转义的字符，更容易理解 CyberChef URL 包含的内容。</li><li><b>整洁 JSON：</b>这种 JSON 格式通过空白和缩进使流程易于阅读。</li><li><b>紧凑 JSON：</b>这是流程以 JSON 表示的最紧凑方式。</li><li><b>本地存储：</b>或者，您可以在“流程名称”字段中输入名称并保存到浏览器本地存储。只要使用同一浏览器配置文件，就可以从“加载流程”面板加载该流程。请注意，如果浏览器配置文件被清理，您可能会丢失这些数据。</li></ul>">
+                                <i class="material-icons" aria-hidden="true">save</i>
+                            </button>
+                            <button type="button" aria-label="加载流程" class="btn btn-primary bmd-btn-icon" id="load" data-toggle="tooltip" title="加载流程" data-help-title="加载流程" data-help="<p>可以通过以下方式之一加载已保存的流程：</p><ul><li>如果您有 CyberChef 深链接，直接访问该链接即可自动填充流程和输入。</li><li>如果您有任意可接受格式的流程字符串，将其粘贴到“加载流程”面板的文本框中并点击“加载”。</li><li>如果您已将流程保存到浏览器本地存储，它应该会出现在“加载流程”面板的下拉菜单中。如果不在其中，可能是您使用的浏览器配置文件不同，或者配置文件已被清理。</li></ul>">
+                                <i class="material-icons" aria-hidden="true">folder</i>
+                            </button>
+                            <button type="button" aria-label="清空流程" class="btn btn-primary bmd-btn-icon" id="clr-recipe" data-toggle="tooltip" title="清空流程" data-help-title="清空流程" data-help="点击“清空流程”按钮将移除流程中的所有操作。它不会清空输入，但如果开启了自动执行，将触发一次执行，从而改变输出值。">
+                                <i class="material-icons" aria-hidden="true">delete</i>
+                            </button>
+                        </span>
+                    </div>
+                    <ul id="rec-list" class="list-area no-select"></ul>
+
+                    <div id="controls" class="no-select hide-on-maximised-output">
+                        <div id="controls-content">
+                            <button type="button" style="width: 150px;" class="mx-2 btn btn-lg btn-secondary" id="step" data-toggle="tooltip" title="单步执行流程" data-help-title="单步执行流程" data-help="<p>“单步”按钮允许你一次执行一个操作，而不是从头到尾运行整个流程。</p><p>通过单步可以查看流程在每个阶段的数据，并理解传递给下一操作的内容。</p>">单步</button>
+
+                            <button type="button" class="mx-2 btn btn-lg btn-success btn-raised btn-block" id="bake" data-help-title="执行" data-help="<p>执行会让 CyberChef 使用流程处理您的数据。这包括三个步骤：</p><ol><li>输入中的数据使用输入状态栏中选择的字符编码编码为字节。</li><li>数据依次通过流程中的每个操作，前一个操作的输出作为下一个操作的输入。</li><li>流程中最后一个操作的结果使用输出状态栏中选择的字符编码解码为输出文本。</li></ol><p>如果有多个输入，点击“执行”按钮会同时执行所有输入。</p>">
+                                <img aria-hidden="true" src="<%- require('../static/images/cook_male-32x32.png') %>" alt="厨师图标"/>
+                                <span>执行</span>
+                            </button>
+
+                            <div class="form-group" style="display: contents;">
+                                <div class="mx-1 checkbox" data-help-title="自动执行" data-help="<p>开启自动执行后，只要输入或流程发生任何变化，CyberChef 就会使用流程执行输入。</p>包括：<ul><li>添加或移除操作</li><li>修改操作参数</li><li>编辑输入</li><li>更改输入字符编码</li></ul><p>如果有多个输入，自动执行触发时只会执行当前活动选项卡。您可以使用“执行”按钮手动执行所有输入。</p>">
+                                    <label id="auto-bake-label">
+                                        <input type="checkbox" checked="checked" id="auto-bake"><br>自动执行</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="split split-horizontal" id="IO">
+                    <div id="input" class="split no-select" data-help-title="输入面板" data-help="<p>输入数据可以通过键入、粘贴、拖入，或使用“加载文件”/“加载文件夹”按钮输入。</p><p>CyberChef 会尽可能准确地表示数据，确保您确切知道正在处理的内容。不可打印字符使用控制字符图形表示，例如空字节（0x00）显示为：<span title='控制字符：空' aria-label='控制字符：空' class='cm-specialChar'>␀</span>。</p>">
+                        <div class="title no-select">
+                            <label for="input-text">输入</label>
+                            <span class="pane-controls">
+                                <div class="io-info" id="input-files-info"></div>
+                                <button type="button" aria-label="添加新的输入标签页" class="btn btn-primary bmd-btn-icon" id="btn-new-tab" data-toggle="tooltip" title="添加新的输入标签页" data-help-title="标签页" data-help="<p>可以创建新选项卡以支持多个输入。这些选项卡拥有各自关联的字符编码和行尾分隔符，可在其状态栏中设置。</p><p>地址栏中的深链接只包含当前活动选项卡的信息。</p>">
+                                    <i class="material-icons" aria-hidden="true">add</i>
+                                </button>
+                                <button type="button" aria-label="打开文件夹作为输入" class="btn btn-primary bmd-btn-icon" id="btn-open-folder" data-toggle="tooltip" title="打开文件夹作为输入" data-help-title="打开文件夹" data-help="<p>您可以将整个文件夹载入 CyberChef，每个文件会加载到单独的输入选项卡中。</p><p>CyberChef 可以处理大量输入文件，但请注意性能可能会受影响，尤其是文件体积较大时。</p><p>也可以将文件夹拖放到输入面板上来加载。</p>">
+                                    <i class="material-icons" aria-hidden="true">folder_open</i>
+                                    <input type="file" id="open-folder" style="display: none" multiple directory webkitdirectory>
+                                </button>
+                                <button type="button" aria-label="打开文件作为输入" class="btn btn-primary bmd-btn-icon" id="btn-open-file" data-toggle="tooltip" title="打开文件作为输入" data-help-title="打开文件" data-help="<p>文件可以单独或成组加载到 CyberChef，可以使用“打开文件作为输入”按钮，也可以拖放到输入面板上。</p><p>CyberChef 可以处理相当大的文件（至少 500MB，取决于硬件），但性能可能受到影响，某些操作在处理大输入时会运行得非常慢。</p>">
+                                    <i class="material-icons" aria-hidden="true">input</i>
+                                    <input type="file" id="open-file" style="display: none" multiple>
+                                </button>
+                                <button type="button" aria-label="清空输入和输出" class="btn btn-primary bmd-btn-icon" id="clr-io" data-toggle="tooltip" title="清空输入和输出" data-help-title="清空输入与输出" data-help="点击“清空输入和输出”按钮将移除所有输入和输出。它不会清空流程。">
+                                    <i class="material-icons" aria-hidden="true">delete</i>
+                                </button>
+                                <button type="button" aria-label="重置面板布局" class="btn btn-primary bmd-btn-icon" id="reset-layout" data-toggle="tooltip" title="重置面板布局" data-help-title="重置面板布局" data-help="CyberChef 的面板可以调整大小以适应您的关注区域。此按钮会将面板大小重置为默认配置。">
+                                    <i class="material-icons" aria-hidden="true">view_compact</i>
+                                </button>
+                            </span>
+                        </div>
+
+                        <div id="input-wrapper" class="no-select">
+                            <div id="input-tabs-wrapper" style="display: none;" class="no-select" data-help-proxy="#btn-new-tab">
+                                <span id="btn-previous-input-tab" class="input-tab-buttons">
+                                    &lt;
+                                </span>
+                                <span id="btn-input-tab-dropdown" class="input-tab-buttons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    ···
+                                </span>
+                                <div class="dropdown-menu" aria-labelledby="btn-input-tab-dropdown">
+                                    <a id="btn-go-to-input-tab" class="dropdown-item">转到标签页 </a>
+                                    <a id="btn-find-input-tab" class="dropdown-item">查找标签页 </a>
+                                    <a id="btn-close-all-tabs" class="dropdown-item">关闭所有标签页</a>
+                                </div>
+                                <span id="btn-next-input-tab" class="input-tab-buttons">
+                                    &gt;
+                                </span>
+                                <ul id="input-tabs">
+                                </ul>
+                            </div>
+                            <div id="input-text"></div>
+                        </div>
+                    </div>
+
+                    <div id="output" class="split" data-help-title="输出面板" data-help="<p>此面板显示流程处理完输入后的结果。</p><p>CyberChef 会尽可能准确地表示数据，确保您确切知道正在处理的内容。不可打印字符使用控制字符图形表示，例如空字节（0x00）显示为：<span title='控制字符：空' aria-label='控制字符：空' class='cm-specialChar'>␀</span>。</p><p>从输出复制这些字符时，复制到剪贴板的是原始字节值，而不是控制字符图形本身。</p>">
+                        <div class="title no-select">
+                            <label for="output-text">输出</label>
+                            <span class="pane-controls">
+                                <div class="io-info" id="bake-info"></div>
+                                <button type="button" class="btn btn-primary bmd-btn-icon" id="save-all-to-file" data-toggle="tooltip" title="将所有输出保存为 zip 文件" style="display: none" data-help-title="将所有输出保存为 zip 文件" data-help="<p>在使用多个选项卡的输入和输出时，您可以使用此按钮将所有输出一次性保存为 ZIP 文件。</p><p>使用“执行”按钮可以一次执行所有输入。</p><p>您可以选择指定输出的文件扩展名，也可以让 CyberChef 尝试自动检测每个输出的文件类型。如果输出类型不明确，CyberChef 将使用“.dat”扩展名。</p>">
+                                        <i class="material-icons">archive</i>
+                                    </button>
+                                <button type="button" aria-label="保存" class="btn btn-primary bmd-btn-icon" id="save-to-file" data-toggle="tooltip" title="将输出保存到文件" data-help-title="将输出保存到文件" data-help="当前活动的输出可以保存到文件。系统会要求您指定文件名。CyberChef 会根据数据尝试推断正确的文件扩展名。如果无法检测到文件类型，扩展名默认为“.dat”，但可以手动更改。">
+                                    <i class="material-icons" aria-hidden="true">save</i>
+                                </button>
+                                <button type="button" aria-label="复制内容" class="btn btn-primary bmd-btn-icon" id="copy-output" data-toggle="tooltip" title="将原始输出复制到剪贴板" data-help-title="将原始输出复制到剪贴板" data-help="<p>可以通过选择文本并复制的常规方式从输出中复制数据。此按钮提供了一种无需选择即可将整个输出快速复制到剪贴板的方式。它直接复制原始数据，而不是在输出编辑器中选中文本。两种方式结果相同，但对于大型输出，此按钮可能更高效，因为它不需要任何 DOM 交互。</p>">
+                                    <i class="material-icons" aria-hidden="true">content_copy</i>
+                                </button>
+                                <button type="button" aria-label="用输出替换输入" class="btn btn-primary bmd-btn-icon" id="switch" data-toggle="tooltip" title="用输出替换输入" data-help-title="用输出替换输入" data-help="<p>此按钮将当前活动的输出数据移动到当前活动的输入选项卡中，覆盖原有数据。</p><p>输入的字符编码和行尾序列将更改为与当前输出一致，以便正确解释数据。</p>">
+                                    <i class="material-icons" aria-hidden="true">open_in_browser</i>
+                                </button>
+                                <button type="button" aria-label="最大化输出面板" class="btn btn-primary bmd-btn-icon" id="maximise-output" data-toggle="tooltip" title="最大化输出面板" data-help-title="最大化输出面板" data-help="此按钮允许您以最大尺寸查看输出面板，隐藏操作、流程和输入面板。再次点击同一按钮即可将面板恢复到正常大小。">
+                                    <i class="material-icons" aria-hidden="true">fullscreen</i>
+                                </button>
+                            </span>
+
+                            <button type="button" class="btn btn-primary bmd-btn-icon hidden" id="magic" data-toggle="tooltip" title="魔术！" data-html="true" data-help-title="CyberChef 魔术！" data-help="<p>CyberChef 最好的功能之一是能够自动检测哪些操作可能更有效地处理您的数据。当 CyberChef 根据输出数据为您推荐操作时，会显示“魔法”按钮。</p><p>点击该按钮会将推荐的操作添加到您的流程中。</p><p>这种后台魔法检测会深入检查您的输出最多三层，并尝试使用一系列技术解开数据。如需更多控制，可以使用“魔法”操作，它可以配置更深的检测深度并根据各种参数进行过滤。</p><p>有关 CyberChef Magic 的更多信息，请参阅<a href='https://github.com/gchq/CyberChef/wiki/Automatic-detection-of-encoded-data-using-CyberChef-Magic'>此处</a>。</p>">
+                                <svg width="22" height="22" viewBox="0 0 24 24">
+                                    <path d="M7.5,5.6L5,7L6.4,4.5L5,2L7.5,3.4L10,2L8.6,4.5L10,7L7.5,5.6M19.5,15.4L22,14L20.6,16.5L22,19L19.5,17.6L17,19L18.4,16.5L17,14L19.5,15.4M22,2L20.6,4.5L22,7L19.5,5.6L17,7L18.4,4.5L17,2L19.5,3.4L22,2M13.34,12.78L15.78,10.34L13.66,8.22L11.22,10.66L13.34,12.78M14.37,7.29L16.71,9.63C17.1,10 17.1,10.65 16.71,11.04L5.04,22.71C4.65,23.1 4,23.1 3.63,22.71L1.29,20.37C0.9,20 0.9,19.35 1.29,18.96L12.96,7.29C13.35,6.9 14,6.9 14.37,7.29Z" />
+                                </svg>
+                            </button>
+                            <span id="stale-indicator" class="hidden" data-toggle="tooltip" title="输出已过期。输入或流程自该输出生成以来已发生更改。请重新执行以获取新值。" data-help-title="过期指示器" data-help="当流程或输入已更改但输出尚未更新时，会显示过期指示器。它最常在自动执行关闭时出现，提示您需要执行才能看到准确的输出。">
+                                <i class="material-icons">access_time</i>
+                            </span>
+                        </div>
+
+                        <div id="output-wrapper" class="no-select">
+                            <div id="output-tabs-wrapper" style="display: none" class="no-select">
+                                <span id="btn-previous-output-tab" class="output-tab-buttons">
+                                    &lt;
+                                </span>
+                                <span id="btn-output-tab-dropdown" class="output-tab-buttons" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">
+                                    ···
+                                </span>
+                                <div class="dropdown-menu" aria-labelledby="btn-input-tab-dropdown">
+                                    <a id="btn-go-to-output-tab" class="dropdown-item">转到标签页 </a>
+                                    <a id="btn-find-output-tab" class="dropdown-item">查找标签页</a>
+                                </div>
+                                <span id="btn-next-output-tab" class="output-tab-buttons">
+                                    &gt;
+                                </span>
+                                <ul id="output-tabs">
+                                </ul>
+                            </div>
+                            <div id="output-text"></div>
+                            <div id="output-loader">
+                                <div id="output-loader-animation">
+                                    <object id="bombe" data="<%- require('../static/images/bombe.svg') %>" width="100%" height="100%" data-help-title="加载动画" data-help="此加载动画精确展示了“炸弹机”（The Bombe）转子的运动方式。炸弹机是 1939 年艾伦·图灵在布莱切利园制造的机电装置，1940 年由戈登·韦尔奇曼改进。英国政府密码学校（GCHQ 的前身）曾使用它破译二战期间德军使用的恩尼格玛机的每日设置。<br><br>更多信息请参阅<a href='https://wikipedia.org/wiki/Bombe'>维基百科</a>。"></object>
+                                </div>
+                                <div class="loading-msg"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="save-modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content" data-help-proxy="#save">
+                    <div class="modal-header">
+                        <h5 class="modal-title">保存流程</h5>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="#chef-format" role="tab" data-toggle="tab">Chef 格式</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#clean-json" role="tab" data-toggle="tab">整洁 JSON</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#compact-json" role="tab" data-toggle="tab">紧凑 JSON</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="save-texts">
+                                <div role="tabpanel" class="tab-pane active" id="chef-format">
+                                    <textarea class="form-control" id="save-text-chef" rows="5"></textarea>
+                                </div>
+                                <div role="tabpanel" class="tab-pane" id="clean-json">
+                                    <textarea class="form-control" id="save-text-clean" rows="5"></textarea>
+                                </div>
+                                <div role="tabpanel" class="tab-pane" id="compact-json">
+                                    <textarea class="form-control" id="save-text-compact" rows="5"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="save-name" class="bmd-label-floating">流程名称</label>
+                            <input type="text" class="form-control" id="save-name">
+                            <span class="bmd-help">使用此名称将流程保存到本地存储，或复制以便稍后加载</span>
+                        </div>
+                    </div>
+                    <div class="modal-footer" id="save-footer">
+                        <button type="button" class="btn btn-primary" id="save-button" data-dismiss="modal">保存</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">完成</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group" id="save-link-group">
+                            <h6 style="display:inline">深度链接</h6>
+                            <div class="save-link-options">
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" id="save-link-recipe-checkbox" checked> 包含流程
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" id="save-link-input-checkbox" checked> 包含输入
+                                </label>
+                            </div>
+                            <br><br>
+                            <a id="save-link" style="word-wrap: break-word;"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="load-modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content" data-help-proxy="#load">
+                    <div class="modal-header">
+                        <h5 class="modal-title">加载流程</h5>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="load-name" class="bmd-label-floating">流程名称</label>
+                            <select class="form-control" id="load-name"></select>
+                            <span class="bmd-help">从下拉列表中选择名称以从本地存储加载流程</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="load-text" class="bmd-label-floating">流程</label>
+                            <textarea class="form-control" id="load-text" rows="5"></textarea>
+                            <span class="bmd-help">将流程粘贴到此框中即可加载</span>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" id="load-button" data-dismiss="modal">加载</button>
+                        <button type="button" class="btn btn-danger" id="load-delete-button">删除</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="options-modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content" data-help-proxy="#options">
+                    <div class="modal-header">
+                        <h5 class="modal-title">选项</h5>
+                    </div>
+                    <div class="modal-body" id="options-body">
+                        <p style="font-weight: bold">请注意，这些选项将在会话之间保持。</p>
+
+                        <div class="form-group option-item">
+                            <label for="theme" class="bmd-label-floating">主题（仅在现代浏览器中支持）</label>
+                            <select class="form-control" option="theme" id="theme">
+                                <option value="classic">经典</option>
+                                <option value="dark">深色</option>
+                                <option value="geocities">GeoCities</option>
+                                <option value="solarizedDark">Solarized 深色</option>
+                                <option value="solarizedLight">Solarized 浅色</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group option-item">
+                            <label for="logLevel" class="bmd-label-floating">控制台日志级别</label>
+                            <select class="form-control" option="logLevel" id="logLevel">
+                                <option value="silent">静默</option>
+                                <option value="error">错误</option>
+                                <option value="warn">警告</option>
+                                <option value="info">信息</option>
+                                <option value="debug">调试</option>
+                                <option value="trace">跟踪</option>
+                            </select>
+                        </div>
+
+                        <div class="checkbox option-item">
+                            <label for="updateUrl">
+                                <input type="checkbox" option="updateUrl" id="updateUrl" checked>
+                                当输入或流程更改时更新 URL
+                            </label>
+                        </div>
+
+                        <div class="checkbox option-item">
+                            <label for="showHighlighter">
+                                <input type="checkbox" option="showHighlighter" id="showHighlighter" checked>
+                                在输出和输入中高亮显示所选字节（如果可能）
+                            </label>
+                        </div>
+
+                        <div class="checkbox option-item">
+                            <label for="wordWrap">
+                                <input type="checkbox" option="wordWrap" id="wordWrap" checked>
+                                对输入和输出进行自动换行
+                            </label>
+                        </div>
+
+                        <div class="checkbox option-item mb-0">
+                            <label for="showErrors">
+                                <input type="checkbox" option="showErrors" id="showErrors" checked>
+                                显示操作中的错误（推荐）
+                            </label>
+                        </div>
+
+                        <div class="form-group option-item">
+                            <label for="errorTimeout" class="bmd-label-floating">操作错误超时时间（毫秒，0 表示永不过期）</label>
+                            <input type="number" class="form-control" option="errorTimeout" id="errorTimeout">
+                        </div>
+
+                        <div class="checkbox option-item">
+                            <label for="useMetaKey">
+                                <input type="checkbox" option="useMetaKey" id="useMetaKey"> 使用 Meta 键作为快捷键（Windows ⊞/Command ⌘）</label>
+                        </div>
+
+                        <div class="checkbox option-item">
+                            <label for="autoMagic">
+                                <input type="checkbox" option="autoMagic" id="autoMagic"> 自动检测编码数据</label>
+                        </div>
+
+                        <div class="checkbox option-item">
+                            <label for="imagePreview">
+                                <input type="checkbox" option="imagePreview" id="imagePreview"> 当检测到输入是图像时，渲染其预览</label>
+                        </div>
+
+                        <div class="checkbox option-item">
+                            <label for="syncTabs">
+                                <input type="checkbox" option="syncTabs" id="syncTabs"> 保持输入和输出之间当前标签页同步</label>
+                        </div>
+
+                        <div class="checkbox option-item">
+                            <label for="showCatCount">
+                                <input type="checkbox" option="showCatCount" id="showCatCount"> 显示每个类别中的操作数量</label>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" id="reset-options">重置选项为默认值</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="favourites-modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content" data-help-proxy="a[data-target='#catFavourites']">
+                    <div class="modal-header">
+                        <h5 class="modal-title">编辑收藏</h5>
+                    </div>
+                    <div class="modal-body" id="favourites-body">
+                        <ul>
+                            <li><span style="font-weight: bold">添加：</span>将操作拖到收藏类别上并放下</li>
+                            <li><span style="font-weight: bold">重新排序：</span>在下方列表中上下拖动</li>
+                            <li><span style="font-weight: bold">删除：</span>点击删除按钮或从下方列表中拖出</li>
+                        </ul>
+                        <br>
+                        <ul id="edit-favourites-list" class="op-list"></ul>
+                        <div class="option-item">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" id="reset-favourites">将收藏重置为默认值</button>
+                        <button type="button" class="btn btn-success" data-dismiss="modal" id="save-favourites">保存</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">取消</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="support-modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content" data-help-proxy="#support">
+                    <div class="modal-header">
+                        <h5 class="modal-title">CyberChef —— 网络瑞士军刀</h5>
+                    </div>
+                    <div class="modal-body">
+                        <img aria-hidden="true" class="about-img-left" src="<%- require('../static/images/cyberchef-128x128.png') %>" alt="CyberChef Logo"/>
+                        <p class="subtext">版本  <%= htmlWebpackPlugin.options.version %><br>编译时间： <%= htmlWebpackPlugin.options.compileTime %>
+                        </p>
+                        <p>&copy; Crown Copyright 2016-<%= htmlWebpackPlugin.options.compileYear %>.</p>
+                        <p>根据 Apache 许可证 2.0 版发布。</p>
+                        <p>官方项目：<a href="https://github.com/gchq/CyberChef" target="_blank" rel="noopener">https://github.com/gchq/CyberChef</a></p>
+                        <p>中文汉化：Star-Anya</p>
+                        <p>汉化版本：v1.0.0</p>
+                        <p>汉化项目：<a href="https://github.com/AnyaWantsStars/CyberChef_zh-cn" target="_blank" rel="noopener">https://github.com/AnyaWantsStars/CyberChef_zh-cn</a></p>
+                        <p><a href="https://gitter.im/gchq/CyberChef">
+                            <img src="<%- require('../static/images/gitter-badge.svg') %>">
+                        </a></p>
+
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <a id="tab-1" class="nav-link active" href="#faqs" aria-controls="profile" role="tab" data-toggle="tab">常见问题解答</a>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a id="tab-2" class="nav-link" href="#report-bug" aria-controls="messages" role="tab" data-toggle="tab">报告错误</a>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a id="tab-3" class="nav-link" href="#report-zh" aria-controls="messages" role="tab" data-toggle="tab">汉化问题</a>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a id="tab-4" class="nav-link" href="#about" aria-controls="messages" role="tab" data-toggle="tab">关于</a>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a id="tab-5" class="nav-link" href="#keybindings" aria-controls="messages" role="tab" data-toggle="tab">快捷键</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="faqs" data-help-title="常见问题解答面板" data-help="“常见问题”面板提供了一些关于 CyberChef 的最常见问题的解答。">
+                                <br>
+                                <a class="btn btn-primary" data-toggle="collapse" data-target="#faq-contextual-help">X 功能是如何工作的？</a>
+                                <div class="collapse" id="faq-contextual-help">
+                                    <p>CyberChef 具有上下文帮助功能。只需将光标悬停在你想要了解的功能上，然后在键盘上按 <code>F1</code> 即可获得相关信息。立即试试：把光标悬停在这段文字上并按 <code>F1</code>！</p>
+                                </div>
+                                <br>
+
+                                <a class="btn btn-primary" data-toggle="collapse" data-target="#faq-examples">我能用 CyberChef 做哪些事情？</a>
+                                <div class="collapse" id="faq-examples">
+                                    <p>CyberChef 中有 <span class="num-ops">数百个</span>操作，使你能够轻松完成简单和复杂的任务。以下是一些示例：</p>
+                                    <ul>
+                                        <li><a href="#recipe=From_Base64('A-Za-z0-9%2B/%3D',true)&input=VTI4Z2JHOXVaeUJoYm1RZ2RHaGhibXR6SUdadmNpQmhiR3dnZEdobElHWnBjMmd1">解码 Base64 编码字符串</a></li>
+                                        <li><a href="#recipe=Translate_DateTime_Format('Standard%20date%20and%20time','DD/MM/YYYY%20HH:mm:ss','UTC','dddd%20Do%20MMMM%20YYYY%20HH:mm:ss%20Z%20z','Australia/Queensland')&input=MTUvMDYvMjAxNSAyMDo0NTowMA">将日期和时间转换为不同时区</a></li>
+                                        <li><a href="#recipe=Parse_IPv6_address()&input=MjAwMTowMDAwOjQxMzY6ZTM3ODo4MDAwOjYzYmY6M2ZmZjpmZGQy">解析 Teredo IPv6 地址</a></li>
+                                        <li><a href="#recipe=From_Hexdump()Gunzip()&input=MDAwMDAwMDAgIDFmIDhiIDA4IDAwIDEyIGJjIGYzIDU3IDAwIGZmIDBkIGM3IGMxIDA5IDAwIDIwICB8Li4uLi6881cu/y7HwS4uIHwKMDAwMDAwMTAgIDA4IDA1IGQwIDU1IGZlIDA0IDJkIGQzIDA0IDFmIGNhIDhjIDQ0IDIxIDViIGZmICB8Li7QVf4uLdMuLsouRCFb/3wKMDAwMDAwMjAgIDYwIGM3IGQ3IDAzIDE2IGJlIDQwIDFmIDc4IDRhIDNmIDA5IDg5IDBiIDlhIDdkICB8YMfXLi6%2BQC54Sj8uLi4ufXwKMDAwMDAwMzAgIDRlIGM4IDRlIDZkIDA1IDFlIDAxIDhiIDRjIDI0IDAwIDAwIDAwICAgICAgICAgICB8TshObS4uLi5MJC4uLnw">将十六进制转储数据转换后再解压缩</a></li>
+                                        <li><a href="#recipe=RC4(%7B'option':'UTF8','string':'secret'%7D,'Hex','Hex')Disassemble_x86('64','Full%20x86%20architecture',16,0,true,true)&input=MjFkZGQyNTQwMTYwZWU2NWZlMDc3NzEwM2YyYTM5ZmJlNWJjYjZhYTBhYWJkNDE0ZjkwYzZjYWY1MzEyNzU0YWY3NzRiNzZiM2JiY2QxOTNjYjNkZGZkYmM1YTI2NTMzYTY4NmI1OWI4ZmVkNGQzODBkNDc0NDIwMWFlYzIwNDA1MDcxMzhlMmZlMmIzOTUwNDQ2ZGIzMWQyYmM2MjliZTRkM2YyZWIwMDQzYzI5M2Q3YTVkMjk2MmMwMGZlNmRhMzAwNzJkOGM1YTZiNGZlN2Q4NTlhMDQwZWVhZjI5OTczMzYzMDJmNWEwZWMxOQ">解密并反汇编 shellcode</a></li>
+                                        <li><a href="#recipe=Fork('%5C%5Cn','%5C%5Cn',false)From_UNIX_Timestamp('Seconds%20(s)')&input=OTc4MzQ2ODAwCjEwMTI2NTEyMDAKMTA0NjY5NjQwMAoxMDgxMDg3MjAwCjExMTUzMDUyMDAKMTE0OTYwOTYwMA">将多个时间戳显示为完整日期</a></li>
+                                        <li><a href="#recipe=Fork('%5C%5Cn','%5C%5Cn',false)Conditional_Jump('1',false,'base64',10)To_Hex('Space')Return()Label('base64')To_Base64('A-Za-z0-9%2B/%3D')&input=U29tZSBkYXRhIHdpdGggYSAxIGluIGl0ClNvbWUgZGF0YSB3aXRoIGEgMiBpbiBpdA">对不同类型的数据执行不同的操作</a></li>
+                                        <li><a href="#recipe=Register('key%3D(%5B%5C%5Cda-f%5D*)',true,false)Find_/_Replace(%7B'option':'Regex','string':'.*data%3D(.*)'%7D,'$1',true,false,true)RC4(%7B'option':'Hex','string':'$R0'%7D,'Hex','Latin1')&input=aHR0cDovL21hbHdhcmV6LmJpei9iZWFjb24ucGhwP2tleT0wZTkzMmE1YyZkYXRhPThkYjdkNWViZTM4NjYzYTU0ZWNiYjMzNGUzZGIxMQ">将输入的部分内容用作操作的参数</a></li>
+                                    </ul>
+                                </div>
+                                <br>
+
+                                <a class="btn btn-primary" data-toggle="collapse" data-target="#faq-load-files">可以直接从文件加载输入吗？</a>
+                                <div class="collapse" id="faq-load-files">
+                                    <p>可以！只需将文件拖到输入框上并放下即可。</p>
+                                    <p>CyberChef 可以处理最大约 2GB 的文件（取决于你的浏览器），但某些操作在如此大的数据上可能需要运行很长时间。</p>
+                                    <p>如果输出超过某个阈值（默认 <a href="#recipe=Multiply('Line%20feed')Convert_data_units('Bytes%20(B)','Mebibytes%20(MiB)')&input=MTAyNAoxMDI0">1 MiB</a>），它将以可下载文件的形式提供。如需检查，可以查看文件的片段。</p>
+                                </div>
+                                <br>
+
+                                <a class="btn btn-primary" data-toggle="collapse" data-target="#faq-fork">如何一次对多个输入运行同一操作？</a>
+                                <div class="collapse" id="faq-fork">
+                                    <p>也许你有 10 个时间戳要解析，或者 16 个使用相同密钥的编码字符串。</p>
+                                    <p>“分支”操作（位于“流程控制”类别）会逐行拆分输入，并分别对每一行运行后续所有操作。每个输出会显示在独立的一行上。分隔符可以更改，因此如果输入以逗号分隔，可以将分隔符改为逗号。</p>
+                                    <p><a href="#recipe=Fork('%5C%5Cn','%5C%5Cn',false)From_UNIX_Timestamp('Seconds%20(s)')&input=OTc4MzQ2ODAwCjEwMTI2NTEyMDAKMTA0NjY5NjQwMAoxMDgxMDg3MjAwCjExMTUzMDUyMDAKMTE0OTYwOTYwMA">点击此处</a>查看示例。</p>
+                                </div>
+                                <br>
+
+                                <a class="btn btn-primary" data-toggle="collapse" data-target="#faq-magic">“魔术”操作是如何工作的？</a>
+                                <div class="collapse" id="faq-magic">
+                                    <p>“魔术”操作使用多种方法来检测编码数据以及可用来解读数据的操作。这些方法的技术描述可<a href="https://github.com/gchq/CyberChef/wiki/Automatic-detection-of-encoded-data-using-CyberChef-Magic">在此处</a>找到。</p>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="report-bug">
+                                <br>
+                                <p>如果你在 CyberChef 中发现错误，请在我们的 GitHub 仓库中提交一个问题，并尽可能详细地说明。请在适当情况下复制并附上以下信息。</p>
+                                <br>
+                                <pre id="report-bug-info"></pre>
+                                <br>
+                                <a class="btn btn-primary" href="https://github.com/gchq/CyberChef/issues/new/choose" role="button">在 GitHub 上提交问题</a>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="report-zh">
+                                <br>
+                                <p>如果你在使用汉化版时发现以下问题，请在汉化项目的 GitHub 仓库中提交问题。请尽量详细描述并提供必要的复现信息，如截图、流程、输入或错误信息等。</p>
+                                <br>
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>问题类型</th>
+                                            <th>说明</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>汉化遗漏</td>
+                                            <td>仍有英文未翻译的可见文本</td>
+                                        </tr>
+                                        <tr>
+                                            <td>汉化不当</td>
+                                            <td>翻译不准确，或某些专业术语不应汉化</td>
+                                        </tr>
+                                        <tr>
+                                            <td>功能异常</td>
+                                            <td>原版正常但因汉化引入的功能问题</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <br>
+                                <a class="btn btn-primary" href="https://github.com/AnyaWantsStars/CyberChef_zh-cn/issues/new/choose" role="button">在汉化项目提交问题</a>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="about" style="padding: 20px;">
+                                <h5><strong>是什么</strong></h5>
+                                <p>一个简单直观的 Web 应用，用于分析和解码数据，无需处理复杂的工具或编程语言。CyberChef 鼓励技术或非技术背景的人员去探索数据格式、加密和压缩。</p><br>
+
+                                <h5><strong>为什么</strong></h5>
+                                <p>在现代世界中，数字数据有各种形式、大小和格式——CyberChef 致力于在一个易用的平台上帮助你理解这些数据。</p><br>
+
+
+                                <h5><strong>怎么做</strong></h5>
+                                <p>界面以简洁为核心进行设计。复杂的技术现在如同拖放般简单。可以组合简单功能以构建“流程”，从而可能实现复杂的分析，并可与其他用户共享，使用他们的输入。</p>
+                                <p>对于熟悉编写代码的人来说，CyberChef 是一种快速高效的原型问题解决方案的方式，验证可行后可再编写脚本实现。</p><br>
+
+
+                                <h5><strong>面向谁</strong></h5>
+                                <p>预计 CyberChef 将对网络安全和杀毒公司很有用。它也会吸引学术界以及任何参与数字数据分析的个人或公司，无论是软件开发人员、分析师、数学家，还是业余的解谜爱好者。</p><br>
+
+
+                                <h5><strong>目标</strong></h5>
+                                <p>希望通过 <a href="https://github.com/gchq/CyberChef">GitHub</a> 发布 CyberChef，让更多人参与贡献，并将其整合到未来版本中。</p><br>
+
+
+                                <br>
+                                <p>对于任何从事互联网相关工作的人来说，CyberChef 中有 <span class="num-ops">数百个</span>有用的操作，无论你是想将时间戳转换为不同格式、解压 gzip 数据、生成 SHA3 哈希，还是解析 X.509 证书以查看其颁发者。</p>
+                                <p>它就是网络瑞士军刀。</p>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="keybindings" style="padding: 20px;">
+                                <table class="table table-condensed table-bordered table-hover" id="keybList"></table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                    </div>
+                    <a href="#" data-toggle="modal" data-target="#project-links-modal">
+                        <img aria-hidden="true" style="position: absolute; top: 0; right: 0; border: 0;" src="<%- require('../static/images/fork_me.png') %>" alt="在 GitHub 上 Fork 我">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="project-links-modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">GitHub 地址</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="关闭"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <p><strong>官方项目：</strong><a href="https://github.com/gchq/CyberChef" target="_blank" rel="noopener">CyberChef</a></p>
+                        <p><strong>汉化项目：</strong><a href="https://github.com/AnyaWantsStars/CyberChef_zh-cn" target="_blank" rel="noopener">CyberChef_zh-cn</a></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="confirm-modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="confirm-title"></h5>
+                    </div>
+                    <div class="modal-body" id="confirm-body"></div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success" id="confirm-yes">是</button>
+                        <button type="button" class="btn btn-danger" id="confirm-no" data-dismiss="modal">否</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="input-tab-modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">查找输入标签页</h5>
+                    </div>
+                    <div class="modal-body" id="input-tab-body">
+                        <h6>加载状态</h6>
+                        <div id="input-find-options">
+                            <ul id="input-find-options-checkboxes">
+                                <li class="checkbox input-find-option">
+                                    <label for="input-show-pending"><input type="checkbox" id="input-show-pending" checked=""> 待处理</label>
+                                </li>
+                                <li class="checkbox input-find-option">
+                                    <label for="input-show-loading"><input type="checkbox" id="input-show-loading" checked=""> 加载中</label>
+                                </li>
+                                <li class="checkbox input-find-option">
+                                    <label for="input-show-loaded"><input type="checkbox" id="input-show-loaded" checked=""> 已加载</label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="form-group input-group">
+                            <div class="toggle-string">
+                                <label for="input-filter" class="bmd-label-floating toggle-string">过滤（正则表达式）</label>
+                                <input type="text" class="form-control toggle-string" id="input-filter">
+                            </div>
+                            <div class="input-group-append">
+                                <button class="btn btn-secondary dropdown-toggle" id="input-filter-button" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">内容</button>
+                                <div class="dropdown-menu toggle-dropdown">
+                                    <a class="dropdown-item" id="input-filter-content">内容</a>
+                                    <a class="dropdown-item" id="input-filter-filename">文件名</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group input-find-option" id="input-num-results-container">
+                            <label for="input-num-results" class="bmd-label-floating">结果数量</label>
+                            <input type="number" class="form-control" id="input-num-results" value="20" min="1">
+                        </div>
+                        <div style="clear:both"></div>
+                        <h6>结果</h6>
+                        <ul id="input-search-results"></ul>
+                    </div>
+                    <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" id="input-filter-refresh">刷新</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="output-tab-modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">查找输出标签页</h5>
+                    </div>
+                    <div class="modal-body" id="output-tab-body">
+                        <h6>执行状态</h6>
+                        <div id="output-find-options">
+                            <ul id="output-find-options-checkboxes">
+                                <li class="checkbox output-find-option">
+                                    <label for="output-show-pending"><input type="checkbox" id="output-show-pending" checked=""> 待处理</label>
+                                </li>
+                                <li class="checkbox output-find-option">
+                                    <label for="output-show-baking"><input type="checkbox" id="output-show-baking" checked=""> 执行中</label>
+                                </li>
+                                <li class="checkbox output-find-option">
+                                    <label for="output-show-baked"><input type="checkbox" id="output-show-baked" checked=""> 已执行</label>
+                                </li>
+                                <li class="checkbox output-find-option">
+                                    <label for="output-show-stale"><input type="checkbox" id="output-show-stale" checked=""> 已过期</label>
+                                </li>
+                                <li class="checkbox output-find-option">
+                                    <label for="output-show-errored"><input type="checkbox" id="output-show-errored" checked=""> 出错</label>
+                                </li>
+                            </ul>
+                            <div class="form-group output-find-option">
+                                <label for="output-content-filter" class="bmd-label-floating">内容过滤（正则表达式）</label>
+                                <input type="text" class="form-control" id="output-content-filter">
+                            </div>
+                            <div class="form-group output-find-option" id="output-num-results-container">
+                                <label for="output-num-results" class="bmd-label-floating">结果数量</label>
+                                <input type="number" class="form-control" id="output-num-results" value="20">
+                            </div>
+                        </div>
+                        <br>
+                        <h6>结果</h6>
+                        <ul id="output-search-results"></ul>
+                    </div>
+                    <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" id="output-filter-refresh">刷新</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="download-modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content" data-help-proxy="a[data-target='#download-modal']">
+                    <div class="modal-header">
+                        <h5 class="modal-title">下载 CyberChef</h5>
+                    </div>
+                    <div class="modal-body">
+                        <p>CyberChef 完全在浏览器内运行，没有服务端组件，因此无论你使用 CyberChef 官方在线版还是下载的独立版本（假设未被修改），你的输入数据和流程配置都不会被发送到任何地方。</p>
+                        <p>有三个操作会调用外部服务：“Show on map”操作会从 wikimedia.org 下载地图瓦片，“DNS over HTTPS”操作会使用 Google 或 Cloudflare 服务解析 DNS 请求，“HTTP request”操作则会调用你输入的已配置 URL。你可以通过浏览器的开发者控制台（F12）并查看 Network 标签来确认发出了哪些网络请求。</p>
+                        <p>如果你希望下载自己的独立版 CyberChef 以在隔离网络或互联网受限/无网络的环境下运行，可从下方获取包含整个 Web 应用的 ZIP 文件。无需任何配置即可在本地运行或部署到 Web 服务器上。</p>
+                        <p>请注意，独立版本永远不会自动更新，这意味着在手动重新下载新版本之前，它将不会收到错误修复或新功能。</p>
+
+                        <hr>
+                        <div>
+                            <h6>官方原版 CyberChef v<%= htmlWebpackPlugin.options.officialVersion %></h6>
+                            <ul>
+                                <li>由 GCHQ 官方维护，此版本的更新日志可<a href="https://github.com/gchq/CyberChef/blob/v<%= htmlWebpackPlugin.options.latestReleaseVersion %>/CHANGELOG.md">在此处</a>查看</li>
+                                <li>&copy; Crown Copyright 2016-<%= htmlWebpackPlugin.options.compileYear %></li>
+                                <li>根据 Apache 许可证 2.0 版发布</li>
+                            </ul>
+                            <a href="https://gchq.github.io/CyberChef" target="_blank" rel="noopener" class="btn btn-outline-primary">访问官方在线版</a>
+                            <a href="https://github.com/gchq/CyberChef/releases" target="_blank" rel="noopener" class="btn btn-outline-secondary">下载官方 ZIP</a>
+                        </div>
+                        <hr>
+                        <div>
+                            <h6>汉化版 CyberChef <%= htmlWebpackPlugin.options.version %> zh-cn <%= htmlWebpackPlugin.options.zhVersion %></h6>
+                            <ul>
+                                <li>在官方版基础上完成界面汉化，汉化项目：<a href="https://github.com/AnyaWantsStars/CyberChef_zh-cn" target="_blank" rel="noopener">CyberChef_zh-cn</a></li>
+                                <li>构建时间：<%= htmlWebpackPlugin.options.compileTime %></li>
+                                <li>SHA256 哈希：DOWNLOAD_HASH_PLACEHOLDER</li>
+                            </ul>
+                            <a href="<%= htmlWebpackPlugin.options.downloadZipFilename %>" download class="btn btn-outline-primary">下载汉化版 ZIP</a>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- The Help modal should be last to ensure it has the highest z-index -->
+        <div class="modal fade" id="help-modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">
+                            <i class="material-icons modal-icon">info_outline</i>
+                            <span id="help-title"></span>
+                        </h5>
+                    </div>
+                    <div class="modal-body">
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" id="help-ok" data-dismiss="modal">确定</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,125 @@
+/**
+ * @author j433866 [j433866@gmail.com]
+ * @author 0xff1ce [github.com/0xff1ce]
+ * @copyright Crown Copyright 2024
+ * @license Apache-2.0
+ */
+
+import Operation from "../Operation.mjs";
+import {FORMATS, convertCoordinates} from "../lib/ConvertCoordinates.mjs";
+import OperationError from "../errors/OperationError.mjs";
+
+/**
+ * Show on map operation
+ */
+class ShowOnMap extends Operation {
+
+    /**
+     * ShowOnMap constructor
+     */
+    constructor() {
+        super();
+
+        this.name = "地图显示";
+        this.module = "Hashing";
+        this.description = "在滑动地图上显示坐标。<br><br>坐标在显示在地图上之前将转换为十进制度数。<br><br>支持的格式：<ul><li>度分秒（DMS）</li><li>度十进制分（DDM）</li><li>十进制度数（DD）</li><li>Geohash</li><li>军用网格参考系统（MGRS）</li><li>英国地形测量局国家网格（OSNG）</li><li>通用横轴墨卡托（UTM）</li></ul><br>此操作在离线状态下无法工作。";
+        this.infoURL = "https://osmfoundation.org/wiki/Terms_of_Use";
+        this.inputType = "string";
+        this.outputType = "string";
+        this.presentType = "html";
+        this.args = [
+            {
+                name: "缩放级别",
+                type: "number",
+                value: 13
+            },
+            {
+                name: "输入格式",
+                type: "option",
+                value: [{name: "自动", value: "Auto"}].concat(FORMATS),
+                allowEmpty: false
+            },
+            {
+                name: "输入分隔符",
+                type: "option",
+                value: [{name: "自动", value: "Auto"}, {name: "方向前导", value: "Direction Leading"}, {name: "方向后随", value: "Direction Trailing"}, "\\n", "逗号", "分号", "冒号"],
+                allowEmpty: false
+            }
+        ];
+    }
+
+    /**
+     * @param {string} input
+     * @param {Object[]} args
+     * @returns {string}
+     */
+    run(input, args) {
+        if (input.replace(/\s+/g, "") !== "") {
+            const inFormat = args[1],
+                inDelim = args[2];
+            let latLong;
+            try {
+                latLong = convertCoordinates(input, inFormat, inDelim, "Decimal Degrees", "逗号", "无", 5);
+            } catch (error) {
+                throw new OperationError(error);
+            }
+            latLong = latLong.replace(/[,]$/, "");
+            latLong = latLong.replace(/°/g, "");
+
+            // The map requires a latitude and longitude pair. If the conversion only produced a
+            // single value (e.g. because the chosen input delimiter didn't match the input), bail
+            // out with a helpful message rather than passing it on to the map, which would throw an
+            // uncaught TypeError in the browser.
+            const coords = latLong.split(",").map(v => v.trim());
+            if (coords.length !== 2 || coords.some(v => v === "" || isNaN(Number(v)))) {
+                throw new OperationError(`无法在地图上显示坐标 '${latLong}'。预期为经纬度对——请检查输入格式和分隔符是否正确。`);
+            }
+
+            return latLong;
+        }
+        return input;
+    }
+
+    /**
+     * @param {string} data
+     * @param {Object[]} args
+     * @returns {string}
+     */
+    async present(data, args) {
+        if (data.replace(/\s+/g, "") === "") {
+            data = "0, 0";
+        }
+        const zoomLevel = args[0];
+        const tileUrl = "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+            tileAttribution = "&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors",
+            leafletUrl = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.js",
+            leafletCssUrl = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.css";
+        return `<link rel="stylesheet" href="${leafletCssUrl}" crossorigin=""/>
+<style>
+    #output-text .cm-content,
+    #output-text .cm-line,
+    #output-html {
+        padding: 0;
+        white-space: normal;
+    }
+</style>
+<div id="presentedMap" style="width: 100%; height: 100%;"></div>
+<script type="text/javascript">
+var mapscript = document.createElement('script');
+document.body.appendChild(mapscript);
+mapscript.onload = function() {
+    var presentMap = L.map('presentedMap').setView([${data}], ${zoomLevel});
+    L.tileLayer('${tileUrl}', {
+        attribution: '${tileAttribution}'
+    }).addTo(presentMap);
+
+    L.marker([${data}]).addTo(presentMap)
+        .bindPopup('${data}')
+        .openPopup();
+};
+mapscript.src = "${leafletUrl}";
+</script>`;
+    }
+}
+
+export default ShowOnMap;
