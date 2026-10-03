@@ -44,7 +44,6 @@ jobs:
 
       - name: Prepare Pages artifact
         run: |
-          rm -f build/prod/*.zip
           rm -f build/prod/BundleAnalyzerReport.html
 
       - name: Configure Pages
