@@ -1,0 +1,3255 @@
+{
+    "A1Z26 密码解密": {
+        "enName": "A1Z26 Cipher Decode",
+        "args": [
+            "Delimiter"
+        ]
+    },
+    "A1Z26 密码编码": {
+        "enName": "A1Z26 Cipher Encode",
+        "args": [
+            "Delimiter"
+        ]
+    },
+    "ADD": {
+        "enName": "ADD",
+        "args": [
+            "Key"
+        ]
+    },
+    "添加行号": {
+        "enName": "Add line numbers",
+        "args": [
+            "Offset"
+        ]
+    },
+    "添加文字到图像": {
+        "enName": "Add Text To Image",
+        "args": [
+            "Text",
+            "Horizontal align",
+            "Vertical align",
+            "X position",
+            "Y position",
+            "Size",
+            "Font face",
+            "Red",
+            "Green",
+            "Blue",
+            "Alpha"
+        ]
+    },
+    "AES 解密": {
+        "enName": "AES Decrypt",
+        "args": [
+            "Key",
+            "IV",
+            "IV Length",
+            "Mode",
+            "Input",
+            "Output",
+            "GCM Tag",
+            "Additional Authenticated Data",
+            "IV from input"
+        ]
+    },
+    "AES 加密": {
+        "enName": "AES Encrypt",
+        "args": [
+            "Key",
+            "IV",
+            "Mode",
+            "Input",
+            "Output",
+            "Additional Authenticated Data",
+            "Include IV in output"
+        ]
+    },
+    "AES 密钥解包": {
+        "enName": "AES Key Unwrap",
+        "args": [
+            "Key (KEK)",
+            "IV",
+            "Input",
+            "Output"
+        ]
+    },
+    "AES 密钥包装": {
+        "enName": "AES Key Wrap",
+        "args": [
+            "Key (KEK)",
+            "IV",
+            "Input",
+            "Output"
+        ]
+    },
+    "仿射密码 解码": {
+        "enName": "Affine Cipher Decode",
+        "args": [
+            "a",
+            "b"
+        ]
+    },
+    "仿射密码 编码": {
+        "enName": "Affine Cipher Encode",
+        "args": [
+            "a",
+            "b"
+        ]
+    },
+    "AMF 解码": {
+        "enName": "AMF Decode",
+        "args": [
+            "Format"
+        ]
+    },
+    "AMF 编码": {
+        "enName": "AMF Encode",
+        "args": [
+            "Format"
+        ]
+    },
+    "分析 UUID": {
+        "enName": "Analyse UUID",
+        "args": [
+            "Include Metadata"
+        ]
+    },
+    "AND": {
+        "enName": "AND",
+        "args": [
+            "Key"
+        ]
+    },
+    "Argon2": {
+        "enName": "Argon2",
+        "args": [
+            "Salt",
+            "Iterations",
+            "Memory (KiB)",
+            "Parallelism",
+            "Hash length (bytes)",
+            "Type",
+            "Output format"
+        ]
+    },
+    "Argon2 比较": {
+        "enName": "Argon2 compare",
+        "args": [
+            "Encoded hash"
+        ]
+    },
+    "Ascon 解密": {
+        "enName": "Ascon Decrypt",
+        "args": [
+            "Key",
+            "Nonce",
+            "Associated Data",
+            "Input",
+            "Output"
+        ]
+    },
+    "Ascon 加密": {
+        "enName": "Ascon Encrypt",
+        "args": [
+            "Key",
+            "Nonce",
+            "Associated Data",
+            "Input",
+            "Output"
+        ]
+    },
+    "Ascon MAC": {
+        "enName": "Ascon MAC",
+        "args": [
+            "Key"
+        ]
+    },
+    "自动化验证测试操作": {
+        "enName": "Automated Validation Test Op",
+        "args": [
+            "Integer Number",
+            "Real Number",
+            "Non Empty String",
+            "Empty Allowed String",
+            "Non Empty Toggle String",
+            "Option Ingredient",
+            "Arg Selector Ingredient"
+        ]
+    },
+    "Avro 转 JSON": {
+        "enName": "Avro to JSON",
+        "args": [
+            "Force Valid JSON"
+        ]
+    },
+    "培根密码 解码": {
+        "enName": "Bacon Cipher Decode",
+        "args": [
+            "Alphabet",
+            "Translation",
+            "Invert Translation"
+        ]
+    },
+    "培根密码 编码": {
+        "enName": "Bacon Cipher Encode",
+        "args": [
+            "Alphabet",
+            "Translation",
+            "Keep extra characters",
+            "Invert Translation"
+        ]
+    },
+    "Bcrypt": {
+        "enName": "Bcrypt",
+        "args": [
+            "Rounds"
+        ]
+    },
+    "Bcrypt 比较": {
+        "enName": "Bcrypt compare",
+        "args": [
+            "Hash"
+        ]
+    },
+    "Bifid 密码 解码": {
+        "enName": "Bifid Cipher Decode",
+        "args": [
+            "Keyword"
+        ]
+    },
+    "Bifid 密码 编码": {
+        "enName": "Bifid Cipher Encode",
+        "args": [
+            "Keyword"
+        ]
+    },
+    "位左移": {
+        "enName": "Bit shift left",
+        "args": [
+            "Amount"
+        ]
+    },
+    "位右移": {
+        "enName": "Bit shift right",
+        "args": [
+            "Amount",
+            "Type"
+        ]
+    },
+    "BLAKE2b": {
+        "enName": "BLAKE2b",
+        "args": [
+            "Size",
+            "Output Encoding",
+            "Key"
+        ]
+    },
+    "BLAKE2s": {
+        "enName": "BLAKE2s",
+        "args": [
+            "Size",
+            "Output Encoding",
+            "Key"
+        ]
+    },
+    "BLAKE3": {
+        "enName": "BLAKE3",
+        "args": [
+            "Size (bytes)",
+            "Key"
+        ]
+    },
+    "Blowfish 解密": {
+        "enName": "Blowfish Decrypt",
+        "args": [
+            "Key",
+            "IV",
+            "Mode",
+            "Input",
+            "Output"
+        ]
+    },
+    "Blowfish 加密": {
+        "enName": "Blowfish Encrypt",
+        "args": [
+            "Key",
+            "IV",
+            "Mode",
+            "Input",
+            "Output"
+        ]
+    },
+    "模糊图像": {
+        "enName": "Blur Image",
+        "args": [
+            "Amount",
+            "Type"
+        ]
+    },
+    "Bombe": {
+        "enName": "Bombe",
+        "args": [
+            "Model",
+            "Left-most (4th) rotor",
+            "Left-hand rotor",
+            "Middle rotor",
+            "Right-hand rotor",
+            "Reflector",
+            "Crib",
+            "Crib offset",
+            "Use checking machine"
+        ]
+    },
+    "Bzip2 压缩": {
+        "enName": "Bzip2 Compress",
+        "args": [
+            "Block size (100s of kb)",
+            "Work factor"
+        ]
+    },
+    "Bzip2 解压": {
+        "enName": "Bzip2 Decompress",
+        "args": [
+            "Use low-memory, slower decompression algorithm"
+        ]
+    },
+    "Caesar Box 密码": {
+        "enName": "Caesar Box Cipher",
+        "args": [
+            "Box Height"
+        ]
+    },
+    "笛卡尔积": {
+        "enName": "Cartesian Product",
+        "args": [
+            "Sample delimiter",
+            "Item delimiter"
+        ]
+    },
+    "ChaCha": {
+        "enName": "ChaCha",
+        "args": [
+            "Key",
+            "Nonce",
+            "Counter",
+            "Rounds",
+            "Input",
+            "Output"
+        ]
+    },
+    "转换 IP 格式": {
+        "enName": "Change IP format",
+        "args": [
+            "Input format",
+            "Output format"
+        ]
+    },
+    "CipherSaber2 解密": {
+        "enName": "CipherSaber2 Decrypt",
+        "args": [
+            "Key",
+            "Rounds"
+        ]
+    },
+    "CipherSaber2 加密": {
+        "enName": "CipherSaber2 Encrypt",
+        "args": [
+            "Key",
+            "Rounds"
+        ]
+    },
+    "CMAC": {
+        "enName": "CMAC",
+        "args": [
+            "Key",
+            "Encryption algorithm"
+        ]
+    },
+    "Colossus": {
+        "enName": "Colossus",
+        "args": [
+            "Input",
+            "Pattern",
+            "QBusZ",
+            "QBusΧ",
+            "QBusΨ",
+            "Limitation",
+            "K Rack Option",
+            "Program to run",
+            "K Rack: Conditional",
+            "R1-Q1",
+            "R1-Q2",
+            "R1-Q3",
+            "R1-Q4",
+            "R1-Q5",
+            "R1-Negate",
+            "R1-Counter",
+            "R2-Q1",
+            "R2-Q2",
+            "R2-Q3",
+            "R2-Q4",
+            "R2-Q5",
+            "R2-Negate",
+            "R2-Counter",
+            "R3-Q1",
+            "R3-Q2",
+            "R3-Q3",
+            "R3-Q4",
+            "R3-Q5",
+            "R3-Negate",
+            "R3-Counter",
+            "Negate All",
+            "K Rack: Addition",
+            "Add-Q1",
+            "Add-Q2",
+            "Add-Q3",
+            "Add-Q4",
+            "Add-Q5",
+            "Add-Equals",
+            "Add-Counter1",
+            "Add Negate All",
+            "Total Motor",
+            "Master Control Panel",
+            "Set Total",
+            "Fast Step",
+            "Slow Step",
+            "Start Χ1",
+            "Start Χ2",
+            "Start Χ3",
+            "Start Χ4",
+            "Start Χ5",
+            "Start M61",
+            "Start M37",
+            "Start Ψ1",
+            "Start Ψ2",
+            "Start Ψ3",
+            "Start Ψ4",
+            "Start Ψ5"
+        ]
+    },
+    "比较 CTPH 哈希": {
+        "enName": "Compare CTPH hashes",
+        "args": [
+            "Delimiter"
+        ]
+    },
+    "比较 SSDEEP 哈希": {
+        "enName": "Compare SSDEEP hashes",
+        "args": [
+            "Delimiter"
+        ]
+    },
+    "条件跳转": {
+        "enName": "Conditional Jump",
+        "args": [
+            "Match (regex)",
+            "Invert match",
+            "Label name",
+            "Maximum jumps (if jumping backwards)"
+        ]
+    },
+    "适应图像": {
+        "enName": "Contain Image",
+        "args": [
+            "Width",
+            "Height",
+            "Horizontal align",
+            "Vertical align",
+            "Resizing algorithm",
+            "Opaque background"
+        ]
+    },
+    "转换面积": {
+        "enName": "Convert area",
+        "args": [
+            "Input units",
+            "Output units"
+        ]
+    },
+    "转换坐标格式": {
+        "enName": "Convert co-ordinate format",
+        "args": [
+            "Input Format",
+            "Input Delimiter",
+            "Output Format",
+            "Output Delimiter",
+            "Include Compass Directions",
+            "Precision"
+        ]
+    },
+    "转换数据单位": {
+        "enName": "Convert data units",
+        "args": [
+            "Input units",
+            "Output units"
+        ]
+    },
+    "转换距离": {
+        "enName": "Convert distance",
+        "args": [
+            "Input units",
+            "Output units"
+        ]
+    },
+    "转换图像格式": {
+        "enName": "Convert Image Format",
+        "args": [
+            "Output Format",
+            "JPEG Quality",
+            "PNG Filter Type",
+            "PNG Deflate Level"
+        ]
+    },
+    "转换 Leet 语": {
+        "enName": "Convert Leet Speak",
+        "args": [
+            "Direction"
+        ]
+    },
+    "转换质量": {
+        "enName": "Convert mass",
+        "args": [
+            "Input units",
+            "Output units"
+        ]
+    },
+    "转换速度": {
+        "enName": "Convert speed",
+        "args": [
+            "Input units",
+            "Output units"
+        ]
+    },
+    "统计出现次数": {
+        "enName": "Count occurrences",
+        "args": [
+            "Search string"
+        ]
+    },
+    "覆盖图像": {
+        "enName": "Cover Image",
+        "args": [
+            "Width",
+            "Height",
+            "Horizontal align",
+            "Vertical align",
+            "Resizing algorithm"
+        ]
+    },
+    "CRC 校验和": {
+        "enName": "CRC Checksum",
+        "args": [
+            "Algorithm",
+            "Width (bits)",
+            "Polynomial",
+            "Initialization",
+            "Reflect input",
+            "Reflect output",
+            "Xor Output"
+        ]
+    },
+    "裁剪图像": {
+        "enName": "Crop Image",
+        "args": [
+            "X Position",
+            "Y Position",
+            "Width",
+            "Height",
+            "Autocrop",
+            "Autocrop tolerance (%)",
+            "Only autocrop frames",
+            "Symmetric autocrop",
+            "Autocrop keep border (px)"
+        ]
+    },
+    "CSS 美化": {
+        "enName": "CSS Beautify",
+        "args": [
+            "Indent string"
+        ]
+    },
+    "CSS 压缩": {
+        "enName": "CSS Minify",
+        "args": [
+            "Preserve comments"
+        ]
+    },
+    "CSS 选择器": {
+        "enName": "CSS selector",
+        "args": [
+            "CSS selector",
+            "Delimiter"
+        ]
+    },
+    "CSV 转 JSON": {
+        "enName": "CSV to JSON",
+        "args": [
+            "Cell delimiters",
+            "Row delimiters",
+            "Format"
+        ]
+    },
+    "日期时间差值": {
+        "enName": "DateTime Delta",
+        "args": [
+            "Built in formats",
+            "Input format string",
+            "Time Operation",
+            "Days",
+            "Hours",
+            "Minutes",
+            "Seconds"
+        ]
+    },
+    "解码 NetBIOS 名称": {
+        "enName": "Decode NetBIOS Name",
+        "args": [
+            "Offset"
+        ]
+    },
+    "解码文本": {
+        "enName": "Decode text",
+        "args": [
+            "Encoding"
+        ]
+    },
+    "安全化 URL": {
+        "enName": "Defang URL",
+        "args": [
+            "Escape dots",
+            "Escape http",
+            "Escape ://",
+            "Process"
+        ]
+    },
+    "派生 EVP 密钥": {
+        "enName": "Derive EVP key",
+        "args": [
+            "Passphrase",
+            "Key size",
+            "Iterations",
+            "Hashing function",
+            "Salt"
+        ]
+    },
+    "派生 HKDF 密钥": {
+        "enName": "Derive HKDF key",
+        "args": [
+            "Salt",
+            "Info",
+            "Hashing function",
+            "Extract mode",
+            "L (number of output octets)"
+        ]
+    },
+    "派生 PBKDF2 密钥": {
+        "enName": "Derive PBKDF2 key",
+        "args": [
+            "Passphrase",
+            "Key size",
+            "Iterations",
+            "Hashing function",
+            "Salt"
+        ]
+    },
+    "DES 解密": {
+        "enName": "DES Decrypt",
+        "args": [
+            "Key",
+            "IV",
+            "Mode",
+            "Input",
+            "Output"
+        ]
+    },
+    "DES 加密": {
+        "enName": "DES Encrypt",
+        "args": [
+            "Key",
+            "IV",
+            "Mode",
+            "Input",
+            "Output"
+        ]
+    },
+    "差异比较": {
+        "enName": "Diff",
+        "args": [
+            "Sample delimiter",
+            "Diff by",
+            "Show added",
+            "Show removed",
+            "Show subtraction",
+            "Ignore whitespace"
+        ]
+    },
+    "ARM 反汇编": {
+        "enName": "Disassemble ARM",
+        "args": [
+            "Architecture",
+            "Mode",
+            "Endianness",
+            "Starting address (hex)",
+            "Show instruction hex",
+            "Show instruction position"
+        ]
+    },
+    "x86 反汇编": {
+        "enName": "Disassemble x86",
+        "args": [
+            "Bit mode",
+            "Compatibility",
+            "Code Segment (CS)",
+            "Offset (IP)",
+            "Show instruction hex",
+            "Show instruction position"
+        ]
+    },
+    "除法": {
+        "enName": "Divide",
+        "args": [
+            "Delimiter"
+        ]
+    },
+    "DNS over HTTPS": {
+        "enName": "DNS over HTTPS",
+        "args": [
+            "Resolver",
+            "Request Type",
+            "Answer Data Only",
+            "Disable DNSSEC validation"
+        ]
+    },
+    "丢弃字节": {
+        "enName": "Drop bytes",
+        "args": [
+            "Start",
+            "Length",
+            "Apply to each line"
+        ]
+    },
+    "丢弃第 n 个字节": {
+        "enName": "Drop nth bytes",
+        "args": [
+            "Drop every",
+            "Starting at",
+            "Apply to each line"
+        ]
+    },
+    "ECDSA 签名": {
+        "enName": "ECDSA Sign",
+        "args": [
+            "ECDSA Private Key (PEM)",
+            "Message Digest Algorithm",
+            "Output Format"
+        ]
+    },
+    "ECDSA 签名转换": {
+        "enName": "ECDSA Signature Conversion",
+        "args": [
+            "Input Format",
+            "Output Format"
+        ]
+    },
+    "ECDSA 验证": {
+        "enName": "ECDSA Verify",
+        "args": [
+            "Input Format",
+            "Message Digest Algorithm",
+            "ECDSA Public Key (PEM)",
+            "Message",
+            "Message format"
+        ]
+    },
+    "编码 NetBIOS 名称": {
+        "enName": "Encode NetBIOS Name",
+        "args": [
+            "Offset"
+        ]
+    },
+    "编码文本": {
+        "enName": "Encode text",
+        "args": [
+            "Encoding"
+        ]
+    },
+    "Enigma": {
+        "enName": "Enigma",
+        "args": [
+            "Model",
+            "Left-most (4th) rotor",
+            "Left-most rotor ring setting",
+            "Left-most rotor initial value",
+            "Left-hand rotor",
+            "Left-hand rotor ring setting",
+            "Left-hand rotor initial value",
+            "Middle rotor",
+            "Middle rotor ring setting",
+            "Middle rotor initial value",
+            "Right-hand rotor",
+            "Right-hand rotor ring setting",
+            "Right-hand rotor initial value",
+            "Reflector",
+            "Plugboard",
+            "Strict output"
+        ]
+    },
+    "信息熵": {
+        "enName": "Entropy",
+        "args": [
+            "Visualisation"
+        ]
+    },
+    "转义智能字符": {
+        "enName": "Escape Smart Characters",
+        "args": [
+            "Unmappable characters"
+        ]
+    },
+    "转义字符串": {
+        "enName": "Escape string",
+        "args": [
+            "Escape level",
+            "Escape quote",
+            "JSON compatible",
+            "ES6 compatible",
+            "Uppercase hex"
+        ]
+    },
+    "转义 Unicode 字符": {
+        "enName": "Escape Unicode Characters",
+        "args": [
+            "Prefix",
+            "Encode all chars",
+            "Padding",
+            "Uppercase hex"
+        ]
+    },
+    "展开字母范围": {
+        "enName": "Expand alphabet range",
+        "args": [
+            "Delimiter"
+        ]
+    },
+    "扩展 GCD": {
+        "enName": "Extended GCD",
+        "args": [
+            "Value a",
+            "Value b"
+        ]
+    },
+    "提取日期": {
+        "enName": "Extract dates",
+        "args": [
+            "Display total"
+        ]
+    },
+    "提取域名": {
+        "enName": "Extract domains",
+        "args": [
+            "Display total",
+            "Sort",
+            "Unique",
+            "Underscore (DMARC, DKIM, etc)"
+        ]
+    },
+    "提取电子邮件地址": {
+        "enName": "Extract email addresses",
+        "args": [
+            "Display total",
+            "Sort",
+            "Unique"
+        ]
+    },
+    "提取文件": {
+        "enName": "Extract Files",
+        "args": [
+            "Images",
+            "Video",
+            "Audio",
+            "Documents",
+            "Applications",
+            "Archives",
+            "Miscellaneous",
+            "Ignore failed extractions",
+            "Minimum File Size"
+        ]
+    },
+    "提取文件路径": {
+        "enName": "Extract file paths",
+        "args": [
+            "Windows",
+            "UNIX",
+            "Display total",
+            "Sort",
+            "Unique"
+        ]
+    },
+    "提取哈希值": {
+        "enName": "Extract hashes",
+        "args": [
+            "Hash character length",
+            "All hashes",
+            "Display Total"
+        ]
+    },
+    "提取 IP 地址": {
+        "enName": "Extract IP addresses",
+        "args": [
+            "IPv4",
+            "IPv6",
+            "Remove local IPv4 addresses",
+            "Display total",
+            "Sort",
+            "Unique"
+        ]
+    },
+    "提取 LSB": {
+        "enName": "Extract LSB",
+        "args": [
+            "Colour Pattern #1",
+            "Colour Pattern #2",
+            "Colour Pattern #3",
+            "Colour Pattern #4",
+            "Pixel Order",
+            "Bit"
+        ]
+    },
+    "提取 MAC 地址": {
+        "enName": "Extract MAC addresses",
+        "args": [
+            "Display total",
+            "Sort",
+            "Unique"
+        ]
+    },
+    "提取 RGBA": {
+        "enName": "Extract RGBA",
+        "args": [
+            "Delimiter",
+            "Include Alpha"
+        ]
+    },
+    "提取 URL": {
+        "enName": "Extract URLs",
+        "args": [
+            "Display total",
+            "Sort",
+            "Unique"
+        ]
+    },
+    "还原 URL": {
+        "enName": "Fang URL",
+        "args": [
+            "Restore [.]",
+            "Restore hxxp",
+            "Restore ://"
+        ]
+    },
+    "Fernet 解密": {
+        "enName": "Fernet Decrypt",
+        "args": [
+            "Key"
+        ]
+    },
+    "Fernet 加密": {
+        "enName": "Fernet Encrypt",
+        "args": [
+            "Key"
+        ]
+    },
+    "文件树": {
+        "enName": "File Tree",
+        "args": [
+            "File Path Delimiter",
+            "Delimiter"
+        ]
+    },
+    "过滤": {
+        "enName": "Filter",
+        "args": [
+            "Delimiter",
+            "Regex",
+            "Invert condition"
+        ]
+    },
+    "查找 / 替换": {
+        "enName": "Find / Replace",
+        "args": [
+            "Find",
+            "Replace",
+            "Global match",
+            "Case insensitive",
+            "Multiline matching",
+            "Dot matches all"
+        ]
+    },
+    "Flask Session 解码": {
+        "enName": "Flask Session Decode",
+        "args": [
+            "View TimeStamp"
+        ]
+    },
+    "Flask Session 签名": {
+        "enName": "Flask Session Sign",
+        "args": [
+            "Key",
+            "Salt",
+            "Algorithm"
+        ]
+    },
+    "Flask Session 验证": {
+        "enName": "Flask Session Verify",
+        "args": [
+            "Key",
+            "Salt",
+            "Algorithm",
+            "View TimeStamp"
+        ]
+    },
+    "翻转图像": {
+        "enName": "Flip Image",
+        "args": [
+            "Axis"
+        ]
+    },
+    "分支": {
+        "enName": "Fork",
+        "args": [
+            "Split delimiter",
+            "Merge delimiter",
+            "Ignore errors"
+        ]
+    },
+    "格式化 MAC 地址": {
+        "enName": "Format MAC addresses",
+        "args": [
+            "Output case",
+            "No delimiter",
+            "Dash delimiter",
+            "Colon delimiter",
+            "Cisco style",
+            "IPv6 interface ID"
+        ]
+    },
+    "频率分布": {
+        "enName": "Frequency distribution",
+        "args": [
+            "Show 0%s",
+            "Show ASCII"
+        ]
+    },
+    "解码进制": {
+        "enName": "From Base",
+        "args": [
+            "Radix"
+        ]
+    },
+    "解码 Base32": {
+        "enName": "From Base32",
+        "args": [
+            "Alphabet",
+            "Remove non-alphabet chars"
+        ]
+    },
+    "解码 Base45": {
+        "enName": "From Base45",
+        "args": [
+            "Alphabet",
+            "Remove non-alphabet chars"
+        ]
+    },
+    "解码 Base58": {
+        "enName": "From Base58",
+        "args": [
+            "Alphabet",
+            "Remove non-alphabet chars"
+        ]
+    },
+    "解码 Base62": {
+        "enName": "From Base62",
+        "args": [
+            "Alphabet"
+        ]
+    },
+    "解码 Base64": {
+        "enName": "From Base64",
+        "args": [
+            "Alphabet",
+            "Remove non-alphabet chars",
+            "Strict mode"
+        ]
+    },
+    "解码 Base85": {
+        "enName": "From Base85",
+        "args": [
+            "Alphabet",
+            "Remove non-alphabet chars",
+            "All-zero group char"
+        ]
+    },
+    "解码 BCD": {
+        "enName": "From BCD",
+        "args": [
+            "Scheme",
+            "Packed",
+            "Signed",
+            "Input format"
+        ]
+    },
+    "解码 Bech32": {
+        "enName": "From Bech32",
+        "args": [
+            "Encoding",
+            "Output Format"
+        ]
+    },
+    "解码二进制": {
+        "enName": "From Binary",
+        "args": [
+            "Delimiter",
+            "Byte Length"
+        ]
+    },
+    "解码字符编码": {
+        "enName": "From Charcode",
+        "args": [
+            "Delimiter",
+            "Base"
+        ]
+    },
+    "解码十进制": {
+        "enName": "From Decimal",
+        "args": [
+            "Delimiter",
+            "Support signed values"
+        ]
+    },
+    "解码浮点数": {
+        "enName": "From Float",
+        "args": [
+            "Endianness",
+            "Size",
+            "Delimiter"
+        ]
+    },
+    "解码 Hex": {
+        "enName": "From Hex",
+        "args": [
+            "Delimiter"
+        ]
+    },
+    "解码 Modhex": {
+        "enName": "From Modhex",
+        "args": [
+            "Delimiter"
+        ]
+    },
+    "解码摩尔斯电码": {
+        "enName": "From Morse Code",
+        "args": [
+            "Letter delimiter",
+            "Word delimiter"
+        ]
+    },
+    "解码八进制": {
+        "enName": "From Octal",
+        "args": [
+            "Delimiter"
+        ]
+    },
+    "解码 Punycode": {
+        "enName": "From Punycode",
+        "args": [
+            "Internationalised domain name"
+        ]
+    },
+    "解码 UNIX 时间戳": {
+        "enName": "From UNIX Timestamp",
+        "args": [
+            "Units"
+        ]
+    },
+    "模糊匹配": {
+        "enName": "Fuzzy Match",
+        "args": [
+            "Search",
+            "Sequential bonus",
+            "Separator bonus",
+            "Camel bonus",
+            "First letter bonus",
+            "Leading letter penalty",
+            "Max leading letter penalty",
+            "Unmatched letter penalty"
+        ]
+    },
+    "生成所有校验和": {
+        "enName": "Generate all checksums",
+        "args": [
+            "Length (bits)",
+            "Include names"
+        ]
+    },
+    "生成所有哈希值": {
+        "enName": "Generate all hashes",
+        "args": [
+            "Length (bits)",
+            "Include names"
+        ]
+    },
+    "生成 De Bruijn 序列": {
+        "enName": "Generate De Bruijn Sequence",
+        "args": [
+            "Alphabet size (k)",
+            "Key length (n)"
+        ]
+    },
+    "生成 ECDSA 密钥对": {
+        "enName": "Generate ECDSA Key Pair",
+        "args": [
+            "Elliptic Curve",
+            "Output Format"
+        ]
+    },
+    "生成 HOTP": {
+        "enName": "Generate HOTP",
+        "args": [
+            "Name",
+            "Code length",
+            "Counter"
+        ]
+    },
+    "生成图像": {
+        "enName": "Generate Image",
+        "args": [
+            "Mode",
+            "Pixel Scale Factor",
+            "Pixels per row"
+        ]
+    },
+    "生成 Lorem Ipsum": {
+        "enName": "Generate Lorem Ipsum",
+        "args": [
+            "Length",
+            "Length in"
+        ]
+    },
+    "生成 PGP 密钥对": {
+        "enName": "Generate PGP Key Pair",
+        "args": [
+            "Key type",
+            "Password (optional)",
+            "Name (optional)",
+            "Email (optional)"
+        ]
+    },
+    "伪随机素数生成器": {
+        "enName": "Pseudo-Random Prime Generator",
+        "args": [
+            "Bit length",
+            "Crypto grade",
+            "Output format"
+        ]
+    },
+    "生成 QR Code": {
+        "enName": "Generate QR Code",
+        "args": [
+            "Image Format",
+            "Module size (px)",
+            "Margin (num modules)",
+            "Error correction"
+        ]
+    },
+    "生成 RSA 密钥对": {
+        "enName": "Generate RSA Key Pair",
+        "args": [
+            "RSA Key Length",
+            "Output Format"
+        ]
+    },
+    "生成 TOTP": {
+        "enName": "Generate TOTP",
+        "args": [
+            "Name",
+            "Code length",
+            "Epoch offset (T0)",
+            "Interval (T1)"
+        ]
+    },
+    "生成 UUID": {
+        "enName": "Generate UUID",
+        "args": [
+            "Version",
+            "Namespace"
+        ]
+    },
+    "获取时间": {
+        "enName": "Get Time",
+        "args": [
+            "Granularity"
+        ]
+    },
+    "GOST 解密": {
+        "enName": "GOST Decrypt",
+        "args": [
+            "Key",
+            "IV",
+            "Input type",
+            "Output type",
+            "Algorithm",
+            "sBox",
+            "Block mode",
+            "Key meshing mode",
+            "Padding"
+        ]
+    },
+    "GOST 加密": {
+        "enName": "GOST Encrypt",
+        "args": [
+            "Key",
+            "IV",
+            "Input type",
+            "Output type",
+            "Algorithm",
+            "sBox",
+            "Block mode",
+            "Key meshing mode",
+            "Padding"
+        ]
+    },
+    "GOST 哈希": {
+        "enName": "GOST Hash",
+        "args": [
+            "Algorithm",
+            "Digest length",
+            "sBox"
+        ]
+    },
+    "GOST 密钥解包": {
+        "enName": "GOST Key Unwrap",
+        "args": [
+            "Key",
+            "User Key Material",
+            "Input type",
+            "Output type",
+            "Algorithm",
+            "sBox",
+            "Key wrapping"
+        ]
+    },
+    "GOST 密钥包装": {
+        "enName": "GOST Key Wrap",
+        "args": [
+            "Key",
+            "User Key Material",
+            "Input type",
+            "Output type",
+            "Algorithm",
+            "sBox",
+            "Key wrapping"
+        ]
+    },
+    "GOST 签名": {
+        "enName": "GOST Sign",
+        "args": [
+            "Key",
+            "IV",
+            "Input type",
+            "Output type",
+            "Algorithm",
+            "sBox",
+            "MAC length"
+        ]
+    },
+    "GOST 验证": {
+        "enName": "GOST Verify",
+        "args": [
+            "Key",
+            "IV",
+            "MAC",
+            "Input type",
+            "Algorithm",
+            "sBox"
+        ]
+    },
+    "分组 IP 地址": {
+        "enName": "Group IP addresses",
+        "args": [
+            "Delimiter",
+            "Subnet (CIDR)",
+            "Only show the subnets"
+        ]
+    },
+    "Gzip 压缩": {
+        "enName": "Gzip",
+        "args": [
+            "Compression type",
+            "Filename (optional)",
+            "Comment (optional)",
+            "Include file checksum"
+        ]
+    },
+    "Hamming 距离": {
+        "enName": "Hamming Distance",
+        "args": [
+            "Delimiter",
+            "Unit",
+            "Input type"
+        ]
+    },
+    "HAS-160": {
+        "enName": "HAS-160",
+        "args": [
+            "Rounds"
+        ]
+    },
+    "HASSH 客户端指纹": {
+        "enName": "HASSH Client Fingerprint",
+        "args": [
+            "Input format",
+            "Output format"
+        ]
+    },
+    "HASSH 服务器指纹": {
+        "enName": "HASSH Server Fingerprint",
+        "args": [
+            "Input format",
+            "Output format"
+        ]
+    },
+    "取头部": {
+        "enName": "Head",
+        "args": [
+            "Delimiter",
+            "Number"
+        ]
+    },
+    "Heatmap 图表": {
+        "enName": "Heatmap chart",
+        "args": [
+            "Record delimiter",
+            "Field delimiter",
+            "Number of vertical bins",
+            "Number of horizontal bins",
+            "Use column headers as labels",
+            "X label",
+            "Y label",
+            "Draw bin edges",
+            "Min colour value",
+            "Max colour value"
+        ]
+    },
+    "Hex Density 图表": {
+        "enName": "Hex Density chart",
+        "args": [
+            "Record delimiter",
+            "Field delimiter",
+            "Pack radius",
+            "Draw radius",
+            "Use column headers as labels",
+            "X label",
+            "Y label",
+            "Draw hexagon edges",
+            "Min colour value",
+            "Max colour value",
+            "Draw empty hexagons within data boundaries"
+        ]
+    },
+    "Hex 转 PEM": {
+        "enName": "Hex to PEM",
+        "args": [
+            "Header string"
+        ]
+    },
+    "HMAC": {
+        "enName": "HMAC",
+        "args": [
+            "Key",
+            "Hashing function"
+        ]
+    },
+    "HTTP 请求": {
+        "enName": "HTTP request",
+        "args": [
+            "Method",
+            "URL",
+            "Headers",
+            "Mode",
+            "Show response metadata"
+        ]
+    },
+    "图像亮度/对比度": {
+        "enName": "Image Brightness / Contrast",
+        "args": [
+            "Brightness",
+            "Contrast"
+        ]
+    },
+    "图像滤镜": {
+        "enName": "Image Filter",
+        "args": [
+            "Filter type"
+        ]
+    },
+    "图像色相/饱和度/亮度": {
+        "enName": "Image Hue/Saturation/Lightness",
+        "args": [
+            "Hue",
+            "Saturation",
+            "Lightness"
+        ]
+    },
+    "图像不透明度": {
+        "enName": "Image Opacity",
+        "args": [
+            "Opacity (%)"
+        ]
+    },
+    "IPv6 过渡地址": {
+        "enName": "IPv6 Transition Addresses",
+        "args": [
+            "Ignore ranges",
+            "Remove headers"
+        ]
+    },
+    "JA3 指纹": {
+        "enName": "JA3 Fingerprint",
+        "args": [
+            "Input format",
+            "Output format"
+        ]
+    },
+    "JA3S 指纹": {
+        "enName": "JA3S Fingerprint",
+        "args": [
+            "Input format",
+            "Output format"
+        ]
+    },
+    "JA4 指纹": {
+        "enName": "JA4 Fingerprint",
+        "args": [
+            "Input format",
+            "Output format"
+        ]
+    },
+    "JA4Server 指纹": {
+        "enName": "JA4Server Fingerprint",
+        "args": [
+            "Input format",
+            "Output format"
+        ]
+    },
+    "JavaScript 美化": {
+        "enName": "JavaScript Beautify",
+        "args": [
+            "Indent string",
+            "Quotes",
+            "Semicolons before closing braces",
+            "Include comments"
+        ]
+    },
+    "JavaScript 解析器": {
+        "enName": "JavaScript Parser",
+        "args": [
+            "Location info",
+            "Range info",
+            "Include tokens array",
+            "Include comments array",
+            "Report errors and try to continue"
+        ]
+    },
+    "JPath 表达式": {
+        "enName": "JPath expression",
+        "args": [
+            "Query",
+            "Result delimiter"
+        ]
+    },
+    "Jq": {
+        "enName": "Jq",
+        "args": [
+            "Query",
+            "Raw"
+        ]
+    },
+    "Jsonata 查询": {
+        "enName": "Jsonata Query",
+        "args": [
+            "Query"
+        ]
+    },
+    "JSON 美化": {
+        "enName": "JSON Beautify",
+        "args": [
+            "Indent string",
+            "Sort Object Keys",
+            "Formatted"
+        ]
+    },
+    "JSON 转 CSV": {
+        "enName": "JSON to CSV",
+        "args": [
+            "Cell delimiter",
+            "Row delimiter"
+        ]
+    },
+    "跳转": {
+        "enName": "Jump",
+        "args": [
+            "Label name",
+            "Maximum jumps (if jumping backwards)"
+        ]
+    },
+    "JWT 签名": {
+        "enName": "JWT Sign",
+        "args": [
+            "Private/Secret Key",
+            "Signing algorithm",
+            "Header"
+        ]
+    },
+    "JWT 验证": {
+        "enName": "JWT Verify",
+        "args": [
+            "Public/Secret Key"
+        ]
+    },
+    "Keccak": {
+        "enName": "Keccak",
+        "args": [
+            "Size"
+        ]
+    },
+    "标签": {
+        "enName": "Label",
+        "args": [
+            "Name"
+        ]
+    },
+    "Levenshtein 距离": {
+        "enName": "Levenshtein Distance",
+        "args": [
+            "Sample delimiter",
+            "Insertion cost",
+            "Deletion cost",
+            "Substitution cost"
+        ]
+    },
+    "Lorenz": {
+        "enName": "Lorenz",
+        "args": [
+            "Model",
+            "Wheel Pattern",
+            "KT-Schalter",
+            "Mode",
+            "Input Type",
+            "Output Type",
+            "ITA2 Format",
+            "Ψ1 start (1-43)",
+            "Ψ2 start (1-47)",
+            "Ψ3 start (1-51)",
+            "Ψ4 start (1-53)",
+            "Ψ5 start (1-59)",
+            "Μ37 start (1-37)",
+            "Μ61 start (1-61)",
+            "Χ1 start (1-41)",
+            "Χ2 start (1-31)",
+            "Χ3 start (1-29)",
+            "Χ4 start (1-26)",
+            "Χ5 start (1-23)",
+            "Ψ1 lugs (43)",
+            "Ψ2 lugs (47)",
+            "Ψ3 lugs (51)",
+            "Ψ4 lugs (53)",
+            "Ψ5 lugs (59)",
+            "Μ37 lugs (37)",
+            "Μ61 lugs (61)",
+            "Χ1 lugs (41)",
+            "Χ2 lugs (31)",
+            "Χ3 lugs (29)",
+            "Χ4 lugs (26)",
+            "Χ5 lugs (23)"
+        ]
+    },
+    "LS47 解密": {
+        "enName": "LS47 Decrypt",
+        "args": [
+            "Password",
+            "Padding"
+        ]
+    },
+    "LS47 加密": {
+        "enName": "LS47 Encrypt",
+        "args": [
+            "Password",
+            "Padding",
+            "Signature"
+        ]
+    },
+    "Luhn 校验和": {
+        "enName": "Luhn Checksum",
+        "args": [
+            "Radix"
+        ]
+    },
+    "LZMA 压缩": {
+        "enName": "LZMA Compress",
+        "args": [
+            "Compression Mode"
+        ]
+    },
+    "LZString 压缩": {
+        "enName": "LZString Compress",
+        "args": [
+            "Compression Format"
+        ]
+    },
+    "LZString 解压": {
+        "enName": "LZString Decompress",
+        "args": [
+            "Compression Format"
+        ]
+    },
+    "Magic 检测": {
+        "enName": "Magic",
+        "args": [
+            "Depth",
+            "Intensive mode",
+            "Extensive language support",
+            "Crib (known plaintext string or regex)"
+        ]
+    },
+    "MD2": {
+        "enName": "MD2",
+        "args": [
+            "Rounds"
+        ]
+    },
+    "MD6": {
+        "enName": "MD6",
+        "args": [
+            "Size",
+            "Levels",
+            "Key"
+        ]
+    },
+    "平均值": {
+        "enName": "Mean",
+        "args": [
+            "Delimiter"
+        ]
+    },
+    "中位数": {
+        "enName": "Median",
+        "args": [
+            "Delimiter"
+        ]
+    },
+    "合并": {
+        "enName": "Merge",
+        "args": [
+            "Merge All"
+        ]
+    },
+    "MOD": {
+        "enName": "MOD",
+        "args": [
+            "Modulus",
+            "Delimiter"
+        ]
+    },
+    "模幂运算": {
+        "enName": "Modular Exponentiation",
+        "args": [
+            "Base",
+            "Modulus",
+            "Exponent"
+        ]
+    },
+    "模逆": {
+        "enName": "Modular Inverse",
+        "args": [
+            "Value (a)",
+            "Modulus (m)"
+        ]
+    },
+    "多重 Bombe": {
+        "enName": "Multiple Bombe",
+        "args": [
+            "Standard Enigmas",
+            "Main rotors",
+            "4th rotor",
+            "Reflectors",
+            "Crib",
+            "Crib offset",
+            "Use checking machine"
+        ]
+    },
+    "乘法": {
+        "enName": "Multiply",
+        "args": [
+            "Delimiter"
+        ]
+    },
+    "MurmurHash3": {
+        "enName": "MurmurHash3",
+        "args": [
+            "Seed",
+            "Convert to Signed"
+        ]
+    },
+    "规范化 Unicode": {
+        "enName": "Normalise Unicode",
+        "args": [
+            "Normal Form"
+        ]
+    },
+    "偏移检查": {
+        "enName": "Offset checker",
+        "args": [
+            "Sample delimiter"
+        ]
+    },
+    "光学字符识别": {
+        "enName": "Optical Character Recognition",
+        "args": [
+            "Show confidence",
+            "OCR Engine Mode"
+        ]
+    },
+    "OR": {
+        "enName": "OR",
+        "args": [
+            "Key"
+        ]
+    },
+    "填充行": {
+        "enName": "Pad lines",
+        "args": [
+            "Position",
+            "Length",
+            "Character"
+        ]
+    },
+    "奇偶校验位": {
+        "enName": "Parity Bit",
+        "args": [
+            "Mode",
+            "Postion",
+            "Encode or Decode",
+            "Delimiter"
+        ]
+    },
+    "解析 ASN.1 十六进制字符串": {
+        "enName": "Parse ASN.1 hex string",
+        "args": [
+            "Starting index",
+            "Truncate octet strings longer than"
+        ]
+    },
+    "解析 CSR": {
+        "enName": "Parse CSR",
+        "args": [
+            "Input format"
+        ]
+    },
+    "解析 DateTime": {
+        "enName": "Parse DateTime",
+        "args": [
+            "Built in formats",
+            "Input format string",
+            "Input timezone"
+        ]
+    },
+    "解析 Ethernet 帧": {
+        "enName": "Parse Ethernet frame",
+        "args": [
+            "Input type",
+            "Return type"
+        ]
+    },
+    "解析 IP 范围": {
+        "enName": "Parse IP range",
+        "args": [
+            "Include network info",
+            "Enumerate IP addresses",
+            "Allow large queries"
+        ]
+    },
+    "解析 IPv4 头部": {
+        "enName": "Parse IPv4 header",
+        "args": [
+            "Input format",
+            "Output format"
+        ]
+    },
+    "解析 QR Code": {
+        "enName": "Parse QR Code",
+        "args": [
+            "Normalise image"
+        ]
+    },
+    "解析 SSH 主机密钥": {
+        "enName": "Parse SSH Host Key",
+        "args": [
+            "Input Format"
+        ]
+    },
+    "解析 TCP": {
+        "enName": "Parse TCP",
+        "args": [
+            "Input format"
+        ]
+    },
+    "解析 TLV": {
+        "enName": "Parse TLV",
+        "args": [
+            "Type/Key size",
+            "Length size",
+            "Use BER"
+        ]
+    },
+    "解析 UDP": {
+        "enName": "Parse UDP",
+        "args": [
+            "Input format"
+        ]
+    },
+    "解析 X.509 证书": {
+        "enName": "Parse X.509 certificate",
+        "args": [
+            "Input format"
+        ]
+    },
+    "解析 X.509 证书捆绑包": {
+        "enName": "Parse X.509 certificate bundles",
+        "args": []
+    },
+    "解析 X.509 CRL": {
+        "enName": "Parse X.509 CRL",
+        "args": [
+            "Input format"
+        ]
+    },
+    "PEM 转 JWK": {
+        "enName": "PEM to JWK",
+        "args": [
+            "Set key ID (kid) to RFC 7638 thumbprint"
+        ]
+    },
+    "PGP 解密": {
+        "enName": "PGP Decrypt",
+        "args": [
+            "Private key of recipient",
+            "Private key passphrase"
+        ]
+    },
+    "PGP 解密并验证": {
+        "enName": "PGP Decrypt and Verify",
+        "args": [
+            "Public key of signer",
+            "Private key of recipient",
+            "Private key password"
+        ]
+    },
+    "PGP 加密": {
+        "enName": "PGP Encrypt",
+        "args": [
+            "Public key of recipient"
+        ]
+    },
+    "PGP 加密并签名": {
+        "enName": "PGP Encrypt and Sign",
+        "args": [
+            "Private key of signer",
+            "Private key passphrase",
+            "Public key of recipient"
+        ]
+    },
+    "PGP 签名": {
+        "enName": "PGP Sign",
+        "args": [
+            "Private key of signer",
+            "Private key passphrase (optional)"
+        ]
+    },
+    "PGP 验证": {
+        "enName": "PGP Verify",
+        "args": [
+            "Public key of signer"
+        ]
+    },
+    "PHP 反序列化": {
+        "enName": "PHP Deserialize",
+        "args": [
+            "Output valid JSON"
+        ]
+    },
+    "播放媒体": {
+        "enName": "Play Media",
+        "args": [
+            "Input format"
+        ]
+    },
+    "幂集": {
+        "enName": "Power Set",
+        "args": [
+            "Item delimiter"
+        ]
+    },
+    "PRESENT 解密": {
+        "enName": "PRESENT Decrypt",
+        "args": [
+            "Key",
+            "IV",
+            "Mode",
+            "Input",
+            "Output",
+            "Padding"
+        ]
+    },
+    "PRESENT 加密": {
+        "enName": "PRESENT Encrypt",
+        "args": [
+            "Key",
+            "IV",
+            "Mode",
+            "Input",
+            "Output",
+            "Padding"
+        ]
+    },
+    "Protobuf 解码": {
+        "enName": "Protobuf Decode",
+        "args": [
+            "Schema (.proto text)",
+            "Show Unknown Fields",
+            "Show Types"
+        ]
+    },
+    "Protobuf 编码": {
+        "enName": "Protobuf Encode",
+        "args": [
+            "Schema (.proto text)"
+        ]
+    },
+    "伪随机整数生成器": {
+        "enName": "Pseudo-Random Integer Generator",
+        "args": [
+            "Number of Integers",
+            "Min Value",
+            "Max Value",
+            "Delimiter",
+            "Output"
+        ]
+    },
+    "伪随机数生成器": {
+        "enName": "Pseudo-Random Number Generator",
+        "args": [
+            "Number of bytes",
+            "Output as"
+        ]
+    },
+    "Rabbit": {
+        "enName": "Rabbit",
+        "args": [
+            "Key",
+            "IV",
+            "Endianness",
+            "Input",
+            "Output"
+        ]
+    },
+    "栅栏密码 解码": {
+        "enName": "Rail Fence Cipher Decode",
+        "args": [
+            "Key",
+            "Offset"
+        ]
+    },
+    "栅栏密码 编码": {
+        "enName": "Rail Fence Cipher Encode",
+        "args": [
+            "Key",
+            "Offset"
+        ]
+    },
+    "RAKE": {
+        "enName": "RAKE",
+        "args": [
+            "Word Delimiter (Regex)",
+            "Sentence Delimiter (Regex)",
+            "Stop Words"
+        ]
+    },
+    "随机调色板": {
+        "enName": "Randomize Colour Palette",
+        "args": [
+            "Seed"
+        ]
+    },
+    "原始 Deflate 压缩": {
+        "enName": "Raw Deflate",
+        "args": [
+            "Compression type"
+        ]
+    },
+    "原始 Deflate 解压": {
+        "enName": "Raw Inflate",
+        "args": [
+            "Start index",
+            "Initial output buffer size",
+            "Buffer expansion type",
+            "Resize buffer after decompression",
+            "Verify result"
+        ]
+    },
+    "RC2 解密": {
+        "enName": "RC2 Decrypt",
+        "args": [
+            "Key",
+            "IV",
+            "Input",
+            "Output"
+        ]
+    },
+    "RC2 加密": {
+        "enName": "RC2 Encrypt",
+        "args": [
+            "Key",
+            "IV",
+            "Input",
+            "Output"
+        ]
+    },
+    "RC4": {
+        "enName": "RC4",
+        "args": [
+            "Passphrase",
+            "Input format",
+            "Output format"
+        ]
+    },
+    "RC4 Drop": {
+        "enName": "RC4 Drop",
+        "args": [
+            "Passphrase",
+            "Input format",
+            "Output format",
+            "Number of dwords to drop"
+        ]
+    },
+    "RC6 解密": {
+        "enName": "RC6 Decrypt",
+        "args": [
+            "Key",
+            "IV",
+            "Mode",
+            "Input",
+            "Output",
+            "Padding",
+            "Word Size",
+            "Rounds"
+        ]
+    },
+    "RC6 加密": {
+        "enName": "RC6 Encrypt",
+        "args": [
+            "Key",
+            "IV",
+            "Mode",
+            "Input",
+            "Output",
+            "Padding",
+            "Word Size",
+            "Rounds"
+        ]
+    },
+    "寄存器": {
+        "enName": "Register",
+        "args": [
+            "Extractor",
+            "Case insensitive",
+            "Multiline matching",
+            "Dot matches all"
+        ]
+    },
+    "正则表达式": {
+        "enName": "Regular expression",
+        "args": [
+            "Built in regexes",
+            "Regex",
+            "Case insensitive",
+            "^ and $ match at newlines",
+            "Dot matches all",
+            "Unicode support",
+            "Astral support",
+            "Display total",
+            "Output format"
+        ]
+    },
+    "移除空白字符": {
+        "enName": "Remove whitespace",
+        "args": [
+            "Spaces",
+            "Carriage returns (\\\\r)",
+            "Line feeds (\\\\n)",
+            "Tabs",
+            "Form feeds (\\\\f)",
+            "Full stops"
+        ]
+    },
+    "渲染图像": {
+        "enName": "Render Image",
+        "args": [
+            "Input format"
+        ]
+    },
+    "渲染 Markdown": {
+        "enName": "Render Markdown",
+        "args": [
+            "Autoconvert URLs to links",
+            "Enable syntax highlighting",
+            "Open links in new tab."
+        ]
+    },
+    "渲染 PDF": {
+        "enName": "Render PDF",
+        "args": [
+            "Input format"
+        ]
+    },
+    "调整大小": {
+        "enName": "Resize Image",
+        "args": [
+            "Width",
+            "Height",
+            "Unit type",
+            "Maintain aspect ratio",
+            "Resizing algorithm"
+        ]
+    },
+    "反转": {
+        "enName": "Reverse",
+        "args": [
+            "By"
+        ]
+    },
+    "RIPEMD": {
+        "enName": "RIPEMD",
+        "args": [
+            "Size"
+        ]
+    },
+    "Rison 解码": {
+        "enName": "Rison Decode",
+        "args": [
+            "Decode Option"
+        ]
+    },
+    "Rison 编码": {
+        "enName": "Rison Encode",
+        "args": [
+            "Encode Option"
+        ]
+    },
+    "ROT13": {
+        "enName": "ROT13",
+        "args": [
+            "Rotate lower case chars",
+            "Rotate upper case chars",
+            "Rotate numbers",
+            "Amount"
+        ]
+    },
+    "ROT13 暴力破解": {
+        "enName": "ROT13 Brute Force",
+        "args": [
+            "Rotate lower case chars",
+            "Rotate upper case chars",
+            "Rotate numbers",
+            "Sample length",
+            "Sample offset",
+            "Print amount",
+            "Crib (known plaintext string)"
+        ]
+    },
+    "ROT47": {
+        "enName": "ROT47",
+        "args": [
+            "Amount"
+        ]
+    },
+    "ROT47 暴力破解": {
+        "enName": "ROT47 Brute Force",
+        "args": [
+            "Sample length",
+            "Sample offset",
+            "Print amount",
+            "Crib (known plaintext string)"
+        ]
+    },
+    "旋转图像": {
+        "enName": "Rotate Image",
+        "args": [
+            "Rotation amount (degrees)"
+        ]
+    },
+    "左旋转": {
+        "enName": "Rotate left",
+        "args": [
+            "Amount",
+            "Carry through"
+        ]
+    },
+    "右旋转": {
+        "enName": "Rotate right",
+        "args": [
+            "Amount",
+            "Carry through"
+        ]
+    },
+    "RSA 解密": {
+        "enName": "RSA Decrypt",
+        "args": [
+            "RSA Private Key (PEM)",
+            "Key Password",
+            "Encryption Scheme",
+            "Message Digest Algorithm"
+        ]
+    },
+    "RSA 加密": {
+        "enName": "RSA Encrypt",
+        "args": [
+            "RSA Public Key (PEM)",
+            "Encryption Scheme",
+            "Message Digest Algorithm"
+        ]
+    },
+    "RSA 签名": {
+        "enName": "RSA Sign",
+        "args": [
+            "RSA Private Key (PEM)",
+            "Key Password",
+            "Message Digest Algorithm"
+        ]
+    },
+    "RSA 验证": {
+        "enName": "RSA Verify",
+        "args": [
+            "RSA Public Key (PEM)",
+            "Message",
+            "Message format",
+            "Message Digest Algorithm"
+        ]
+    },
+    "Salsa20": {
+        "enName": "Salsa20",
+        "args": [
+            "Key",
+            "Nonce",
+            "Counter",
+            "Rounds",
+            "Input",
+            "Output"
+        ]
+    },
+    "Scatter 图表": {
+        "enName": "Scatter chart",
+        "args": [
+            "Record delimiter",
+            "Field delimiter",
+            "Use column headers as labels",
+            "X label",
+            "Y label",
+            "Colour",
+            "Point radius",
+            "Use colour from third column"
+        ]
+    },
+    "Scrypt": {
+        "enName": "Scrypt",
+        "args": [
+            "Salt",
+            "Iterations (N)",
+            "Memory factor (r)",
+            "Parallelization factor (p)",
+            "Key length"
+        ]
+    },
+    "Series 图表": {
+        "enName": "Series chart",
+        "args": [
+            "Record delimiter",
+            "Field delimiter",
+            "X label",
+            "Point radius",
+            "Series colours"
+        ]
+    },
+    "集合差集": {
+        "enName": "Set Difference",
+        "args": [
+            "Sample delimiter",
+            "Item delimiter"
+        ]
+    },
+    "集合交集": {
+        "enName": "Set Intersection",
+        "args": [
+            "Sample delimiter",
+            "Item delimiter"
+        ]
+    },
+    "集合并集": {
+        "enName": "Set Union",
+        "args": [
+            "Sample delimiter",
+            "Item delimiter"
+        ]
+    },
+    "SHA0": {
+        "enName": "SHA0",
+        "args": [
+            "Rounds"
+        ]
+    },
+    "SHA1": {
+        "enName": "SHA1",
+        "args": [
+            "Rounds"
+        ]
+    },
+    "SHA2": {
+        "enName": "SHA2",
+        "args": [
+            "Size",
+            "Rounds",
+            "Rounds"
+        ]
+    },
+    "SHA3": {
+        "enName": "SHA3",
+        "args": [
+            "Size"
+        ]
+    },
+    "Shake": {
+        "enName": "Shake",
+        "args": [
+            "Capacity",
+            "Size"
+        ]
+    },
+    "锐化图像": {
+        "enName": "Sharpen Image",
+        "args": [
+            "Radius",
+            "Amount",
+            "Threshold"
+        ]
+    },
+    "显示 Base64 偏移量": {
+        "enName": "Show Base64 offsets",
+        "args": [
+            "Alphabet",
+            "Show variable chars and padding",
+            "Input format"
+        ]
+    },
+    "地图显示": {
+        "enName": "Show on map",
+        "args": [
+            "Zoom Level",
+            "Input Format",
+            "Input Delimiter"
+        ]
+    },
+    "随机排列": {
+        "enName": "Shuffle",
+        "args": [
+            "Delimiter"
+        ]
+    },
+    "SIGABA": {
+        "enName": "SIGABA",
+        "args": [
+            "1st (left-hand) cipher rotor",
+            "1st cipher rotor reversed",
+            "1st cipher rotor initial value",
+            "2nd cipher rotor",
+            "2nd cipher rotor reversed",
+            "2nd cipher rotor initial value",
+            "3rd (middle) cipher rotor",
+            "3rd cipher rotor reversed",
+            "3rd cipher rotor initial value",
+            "4th cipher rotor",
+            "4th cipher rotor reversed",
+            "4th cipher rotor initial value",
+            "5th (right-hand) cipher rotor",
+            "5th cipher rotor reversed",
+            "5th cipher rotor initial value",
+            "1st (left-hand) control rotor",
+            "1st control rotor reversed",
+            "1st control rotor initial value",
+            "2nd control rotor",
+            "2nd control rotor reversed",
+            "2nd control rotor initial value",
+            "3rd (middle) control rotor",
+            "3rd control rotor reversed",
+            "3rd control rotor initial value",
+            "4th control rotor",
+            "4th control rotor reversed",
+            "4th control rotor initial value",
+            "5th (right-hand) control rotor",
+            "5th control rotor reversed",
+            "5th control rotor initial value",
+            "1st (left-hand) index rotor",
+            "1st index rotor initial value",
+            "2nd index rotor",
+            "2nd index rotor initial value",
+            "3rd (middle) index rotor",
+            "3rd index rotor initial value",
+            "4th index rotor",
+            "4th index rotor initial value",
+            "5th (right-hand) index rotor",
+            "5th index rotor initial value",
+            "SIGABA mode"
+        ]
+    },
+    "休眠": {
+        "enName": "Sleep",
+        "args": [
+            "Time (ms)"
+        ]
+    },
+    "SM2 解密": {
+        "enName": "SM2 Decrypt",
+        "args": [
+            "Private Key",
+            "Input Format",
+            "Curve"
+        ]
+    },
+    "SM2 加密": {
+        "enName": "SM2 Encrypt",
+        "args": [
+            "Public Key X",
+            "Public Key Y",
+            "Output Format",
+            "Curve"
+        ]
+    },
+    "SM3": {
+        "enName": "SM3",
+        "args": [
+            "Length",
+            "Rounds"
+        ]
+    },
+    "SM4 解密": {
+        "enName": "SM4 Decrypt",
+        "args": [
+            "Key",
+            "IV",
+            "Mode",
+            "Input",
+            "Output"
+        ]
+    },
+    "SM4 加密": {
+        "enName": "SM4 Encrypt",
+        "args": [
+            "Key",
+            "IV",
+            "Mode",
+            "Input",
+            "Output"
+        ]
+    },
+    "Snefru": {
+        "enName": "Snefru",
+        "args": [
+            "Size",
+            "Rounds"
+        ]
+    },
+    "排序": {
+        "enName": "Sort",
+        "args": [
+            "Delimiter",
+            "Reverse",
+            "Order"
+        ]
+    },
+    "分割": {
+        "enName": "Split",
+        "args": [
+            "Split delimiter",
+            "Join delimiter"
+        ]
+    },
+    "SQL 美化": {
+        "enName": "SQL Beautify",
+        "args": [
+            "Indent string"
+        ]
+    },
+    "标准差": {
+        "enName": "Standard Deviation",
+        "args": [
+            "Delimiter"
+        ]
+    },
+    "Streebog": {
+        "enName": "Streebog",
+        "args": [
+            "Digest length"
+        ]
+    },
+    "提取字符串": {
+        "enName": "Strings",
+        "args": [
+            "Encoding",
+            "Minimum length",
+            "Match",
+            "Display total",
+            "Sort",
+            "Unique"
+        ]
+    },
+    "剥离 HTML 标签": {
+        "enName": "Strip HTML tags",
+        "args": [
+            "Remove indentation",
+            "Remove excess line breaks"
+        ]
+    },
+    "SUB": {
+        "enName": "SUB",
+        "args": [
+            "Key"
+        ]
+    },
+    "子区域": {
+        "enName": "Subsection",
+        "args": [
+            "Section (regex)",
+            "Case sensitive matching",
+            "Global matching",
+            "Ignore errors"
+        ]
+    },
+    "替换": {
+        "enName": "Substitute",
+        "args": [
+            "Plaintext",
+            "Ciphertext",
+            "Ignore case"
+        ]
+    },
+    "减法": {
+        "enName": "Subtract",
+        "args": [
+            "Delimiter"
+        ]
+    },
+    "求和": {
+        "enName": "Sum",
+        "args": [
+            "Delimiter"
+        ]
+    },
+    "交换字节序": {
+        "enName": "Swap endianness",
+        "args": [
+            "Data format",
+            "Word length (bytes)",
+            "Pad incomplete words"
+        ]
+    },
+    "对称差集": {
+        "enName": "Symmetric Difference",
+        "args": [
+            "Sample delimiter",
+            "Item delimiter"
+        ]
+    },
+    "语法高亮": {
+        "enName": "Syntax highlighter",
+        "args": [
+            "Language"
+        ]
+    },
+    "取尾部": {
+        "enName": "Tail",
+        "args": [
+            "Delimiter",
+            "Number"
+        ]
+    },
+    "取字节": {
+        "enName": "Take bytes",
+        "args": [
+            "Start",
+            "Length",
+            "Apply to each line"
+        ]
+    },
+    "取第 n 字节": {
+        "enName": "Take nth bytes",
+        "args": [
+            "Take every",
+            "Starting at",
+            "Apply to each line"
+        ]
+    },
+    "Tar 打包": {
+        "enName": "Tar",
+        "args": [
+            "Filename"
+        ]
+    },
+    "TEA 解密": {
+        "enName": "TEA Decrypt",
+        "args": [
+            "Key",
+            "IV",
+            "Mode",
+            "Input",
+            "Output",
+            "Padding"
+        ]
+    },
+    "TEA 加密": {
+        "enName": "TEA Encrypt",
+        "args": [
+            "Key",
+            "IV",
+            "Mode",
+            "Input",
+            "Output",
+            "Padding"
+        ]
+    },
+    "模板": {
+        "enName": "Template",
+        "args": [
+            "Template definition (.handlebars)"
+        ]
+    },
+    "文本编码暴力破解": {
+        "enName": "Text Encoding Brute Force",
+        "args": [
+            "Mode"
+        ]
+    },
+    "Text-Integer 转换": {
+        "enName": "Text-Integer Conversion",
+        "args": [
+            "Output format"
+        ]
+    },
+    "转为进制": {
+        "enName": "To Base",
+        "args": [
+            "Radix"
+        ]
+    },
+    "转为 Base32": {
+        "enName": "To Base32",
+        "args": [
+            "Alphabet"
+        ]
+    },
+    "转为 Base45": {
+        "enName": "To Base45",
+        "args": [
+            "Alphabet"
+        ]
+    },
+    "转为 Base58": {
+        "enName": "To Base58",
+        "args": [
+            "Alphabet"
+        ]
+    },
+    "转为 Base62": {
+        "enName": "To Base62",
+        "args": [
+            "Alphabet"
+        ]
+    },
+    "转为 Base64": {
+        "enName": "To Base64",
+        "args": [
+            "Alphabet"
+        ]
+    },
+    "转为 Base85": {
+        "enName": "To Base85",
+        "args": [
+            "Alphabet",
+            "Include delimiter"
+        ]
+    },
+    "转为 BCD": {
+        "enName": "To BCD",
+        "args": [
+            "Scheme",
+            "Packed",
+            "Signed",
+            "Output format"
+        ]
+    },
+    "转为 Bech32": {
+        "enName": "To Bech32",
+        "args": [
+            "Human-Readable Part (HRP)",
+            "Encoding",
+            "Input Format",
+            "Mode",
+            "Witness Version"
+        ]
+    },
+    "转为二进制": {
+        "enName": "To Binary",
+        "args": [
+            "Delimiter",
+            "Byte Length"
+        ]
+    },
+    "转为驼峰式": {
+        "enName": "To Camel case",
+        "args": [
+            "Attempt to be context aware"
+        ]
+    },
+    "转为字符编码": {
+        "enName": "To Charcode",
+        "args": [
+            "Delimiter",
+            "Base"
+        ]
+    },
+    "转为十进制": {
+        "enName": "To Decimal",
+        "args": [
+            "Delimiter",
+            "Support signed values"
+        ]
+    },
+    "转为浮点数": {
+        "enName": "To Float",
+        "args": [
+            "Endianness",
+            "Size",
+            "Delimiter"
+        ]
+    },
+    "转为 Hex": {
+        "enName": "To Hex",
+        "args": [
+            "Delimiter",
+            "Bytes per line"
+        ]
+    },
+    "转为 Hex Content": {
+        "enName": "To Hex Content",
+        "args": [
+            "Convert",
+            "Print spaces between bytes"
+        ]
+    },
+    "转为 Hexdump": {
+        "enName": "To Hexdump",
+        "args": [
+            "Width",
+            "Upper case hex",
+            "Include final length",
+            "UNIX format"
+        ]
+    },
+    "转为 HTML 实体": {
+        "enName": "To HTML Entity",
+        "args": [
+            "Convert all characters",
+            "Convert to"
+        ]
+    },
+    "转为短横线式": {
+        "enName": "To Kebab case",
+        "args": [
+            "Attempt to be context aware"
+        ]
+    },
+    "转为 Modhex": {
+        "enName": "To Modhex",
+        "args": [
+            "Delimiter",
+            "Bytes per line"
+        ]
+    },
+    "转为摩尔斯电码": {
+        "enName": "To Morse Code",
+        "args": [
+            "Format options",
+            "Letter delimiter",
+            "Word delimiter"
+        ]
+    },
+    "转为八进制": {
+        "enName": "To Octal",
+        "args": [
+            "Delimiter"
+        ]
+    },
+    "转为 Punycode": {
+        "enName": "To Punycode",
+        "args": [
+            "Internationalised domain name"
+        ]
+    },
+    "转为蛇形": {
+        "enName": "To Snake case",
+        "args": [
+            "Attempt to be context aware"
+        ]
+    },
+    "转为表格": {
+        "enName": "To Table",
+        "args": [
+            "Cell delimiters",
+            "Row delimiters",
+            "Make first row header",
+            "Format"
+        ]
+    },
+    "转为 UNIX 时间戳": {
+        "enName": "To UNIX Timestamp",
+        "args": [
+            "Units",
+            "Treat as UTC",
+            "Show parsed datetime"
+        ]
+    },
+    "转为大写": {
+        "enName": "To Upper case",
+        "args": [
+            "Scope"
+        ]
+    },
+    "转换日期时间格式": {
+        "enName": "Translate DateTime Format",
+        "args": [
+            "Built in formats",
+            "Input format string",
+            "Input timezone",
+            "Output format string",
+            "Output timezone"
+        ]
+    },
+    "Triple DES 解密": {
+        "enName": "Triple DES Decrypt",
+        "args": [
+            "Key",
+            "IV",
+            "Mode",
+            "Input",
+            "Output"
+        ]
+    },
+    "Triple DES 加密": {
+        "enName": "Triple DES Encrypt",
+        "args": [
+            "Key",
+            "IV",
+            "Mode",
+            "Input",
+            "Output"
+        ]
+    },
+    "Twofish 解密": {
+        "enName": "Twofish Decrypt",
+        "args": [
+            "Key",
+            "IV",
+            "Mode",
+            "Input",
+            "Output",
+            "Padding"
+        ]
+    },
+    "Twofish 加密": {
+        "enName": "Twofish Encrypt",
+        "args": [
+            "Key",
+            "IV",
+            "Mode",
+            "Input",
+            "Output",
+            "Padding"
+        ]
+    },
+    "Typex": {
+        "enName": "Typex",
+        "args": [
+            "1st (left-hand) rotor",
+            "1st rotor reversed",
+            "1st rotor ring setting",
+            "1st rotor initial value",
+            "2nd rotor",
+            "2nd rotor reversed",
+            "2nd rotor ring setting",
+            "2nd rotor initial value",
+            "3rd (middle) rotor",
+            "3rd rotor reversed",
+            "3rd rotor ring setting",
+            "3rd rotor initial value",
+            "4th (static) rotor",
+            "4th rotor reversed",
+            "4th rotor ring setting",
+            "4th rotor initial value",
+            "5th (right-hand, static) rotor",
+            "5th rotor reversed",
+            "5th rotor ring setting",
+            "5th rotor initial value",
+            "Reflector",
+            "Plugboard",
+            "Typex keyboard emulation",
+            "Strict output"
+        ]
+    },
+    "反转义 Unicode 字符": {
+        "enName": "Unescape Unicode Characters",
+        "args": [
+            "Prefix"
+        ]
+    },
+    "Unicode 文本格式": {
+        "enName": "Unicode Text Format",
+        "args": [
+            "Underline",
+            "Strikethrough"
+        ]
+    },
+    "去重": {
+        "enName": "Unique",
+        "args": [
+            "Delimiter",
+            "Display count"
+        ]
+    },
+    "UNIX 时间戳转 Windows 文件时间": {
+        "enName": "UNIX Timestamp to Windows Filetime",
+        "args": [
+            "Input units",
+            "Output format"
+        ]
+    },
+    "Zip 解压": {
+        "enName": "Unzip",
+        "args": [
+            "Password",
+            "Verify result"
+        ]
+    },
+    "URL 解码": {
+        "enName": "URL Decode",
+        "args": [
+            "Treat \"+\" as space"
+        ]
+    },
+    "URL 编码": {
+        "enName": "URL Encode",
+        "args": [
+            "Encode all special chars"
+        ]
+    },
+    "查看位平面": {
+        "enName": "View Bit Plane",
+        "args": [
+            "Colour",
+            "Bit"
+        ]
+    },
+    "Vigenère 解码": {
+        "enName": "Vigenère Decode",
+        "args": [
+            "Key"
+        ]
+    },
+    "Vigenère 编码": {
+        "enName": "Vigenère Encode",
+        "args": [
+            "Key"
+        ]
+    },
+    "Whirlpool": {
+        "enName": "Whirlpool",
+        "args": [
+            "Variant",
+            "Rounds"
+        ]
+    },
+    "Windows 文件时间转 UNIX 时间戳": {
+        "enName": "Windows Filetime to UNIX Timestamp",
+        "args": [
+            "Output units",
+            "Input format"
+        ]
+    },
+    "折行": {
+        "enName": "Wrap",
+        "args": [
+            "Line Width"
+        ]
+    },
+    "XML 美化": {
+        "enName": "XML Beautify",
+        "args": [
+            "Indent string"
+        ]
+    },
+    "XML 压缩": {
+        "enName": "XML Minify",
+        "args": [
+            "Preserve comments"
+        ]
+    },
+    "XOR": {
+        "enName": "XOR",
+        "args": [
+            "Key",
+            "Scheme",
+            "Null preserving"
+        ]
+    },
+    "XOR 暴力破解": {
+        "enName": "XOR Brute Force",
+        "args": [
+            "Key length",
+            "Sample length",
+            "Sample offset",
+            "Scheme",
+            "Null preserving",
+            "Print key",
+            "Output as hex",
+            "Crib (known plaintext string)"
+        ]
+    },
+    "XOR 校验和": {
+        "enName": "XOR Checksum",
+        "args": [
+            "Blocksize"
+        ]
+    },
+    "XPath 表达式": {
+        "enName": "XPath expression",
+        "args": [
+            "XPath",
+            "Result delimiter"
+        ]
+    },
+    "XPRESS LZ77+Huffman 解压": {
+        "enName": "XPRESS LZ77+Huffman Decompress",
+        "args": [
+            "Decompressed size"
+        ]
+    },
+    "XSalsa20": {
+        "enName": "XSalsa20",
+        "args": [
+            "Key",
+            "Nonce",
+            "Counter",
+            "Rounds",
+            "Input",
+            "Output"
+        ]
+    },
+    "XTEA 解密": {
+        "enName": "XTEA Decrypt",
+        "args": [
+            "Key",
+            "IV",
+            "Mode",
+            "Input",
+            "Output",
+            "Padding",
+            "Rounds"
+        ]
+    },
+    "XTEA 加密": {
+        "enName": "XTEA Encrypt",
+        "args": [
+            "Key",
+            "IV",
+            "Mode",
+            "Input",
+            "Output",
+            "Padding",
+            "Rounds"
+        ]
+    },
+    "XXTEA 解密": {
+        "enName": "XXTEA Decrypt",
+        "args": [
+            "Key"
+        ]
+    },
+    "XXTEA 加密": {
+        "enName": "XXTEA Encrypt",
+        "args": [
+            "Key"
+        ]
+    },
+    "YARA 规则": {
+        "enName": "YARA Rules",
+        "args": [
+            "Rules",
+            "Show strings",
+            "Show string lengths",
+            "Show metadata",
+            "Show counts",
+            "Show rule warnings",
+            "Show console module messages"
+        ]
+    },
+    "Zip 压缩": {
+        "enName": "Zip",
+        "args": [
+            "Filename",
+            "Comment",
+            "Password",
+            "Compression method",
+            "Operating system",
+            "Compression type"
+        ]
+    },
+    "Zlib 压缩": {
+        "enName": "Zlib Deflate",
+        "args": [
+            "Compression type"
+        ]
+    },
+    "Zlib 解压": {
+        "enName": "Zlib Inflate",
+        "args": [
+            "Start index",
+            "Initial output buffer size",
+            "Buffer expansion type",
+            "Resize buffer after decompression",
+            "Verify result"
+        ]
+    },
+    "提取音频元数据": {
+        "enName": "Extract Audio Metadata",
+        "args": [
+            "Filename (optional)",
+            "Max embedded text bytes (iXML/axml/etc)"
+        ]
+    }
+}

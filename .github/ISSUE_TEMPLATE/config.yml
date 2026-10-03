@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 官方 CyberChef 功能问题
+    url: https://github.com/gchq/CyberChef/issues
+    about: 算法、协议、官方 operation 和官方页面问题请提交到上游仓库
+  - name: 官方 CyberChef 安全政策
+    url: https://github.com/gchq/CyberChef/security/policy
+    about: 核心 CyberChef 安全问题请按官方政策私下报告
+  - name: 当前仓库安全报告
+    url: https://github.com/AnyaWantsStars/CyberChef_zh-cn/security/advisories/new
+    about: 汉化兼容层、构建和发布流程的安全问题请私下报告

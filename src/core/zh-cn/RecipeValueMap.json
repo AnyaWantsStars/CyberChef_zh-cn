@@ -1,0 +1,608 @@
+{
+ "version": "2.2",
+ "ops": {
+  "Colossus": {
+   "enName": "Colossus",
+   "args": {
+    "1": {
+     "type": "option",
+     "strZh2en": {
+      "KH 模式": "KH Pattern",
+      "ZMUG 模式": "ZMUG Pattern",
+      "BREAM 模式": "BREAM Pattern"
+     }
+    },
+    "5": {
+     "type": "option",
+     "strZh2en": {
+      "无": "None"
+     }
+    }
+   }
+  },
+  "转换坐标格式": {
+   "enName": "Convert co-ordinate format",
+   "args": {
+    "0": {
+     "type": "option",
+     "strZh2en": {
+      "度分秒": "Degrees Minutes Seconds",
+      "度十进制分": "Degrees Decimal Minutes",
+      "十进制度": "Decimal Degrees",
+      "军事网格参考系统": "Military Grid Reference System",
+      "英国地形测量局国家网格": "Ordnance Survey National Grid",
+      "通用横轴墨卡托": "Universal Transverse Mercator"
+     }
+    },
+    "2": {
+     "type": "option",
+     "strZh2en": {
+      "度分秒": "Degrees Minutes Seconds",
+      "度十进制分": "Degrees Decimal Minutes",
+      "十进制度": "Decimal Degrees",
+      "军事网格参考系统": "Military Grid Reference System",
+      "英国地形测量局国家网格": "Ordnance Survey National Grid",
+      "通用横轴墨卡托": "Universal Transverse Mercator"
+     }
+    },
+    "4": {
+     "type": "option",
+     "strZh2en": {
+      "无": "None",
+      "之前": "Before",
+      "之后": "After"
+     }
+    }
+   }
+  },
+  "转换数据单位": {
+   "enName": "Convert data units",
+   "args": {
+    "0": {
+     "type": "option",
+     "strZh2en": {
+      "[二进制比特 (2^n)]": "[Binary bits (2^n)]",
+      "[十进制比特 (10^n)]": "[Decimal bits (10^n)]",
+      "[二进制字节 (8 x 2^n)]": "[Binary bytes (8 x 2^n)]",
+      "[十进制字节 (8 x 10^n)]": "[Decimal bytes (8 x 10^n)]"
+     }
+    },
+    "1": {
+     "type": "option",
+     "strZh2en": {
+      "[二进制比特 (2^n)]": "[Binary bits (2^n)]",
+      "[十进制比特 (10^n)]": "[Decimal bits (10^n)]",
+      "[二进制字节 (8 x 2^n)]": "[Binary bytes (8 x 2^n)]",
+      "[十进制字节 (8 x 10^n)]": "[Decimal bytes (8 x 10^n)]"
+     }
+    }
+   }
+  },
+  "日期时间差值": {
+   "enName": "DateTime Delta",
+   "args": {
+    "0": {
+     "type": "populateOption",
+     "strZh2en": {
+      "标准日期和时间": "Standard date and time",
+      "美式日期和时间": "American-style date and time",
+      "国际日期和时间": "International date and time",
+      "详细日期和时间": "Verbose date and time",
+      "UNIX 时间戳（秒）": "UNIX timestamp (seconds)",
+      "UNIX 时间戳偏移（毫秒）": "UNIX timestamp offset (milliseconds)",
+      "自动": "Automatic"
+     }
+    },
+    "2": {
+     "type": "option",
+     "strZh2en": {
+      "加": "Add",
+      "减": "Subtract"
+     }
+    }
+   }
+  },
+  "解码文本": {
+   "enName": "Decode text",
+   "args": {
+    "0": {
+     "type": "option",
+     "strZh2en": {
+      "IBM EBCDIC 国际 (500)": "IBM EBCDIC International (500)",
+      "IBM EBCDIC 美国-加拿大 (37)": "IBM EBCDIC US-Canada (37)",
+      "IBM EBCDIC 多语言/ROECE（拉丁 2）(870)": "IBM EBCDIC Multilingual/ROECE (Latin 2) (870)",
+      "IBM EBCDIC 希腊语现代 (875)": "IBM EBCDIC Greek Modern (875)",
+      "IBM EBCDIC 法语 (1010)": "IBM EBCDIC French (1010)",
+      "IBM EBCDIC 土耳其语（拉丁 5）(1026)": "IBM EBCDIC Turkish (Latin 5) (1026)",
+      "IBM EBCDIC 拉丁 1/开放系统 (1047)": "IBM EBCDIC Latin 1/Open System (1047)",
+      "IBM EBCDIC 老挝语 (1132/1133/1341)": "IBM EBCDIC Lao (1132/1133/1341)",
+      "IBM EBCDIC 美国-加拿大（037 + 欧元符号）(1140)": "IBM EBCDIC US-Canada (037 + Euro symbol) (1140)",
+      "IBM EBCDIC 德语（20273 + 欧元符号）(1141)": "IBM EBCDIC Germany (20273 + Euro symbol) (1141)",
+      "IBM EBCDIC 丹麦-挪威语（20277 + 欧元符号）(1142)": "IBM EBCDIC Denmark-Norway (20277 + Euro symbol) (1142)",
+      "IBM EBCDIC 芬兰-瑞典语（20278 + 欧元符号）(1143)": "IBM EBCDIC Finland-Sweden (20278 + Euro symbol) (1143)",
+      "IBM EBCDIC 意大利语（20280 + 欧元符号）(1144)": "IBM EBCDIC Italy (20280 + Euro symbol) (1144)",
+      "IBM EBCDIC 拉丁美洲-西班牙语（20284 + 欧元符号）(1145)": "IBM EBCDIC Latin America-Spain (20284 + Euro symbol) (1145)",
+      "IBM EBCDIC 英国（20285 + 欧元符号）(1146)": "IBM EBCDIC United Kingdom (20285 + Euro symbol) (1146)",
+      "IBM EBCDIC 法语（20297 + 欧元符号）(1147)": "IBM EBCDIC France (20297 + Euro symbol) (1147)",
+      "IBM EBCDIC 国际（500 + 欧元符号）(1148)": "IBM EBCDIC International (500 + Euro symbol) (1148)",
+      "IBM EBCDIC 冰岛语（20871 + 欧元符号）(1149)": "IBM EBCDIC Icelandic (20871 + Euro symbol) (1149)",
+      "IBM EBCDIC 德语 (20273)": "IBM EBCDIC Germany (20273)",
+      "IBM EBCDIC 丹麦-挪威语 (20277)": "IBM EBCDIC Denmark-Norway (20277)",
+      "IBM EBCDIC 芬兰-瑞典语 (20278)": "IBM EBCDIC Finland-Sweden (20278)",
+      "IBM EBCDIC 意大利语 (20280)": "IBM EBCDIC Italy (20280)",
+      "IBM EBCDIC 拉丁美洲-西班牙语 (20284)": "IBM EBCDIC Latin America-Spain (20284)",
+      "IBM EBCDIC 英国 (20285)": "IBM EBCDIC United Kingdom (20285)",
+      "IBM EBCDIC 日语片假名扩展 (20290)": "IBM EBCDIC Japanese Katakana Extended (20290)",
+      "IBM EBCDIC 法语 (20297)": "IBM EBCDIC France (20297)",
+      "IBM EBCDIC 阿拉伯语 (20420)": "IBM EBCDIC Arabic (20420)",
+      "IBM EBCDIC 希腊语 (20423)": "IBM EBCDIC Greek (20423)",
+      "IBM EBCDIC 希伯来语 (20424)": "IBM EBCDIC Hebrew (20424)",
+      "IBM EBCDIC 韩语扩展 (20833)": "IBM EBCDIC Korean Extended (20833)",
+      "IBM EBCDIC 泰语 (20838)": "IBM EBCDIC Thai (20838)",
+      "IBM EBCDIC 冰岛语 (20871)": "IBM EBCDIC Icelandic (20871)",
+      "IBM EBCDIC 西里尔文俄语 (20880)": "IBM EBCDIC Cyrillic Russian (20880)",
+      "IBM EBCDIC 土耳其语 (20905)": "IBM EBCDIC Turkish (20905)",
+      "IBM EBCDIC 拉丁 1/开放系统（1047 + 欧元符号）(20924)": "IBM EBCDIC Latin 1/Open System (1047 + Euro symbol) (20924)",
+      "IBM EBCDIC 西里尔文塞尔维亚-保加利亚语 (21025)": "IBM EBCDIC Cyrillic Serbian-Bulgarian (21025)",
+      "OEM 美国 (437)": "OEM United States (437)",
+      "OEM 希腊语（原 437G）；希腊语 (DOS) (737)": "OEM Greek (formerly 437G); Greek (DOS) (737)",
+      "OEM 波罗的海语；波罗的海语 (DOS) (775)": "OEM Baltic; Baltic (DOS) (775)",
+      "OEM 俄语；西里尔文 + 欧元符号 (808)": "OEM Russian; Cyrillic + Euro symbol (808)",
+      "OEM 多语言拉丁 1；西欧 (DOS) (850)": "OEM Multilingual Latin 1; Western European (DOS) (850)",
+      "OEM 拉丁 2；中欧 (DOS) (852)": "OEM Latin 2; Central European (DOS) (852)",
+      "OEM 西里尔文（主要为俄语）(855)": "OEM Cyrillic (primarily Russian) (855)",
+      "OEM 土耳其语；土耳其语 (DOS) (857)": "OEM Turkish; Turkish (DOS) (857)",
+      "OEM 多语言拉丁 1 + 欧元符号 (858)": "OEM Multilingual Latin 1 + Euro symbol (858)",
+      "OEM 葡萄牙语；葡萄牙语 (DOS) (860)": "OEM Portuguese; Portuguese (DOS) (860)",
+      "OEM 冰岛语；冰岛语 (DOS) (861)": "OEM Icelandic; Icelandic (DOS) (861)",
+      "OEM 希伯来语；希伯来语 (DOS) (862)": "OEM Hebrew; Hebrew (DOS) (862)",
+      "OEM 法语（加拿大）；法语（加拿大）(DOS) (863)": "OEM French Canadian; French Canadian (DOS) (863)",
+      "OEM 阿拉伯语；阿拉伯语 (864) (864)": "OEM Arabic; Arabic (864) (864)",
+      "OEM 北欧；北欧 (DOS) (865)": "OEM Nordic; Nordic (DOS) (865)",
+      "OEM 俄语；西里尔文 (DOS) (866)": "OEM Russian; Cyrillic (DOS) (866)",
+      "OEM 现代希腊语；希腊语现代 (DOS) (869)": "OEM Modern Greek; Greek, Modern (DOS) (869)",
+      "OEM 西里尔文（主要为俄语）+ 欧元符号 (872)": "OEM Cyrillic (primarily Russian) + Euro Symbol (872)",
+      "Windows-874 泰语 (874)": "Windows-874 Thai (874)",
+      "Windows-1250 中欧 (1250)": "Windows-1250 Central European (1250)",
+      "Windows-1251 西里尔文 (1251)": "Windows-1251 Cyrillic (1251)",
+      "Windows-1252 拉丁 (1252)": "Windows-1252 Latin (1252)",
+      "Windows-1253 希腊语 (1253)": "Windows-1253 Greek (1253)",
+      "Windows-1254 土耳其语 (1254)": "Windows-1254 Turkish (1254)",
+      "Windows-1255 希伯来语 (1255)": "Windows-1255 Hebrew (1255)",
+      "Windows-1256 阿拉伯语 (1256)": "Windows-1256 Arabic (1256)",
+      "Windows-1257 波罗的海语 (1257)": "Windows-1257 Baltic (1257)",
+      "Windows-1258 越南 (1258)": "Windows-1258 Vietnam (1258)",
+      "ISO-8859-1 拉丁 1 西欧 (28591)": "ISO-8859-1 Latin 1 Western European (28591)",
+      "ISO-8859-2 拉丁 2 中欧 (28592)": "ISO-8859-2 Latin 2 Central European (28592)",
+      "ISO-8859-3 拉丁 3 南欧 (28593)": "ISO-8859-3 Latin 3 South European (28593)",
+      "ISO-8859-4 拉丁 4 北欧 (28594)": "ISO-8859-4 Latin 4 North European (28594)",
+      "ISO-8859-5 拉丁/西里尔文 (28595)": "ISO-8859-5 Latin/Cyrillic (28595)",
+      "ISO-8859-6 拉丁/阿拉伯语 (28596)": "ISO-8859-6 Latin/Arabic (28596)",
+      "ISO-8859-7 拉丁/希腊语 (28597)": "ISO-8859-7 Latin/Greek (28597)",
+      "ISO-8859-8 拉丁/希伯来语 (28598)": "ISO-8859-8 Latin/Hebrew (28598)",
+      "ISO 8859-8 希伯来语（ISO 逻辑）(38598)": "ISO 8859-8 Hebrew (ISO-Logical) (38598)",
+      "ISO-8859-9 拉丁 5 土耳其语 (28599)": "ISO-8859-9 Latin 5 Turkish (28599)",
+      "ISO-8859-10 拉丁 6 北欧 (28600)": "ISO-8859-10 Latin 6 Nordic (28600)",
+      "ISO-8859-11 拉丁/泰语 (28601)": "ISO-8859-11 Latin/Thai (28601)",
+      "ISO-8859-13 拉丁 7 波罗的海沿岸 (28603)": "ISO-8859-13 Latin 7 Baltic Rim (28603)",
+      "ISO-8859-14 拉丁 8 凯尔特语 (28604)": "ISO-8859-14 Latin 8 Celtic (28604)",
+      "ISO-8859-15 拉丁 9 (28605)": "ISO-8859-15 Latin 9 (28605)",
+      "ISO-8859-16 拉丁 10 (28606)": "ISO-8859-16 Latin 10 (28606)",
+      "ISO 2022 JIS 日语（无半角片假名）(50220)": "ISO 2022 JIS Japanese with no halfwidth Katakana (50220)",
+      "ISO 2022 JIS 日语（带半角片假名）(50221)": "ISO 2022 JIS Japanese with halfwidth Katakana (50221)",
+      "ISO 2022 日语 JIS X 0201-1989（1 字节假名-SO/SI）(50222)": "ISO 2022 Japanese JIS X 0201-1989 (1 byte Kana-SO/SI) (50222)",
+      "ISO 2022 韩语 (50225)": "ISO 2022 Korean (50225)",
+      "ISO 2022 简体中文 (50227)": "ISO 2022 Simplified Chinese (50227)",
+      "ISO 6937 非间距重音 (20269)": "ISO 6937 Non-Spacing Accent (20269)",
+      "EUC 日语 (51932)": "EUC Japanese (51932)",
+      "EUC 简体中文 (51936)": "EUC Simplified Chinese (51936)",
+      "EUC 韩语 (51949)": "EUC Korean (51949)",
+      "ISCII 天城文 (57002)": "ISCII Devanagari (57002)",
+      "ISCII 孟加拉语 (57003)": "ISCII Bengali (57003)",
+      "ISCII 泰米尔语 (57004)": "ISCII Tamil (57004)",
+      "ISCII 泰卢固语 (57005)": "ISCII Telugu (57005)",
+      "ISCII 阿萨姆语 (57006)": "ISCII Assamese (57006)",
+      "ISCII 奥里亚语 (57007)": "ISCII Oriya (57007)",
+      "ISCII 坎纳达语 (57008)": "ISCII Kannada (57008)",
+      "ISCII 马拉雅拉姆语 (57009)": "ISCII Malayalam (57009)",
+      "ISCII 古吉拉特语 (57010)": "ISCII Gujarati (57010)",
+      "ISCII 旁遮普语 (57011)": "ISCII Punjabi (57011)",
+      "日语 Shift-JIS (932)": "Japanese Shift-JIS (932)",
+      "简体中文 GBK (936)": "Simplified Chinese GBK (936)",
+      "韩语 (949)": "Korean (949)",
+      "繁体中文 Big5 (950)": "Traditional Chinese Big5 (950)",
+      "US-ASCII（7 位）(20127)": "US-ASCII (7-bit) (20127)",
+      "简体中文 GB2312 (20936)": "Simplified Chinese GB2312 (20936)",
+      "KOI8-R 俄语西里尔文 (20866)": "KOI8-R Russian Cyrillic (20866)",
+      "KOI8-U 乌克兰语西里尔文 (21866)": "KOI8-U Ukrainian Cyrillic (21866)",
+      "Mazovia（波兰语）MS-DOS (620)": "Mazovia (Polish) MS-DOS (620)",
+      "阿拉伯语 (ASMO 708) (708)": "Arabic (ASMO 708) (708)",
+      "阿拉伯语（透明 ASMO）；阿拉伯语 (DOS) (720)": "Arabic (Transparent ASMO); Arabic (DOS) (720)",
+      "Kamenický（捷克语）MS-DOS (895)": "Kamenický (Czech) MS-DOS (895)",
+      "韩语 (Johab) (1361)": "Korean (Johab) (1361)",
+      "MAC 罗马 (10000)": "MAC Roman (10000)",
+      "日语 (Mac) (10001)": "Japanese (Mac) (10001)",
+      "MAC 繁体中文 (Big5) (10002)": "MAC Traditional Chinese (Big5) (10002)",
+      "韩语 (Mac) (10003)": "Korean (Mac) (10003)",
+      "阿拉伯语 (Mac) (10004)": "Arabic (Mac) (10004)",
+      "希伯来语 (Mac) (10005)": "Hebrew (Mac) (10005)",
+      "希腊语 (Mac) (10006)": "Greek (Mac) (10006)",
+      "西里尔文 (Mac) (10007)": "Cyrillic (Mac) (10007)",
+      "MAC 简体中文 (GB 2312) (10008)": "MAC Simplified Chinese (GB 2312) (10008)",
+      "罗马尼亚语 (Mac) (10010)": "Romanian (Mac) (10010)",
+      "乌克兰语 (Mac) (10017)": "Ukrainian (Mac) (10017)",
+      "泰语 (Mac) (10021)": "Thai (Mac) (10021)",
+      "MAC 拉丁 2（中欧）(10029)": "MAC Latin 2 (Central European) (10029)",
+      "冰岛语 (Mac) (10079)": "Icelandic (Mac) (10079)",
+      "土耳其语 (Mac) (10081)": "Turkish (Mac) (10081)",
+      "克罗地亚语 (Mac) (10082)": "Croatian (Mac) (10082)",
+      "CNS 台湾（繁体中文）(20000)": "CNS Taiwan (Chinese Traditional) (20000)",
+      "TCA 台湾 (20001)": "TCA Taiwan (20001)",
+      "ETEN 台湾（繁体中文）(20002)": "ETEN Taiwan (Chinese Traditional) (20002)",
+      "IBM5550 台湾 (20003)": "IBM5550 Taiwan (20003)",
+      "TeleText 台湾 (20004)": "TeleText Taiwan (20004)",
+      "Wang 台湾 (20005)": "Wang Taiwan (20005)",
+      "西欧 IA5（IRV 国际字母表 5）(20105)": "Western European IA5 (IRV International Alphabet 5) (20105)",
+      "IA5 德语（7 位）(20106)": "IA5 German (7-bit) (20106)",
+      "IA5 瑞典语（7 位）(20107)": "IA5 Swedish (7-bit) (20107)",
+      "IA5 挪威语（7 位）(20108)": "IA5 Norwegian (7-bit) (20108)",
+      "日语（JIS 0208-1990 与 0212-1990）(20932)": "Japanese (JIS 0208-1990 and 0212-1990) (20932)",
+      "韩语 Wansung (20949)": "Korean Wansung (20949)",
+      "扩展/扩展 Alpha 小写 (21027)": "Extended/Ext Alpha Lowercase (21027)",
+      "HZ-GB2312 简体中文 (52936)": "HZ-GB2312 Simplified Chinese (52936)",
+      "简体中文 GB18030 (54936)": "Simplified Chinese GB18030 (54936)"
+     }
+    }
+   }
+  },
+  "编码文本": {
+   "enName": "Encode text",
+   "args": {
+    "0": {
+     "type": "option",
+     "strZh2en": {
+      "IBM EBCDIC 国际 (500)": "IBM EBCDIC International (500)",
+      "IBM EBCDIC 美国-加拿大 (37)": "IBM EBCDIC US-Canada (37)",
+      "IBM EBCDIC 多语言/ROECE（拉丁 2）(870)": "IBM EBCDIC Multilingual/ROECE (Latin 2) (870)",
+      "IBM EBCDIC 希腊语现代 (875)": "IBM EBCDIC Greek Modern (875)",
+      "IBM EBCDIC 法语 (1010)": "IBM EBCDIC French (1010)",
+      "IBM EBCDIC 土耳其语（拉丁 5）(1026)": "IBM EBCDIC Turkish (Latin 5) (1026)",
+      "IBM EBCDIC 拉丁 1/开放系统 (1047)": "IBM EBCDIC Latin 1/Open System (1047)",
+      "IBM EBCDIC 老挝语 (1132/1133/1341)": "IBM EBCDIC Lao (1132/1133/1341)",
+      "IBM EBCDIC 美国-加拿大（037 + 欧元符号）(1140)": "IBM EBCDIC US-Canada (037 + Euro symbol) (1140)",
+      "IBM EBCDIC 德语（20273 + 欧元符号）(1141)": "IBM EBCDIC Germany (20273 + Euro symbol) (1141)",
+      "IBM EBCDIC 丹麦-挪威语（20277 + 欧元符号）(1142)": "IBM EBCDIC Denmark-Norway (20277 + Euro symbol) (1142)",
+      "IBM EBCDIC 芬兰-瑞典语（20278 + 欧元符号）(1143)": "IBM EBCDIC Finland-Sweden (20278 + Euro symbol) (1143)",
+      "IBM EBCDIC 意大利语（20280 + 欧元符号）(1144)": "IBM EBCDIC Italy (20280 + Euro symbol) (1144)",
+      "IBM EBCDIC 拉丁美洲-西班牙语（20284 + 欧元符号）(1145)": "IBM EBCDIC Latin America-Spain (20284 + Euro symbol) (1145)",
+      "IBM EBCDIC 英国（20285 + 欧元符号）(1146)": "IBM EBCDIC United Kingdom (20285 + Euro symbol) (1146)",
+      "IBM EBCDIC 法语（20297 + 欧元符号）(1147)": "IBM EBCDIC France (20297 + Euro symbol) (1147)",
+      "IBM EBCDIC 国际（500 + 欧元符号）(1148)": "IBM EBCDIC International (500 + Euro symbol) (1148)",
+      "IBM EBCDIC 冰岛语（20871 + 欧元符号）(1149)": "IBM EBCDIC Icelandic (20871 + Euro symbol) (1149)",
+      "IBM EBCDIC 德语 (20273)": "IBM EBCDIC Germany (20273)",
+      "IBM EBCDIC 丹麦-挪威语 (20277)": "IBM EBCDIC Denmark-Norway (20277)",
+      "IBM EBCDIC 芬兰-瑞典语 (20278)": "IBM EBCDIC Finland-Sweden (20278)",
+      "IBM EBCDIC 意大利语 (20280)": "IBM EBCDIC Italy (20280)",
+      "IBM EBCDIC 拉丁美洲-西班牙语 (20284)": "IBM EBCDIC Latin America-Spain (20284)",
+      "IBM EBCDIC 英国 (20285)": "IBM EBCDIC United Kingdom (20285)",
+      "IBM EBCDIC 日语片假名扩展 (20290)": "IBM EBCDIC Japanese Katakana Extended (20290)",
+      "IBM EBCDIC 法语 (20297)": "IBM EBCDIC France (20297)",
+      "IBM EBCDIC 阿拉伯语 (20420)": "IBM EBCDIC Arabic (20420)",
+      "IBM EBCDIC 希腊语 (20423)": "IBM EBCDIC Greek (20423)",
+      "IBM EBCDIC 希伯来语 (20424)": "IBM EBCDIC Hebrew (20424)",
+      "IBM EBCDIC 韩语扩展 (20833)": "IBM EBCDIC Korean Extended (20833)",
+      "IBM EBCDIC 泰语 (20838)": "IBM EBCDIC Thai (20838)",
+      "IBM EBCDIC 冰岛语 (20871)": "IBM EBCDIC Icelandic (20871)",
+      "IBM EBCDIC 西里尔文俄语 (20880)": "IBM EBCDIC Cyrillic Russian (20880)",
+      "IBM EBCDIC 土耳其语 (20905)": "IBM EBCDIC Turkish (20905)",
+      "IBM EBCDIC 拉丁 1/开放系统（1047 + 欧元符号）(20924)": "IBM EBCDIC Latin 1/Open System (1047 + Euro symbol) (20924)",
+      "IBM EBCDIC 西里尔文塞尔维亚-保加利亚语 (21025)": "IBM EBCDIC Cyrillic Serbian-Bulgarian (21025)",
+      "OEM 美国 (437)": "OEM United States (437)",
+      "OEM 希腊语（原 437G）；希腊语 (DOS) (737)": "OEM Greek (formerly 437G); Greek (DOS) (737)",
+      "OEM 波罗的海语；波罗的海语 (DOS) (775)": "OEM Baltic; Baltic (DOS) (775)",
+      "OEM 俄语；西里尔文 + 欧元符号 (808)": "OEM Russian; Cyrillic + Euro symbol (808)",
+      "OEM 多语言拉丁 1；西欧 (DOS) (850)": "OEM Multilingual Latin 1; Western European (DOS) (850)",
+      "OEM 拉丁 2；中欧 (DOS) (852)": "OEM Latin 2; Central European (DOS) (852)",
+      "OEM 西里尔文（主要为俄语）(855)": "OEM Cyrillic (primarily Russian) (855)",
+      "OEM 土耳其语；土耳其语 (DOS) (857)": "OEM Turkish; Turkish (DOS) (857)",
+      "OEM 多语言拉丁 1 + 欧元符号 (858)": "OEM Multilingual Latin 1 + Euro symbol (858)",
+      "OEM 葡萄牙语；葡萄牙语 (DOS) (860)": "OEM Portuguese; Portuguese (DOS) (860)",
+      "OEM 冰岛语；冰岛语 (DOS) (861)": "OEM Icelandic; Icelandic (DOS) (861)",
+      "OEM 希伯来语；希伯来语 (DOS) (862)": "OEM Hebrew; Hebrew (DOS) (862)",
+      "OEM 法语（加拿大）；法语（加拿大）(DOS) (863)": "OEM French Canadian; French Canadian (DOS) (863)",
+      "OEM 阿拉伯语；阿拉伯语 (864) (864)": "OEM Arabic; Arabic (864) (864)",
+      "OEM 北欧；北欧 (DOS) (865)": "OEM Nordic; Nordic (DOS) (865)",
+      "OEM 俄语；西里尔文 (DOS) (866)": "OEM Russian; Cyrillic (DOS) (866)",
+      "OEM 现代希腊语；希腊语现代 (DOS) (869)": "OEM Modern Greek; Greek, Modern (DOS) (869)",
+      "OEM 西里尔文（主要为俄语）+ 欧元符号 (872)": "OEM Cyrillic (primarily Russian) + Euro Symbol (872)",
+      "Windows-874 泰语 (874)": "Windows-874 Thai (874)",
+      "Windows-1250 中欧 (1250)": "Windows-1250 Central European (1250)",
+      "Windows-1251 西里尔文 (1251)": "Windows-1251 Cyrillic (1251)",
+      "Windows-1252 拉丁 (1252)": "Windows-1252 Latin (1252)",
+      "Windows-1253 希腊语 (1253)": "Windows-1253 Greek (1253)",
+      "Windows-1254 土耳其语 (1254)": "Windows-1254 Turkish (1254)",
+      "Windows-1255 希伯来语 (1255)": "Windows-1255 Hebrew (1255)",
+      "Windows-1256 阿拉伯语 (1256)": "Windows-1256 Arabic (1256)",
+      "Windows-1257 波罗的海语 (1257)": "Windows-1257 Baltic (1257)",
+      "Windows-1258 越南 (1258)": "Windows-1258 Vietnam (1258)",
+      "ISO-8859-1 拉丁 1 西欧 (28591)": "ISO-8859-1 Latin 1 Western European (28591)",
+      "ISO-8859-2 拉丁 2 中欧 (28592)": "ISO-8859-2 Latin 2 Central European (28592)",
+      "ISO-8859-3 拉丁 3 南欧 (28593)": "ISO-8859-3 Latin 3 South European (28593)",
+      "ISO-8859-4 拉丁 4 北欧 (28594)": "ISO-8859-4 Latin 4 North European (28594)",
+      "ISO-8859-5 拉丁/西里尔文 (28595)": "ISO-8859-5 Latin/Cyrillic (28595)",
+      "ISO-8859-6 拉丁/阿拉伯语 (28596)": "ISO-8859-6 Latin/Arabic (28596)",
+      "ISO-8859-7 拉丁/希腊语 (28597)": "ISO-8859-7 Latin/Greek (28597)",
+      "ISO-8859-8 拉丁/希伯来语 (28598)": "ISO-8859-8 Latin/Hebrew (28598)",
+      "ISO 8859-8 希伯来语（ISO 逻辑）(38598)": "ISO 8859-8 Hebrew (ISO-Logical) (38598)",
+      "ISO-8859-9 拉丁 5 土耳其语 (28599)": "ISO-8859-9 Latin 5 Turkish (28599)",
+      "ISO-8859-10 拉丁 6 北欧 (28600)": "ISO-8859-10 Latin 6 Nordic (28600)",
+      "ISO-8859-11 拉丁/泰语 (28601)": "ISO-8859-11 Latin/Thai (28601)",
+      "ISO-8859-13 拉丁 7 波罗的海沿岸 (28603)": "ISO-8859-13 Latin 7 Baltic Rim (28603)",
+      "ISO-8859-14 拉丁 8 凯尔特语 (28604)": "ISO-8859-14 Latin 8 Celtic (28604)",
+      "ISO-8859-15 拉丁 9 (28605)": "ISO-8859-15 Latin 9 (28605)",
+      "ISO-8859-16 拉丁 10 (28606)": "ISO-8859-16 Latin 10 (28606)",
+      "ISO 2022 JIS 日语（无半角片假名）(50220)": "ISO 2022 JIS Japanese with no halfwidth Katakana (50220)",
+      "ISO 2022 JIS 日语（带半角片假名）(50221)": "ISO 2022 JIS Japanese with halfwidth Katakana (50221)",
+      "ISO 2022 日语 JIS X 0201-1989（1 字节假名-SO/SI）(50222)": "ISO 2022 Japanese JIS X 0201-1989 (1 byte Kana-SO/SI) (50222)",
+      "ISO 2022 韩语 (50225)": "ISO 2022 Korean (50225)",
+      "ISO 2022 简体中文 (50227)": "ISO 2022 Simplified Chinese (50227)",
+      "ISO 6937 非间距重音 (20269)": "ISO 6937 Non-Spacing Accent (20269)",
+      "EUC 日语 (51932)": "EUC Japanese (51932)",
+      "EUC 简体中文 (51936)": "EUC Simplified Chinese (51936)",
+      "EUC 韩语 (51949)": "EUC Korean (51949)",
+      "ISCII 天城文 (57002)": "ISCII Devanagari (57002)",
+      "ISCII 孟加拉语 (57003)": "ISCII Bengali (57003)",
+      "ISCII 泰米尔语 (57004)": "ISCII Tamil (57004)",
+      "ISCII 泰卢固语 (57005)": "ISCII Telugu (57005)",
+      "ISCII 阿萨姆语 (57006)": "ISCII Assamese (57006)",
+      "ISCII 奥里亚语 (57007)": "ISCII Oriya (57007)",
+      "ISCII 坎纳达语 (57008)": "ISCII Kannada (57008)",
+      "ISCII 马拉雅拉姆语 (57009)": "ISCII Malayalam (57009)",
+      "ISCII 古吉拉特语 (57010)": "ISCII Gujarati (57010)",
+      "ISCII 旁遮普语 (57011)": "ISCII Punjabi (57011)",
+      "日语 Shift-JIS (932)": "Japanese Shift-JIS (932)",
+      "简体中文 GBK (936)": "Simplified Chinese GBK (936)",
+      "韩语 (949)": "Korean (949)",
+      "繁体中文 Big5 (950)": "Traditional Chinese Big5 (950)",
+      "US-ASCII（7 位）(20127)": "US-ASCII (7-bit) (20127)",
+      "简体中文 GB2312 (20936)": "Simplified Chinese GB2312 (20936)",
+      "KOI8-R 俄语西里尔文 (20866)": "KOI8-R Russian Cyrillic (20866)",
+      "KOI8-U 乌克兰语西里尔文 (21866)": "KOI8-U Ukrainian Cyrillic (21866)",
+      "Mazovia（波兰语）MS-DOS (620)": "Mazovia (Polish) MS-DOS (620)",
+      "阿拉伯语 (ASMO 708) (708)": "Arabic (ASMO 708) (708)",
+      "阿拉伯语（透明 ASMO）；阿拉伯语 (DOS) (720)": "Arabic (Transparent ASMO); Arabic (DOS) (720)",
+      "Kamenický（捷克语）MS-DOS (895)": "Kamenický (Czech) MS-DOS (895)",
+      "韩语 (Johab) (1361)": "Korean (Johab) (1361)",
+      "MAC 罗马 (10000)": "MAC Roman (10000)",
+      "日语 (Mac) (10001)": "Japanese (Mac) (10001)",
+      "MAC 繁体中文 (Big5) (10002)": "MAC Traditional Chinese (Big5) (10002)",
+      "韩语 (Mac) (10003)": "Korean (Mac) (10003)",
+      "阿拉伯语 (Mac) (10004)": "Arabic (Mac) (10004)",
+      "希伯来语 (Mac) (10005)": "Hebrew (Mac) (10005)",
+      "希腊语 (Mac) (10006)": "Greek (Mac) (10006)",
+      "西里尔文 (Mac) (10007)": "Cyrillic (Mac) (10007)",
+      "MAC 简体中文 (GB 2312) (10008)": "MAC Simplified Chinese (GB 2312) (10008)",
+      "罗马尼亚语 (Mac) (10010)": "Romanian (Mac) (10010)",
+      "乌克兰语 (Mac) (10017)": "Ukrainian (Mac) (10017)",
+      "泰语 (Mac) (10021)": "Thai (Mac) (10021)",
+      "MAC 拉丁 2（中欧）(10029)": "MAC Latin 2 (Central European) (10029)",
+      "冰岛语 (Mac) (10079)": "Icelandic (Mac) (10079)",
+      "土耳其语 (Mac) (10081)": "Turkish (Mac) (10081)",
+      "克罗地亚语 (Mac) (10082)": "Croatian (Mac) (10082)",
+      "CNS 台湾（繁体中文）(20000)": "CNS Taiwan (Chinese Traditional) (20000)",
+      "TCA 台湾 (20001)": "TCA Taiwan (20001)",
+      "ETEN 台湾（繁体中文）(20002)": "ETEN Taiwan (Chinese Traditional) (20002)",
+      "IBM5550 台湾 (20003)": "IBM5550 Taiwan (20003)",
+      "TeleText 台湾 (20004)": "TeleText Taiwan (20004)",
+      "Wang 台湾 (20005)": "Wang Taiwan (20005)",
+      "西欧 IA5（IRV 国际字母表 5）(20105)": "Western European IA5 (IRV International Alphabet 5) (20105)",
+      "IA5 德语（7 位）(20106)": "IA5 German (7-bit) (20106)",
+      "IA5 瑞典语（7 位）(20107)": "IA5 Swedish (7-bit) (20107)",
+      "IA5 挪威语（7 位）(20108)": "IA5 Norwegian (7-bit) (20108)",
+      "日语（JIS 0208-1990 与 0212-1990）(20932)": "Japanese (JIS 0208-1990 and 0212-1990) (20932)",
+      "韩语 Wansung (20949)": "Korean Wansung (20949)",
+      "扩展/扩展 Alpha 小写 (21027)": "Extended/Ext Alpha Lowercase (21027)",
+      "HZ-GB2312 简体中文 (52936)": "HZ-GB2312 Simplified Chinese (52936)",
+      "简体中文 GB18030 (54936)": "Simplified Chinese GB18030 (54936)"
+     }
+    }
+   }
+  },
+  "解码 Modhex": {
+   "enName": "From Modhex",
+   "args": {
+    "0": {
+     "type": "option",
+     "strZh2en": {
+      "空格": "Space",
+      "百分号": "Percent",
+      "逗号": "Comma",
+      "分号": "Semi-colon",
+      "冒号": "Colon",
+      "换行": "Line feed",
+      "回车换行": "CRLF",
+      "无": "None"
+     }
+    }
+   }
+  },
+  "Heatmap 图表": {
+   "enName": "Heatmap chart",
+   "args": {
+    "0": {
+     "type": "option",
+     "strZh2en": {
+      "换行": "Line feed",
+      "回车换行": "CRLF"
+     }
+    },
+    "1": {
+     "type": "option",
+     "strZh2en": {
+      "空格": "Space",
+      "逗号": "Comma",
+      "分号": "Semi-colon",
+      "冒号": "Colon",
+      "制表符": "Tab"
+     }
+    }
+   }
+  },
+  "Hex Density 图表": {
+   "enName": "Hex Density chart",
+   "args": {
+    "0": {
+     "type": "option",
+     "strZh2en": {
+      "换行": "Line feed",
+      "回车换行": "CRLF"
+     }
+    },
+    "1": {
+     "type": "option",
+     "strZh2en": {
+      "空格": "Space",
+      "逗号": "Comma",
+      "分号": "Semi-colon",
+      "冒号": "Colon",
+      "制表符": "Tab"
+     }
+    }
+   }
+  },
+  "解析 DateTime": {
+   "enName": "Parse DateTime",
+   "args": {
+    "0": {
+     "type": "populateOption",
+     "strZh2en": {
+      "标准日期和时间": "Standard date and time",
+      "美式日期和时间": "American-style date and time",
+      "国际日期和时间": "International date and time",
+      "详细日期和时间": "Verbose date and time",
+      "UNIX 时间戳（秒）": "UNIX timestamp (seconds)",
+      "UNIX 时间戳偏移（毫秒）": "UNIX timestamp offset (milliseconds)",
+      "自动": "Automatic"
+     }
+    }
+   }
+  },
+  "Scatter 图表": {
+   "enName": "Scatter chart",
+   "args": {
+    "0": {
+     "type": "option",
+     "strZh2en": {
+      "换行": "Line feed",
+      "回车换行": "CRLF"
+     }
+    },
+    "1": {
+     "type": "option",
+     "strZh2en": {
+      "空格": "Space",
+      "逗号": "Comma",
+      "分号": "Semi-colon",
+      "冒号": "Colon",
+      "制表符": "Tab"
+     }
+    }
+   }
+  },
+  "Series 图表": {
+   "enName": "Series chart",
+   "args": {
+    "0": {
+     "type": "option",
+     "strZh2en": {
+      "换行": "Line feed",
+      "回车换行": "CRLF"
+     }
+    },
+    "1": {
+     "type": "option",
+     "strZh2en": {
+      "空格": "Space",
+      "逗号": "Comma",
+      "分号": "Semi-colon",
+      "冒号": "Colon",
+      "制表符": "Tab"
+     }
+    }
+   }
+  },
+  "地图显示": {
+   "enName": "Show on map",
+   "args": {
+    "1": {
+     "type": "option",
+     "strZh2en": {
+      "度分秒": "Degrees Minutes Seconds",
+      "度十进制分": "Degrees Decimal Minutes",
+      "十进制度": "Decimal Degrees",
+      "军事网格参考系统": "Military Grid Reference System",
+      "英国地形测量局国家网格": "Ordnance Survey National Grid",
+      "通用横轴墨卡托": "Universal Transverse Mercator"
+     }
+    },
+    "2": {
+     "type": "option",
+     "strZh2en": {
+      "逗号": "Comma",
+      "分号": "Semi-colon",
+      "冒号": "Colon"
+     }
+    }
+   }
+  },
+  "转为 Modhex": {
+   "enName": "To Modhex",
+   "args": {
+    "0": {
+     "type": "option",
+     "strZh2en": {
+      "空格": "Space",
+      "百分号": "Percent",
+      "逗号": "Comma",
+      "分号": "Semi-colon",
+      "冒号": "Colon",
+      "换行": "Line feed",
+      "回车换行": "CRLF",
+      "无": "None"
+     }
+    }
+   }
+  },
+  "转换日期时间格式": {
+   "enName": "Translate DateTime Format",
+   "args": {
+    "0": {
+     "type": "populateOption",
+     "strZh2en": {
+      "标准日期和时间": "Standard date and time",
+      "美式日期和时间": "American-style date and time",
+      "国际日期和时间": "International date and time",
+      "详细日期和时间": "Verbose date and time",
+      "UNIX 时间戳（秒）": "UNIX timestamp (seconds)",
+      "UNIX 时间戳偏移（毫秒）": "UNIX timestamp offset (milliseconds)",
+      "自动": "Automatic"
+     }
+    }
+   }
+  },
+  "自动化验证测试操作": {
+   "enName": "Automated Validation Test Op",
+   "args": {
+    "5": {
+     "type": "option",
+     "strZh2en": {
+      "[分组 1]": "[Group 1]",
+      "[/分组 1]": "[/Group 1]",
+      "[分组 2]": "[Group 2]",
+      "[/分组 2]": "[/Group 2]"
+     }
+    }
+   }
+  }
+ }
+}

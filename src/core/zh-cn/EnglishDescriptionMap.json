@@ -1,0 +1,2026 @@
+{
+  "A1Z26 密码解密": {
+    "enName": "A1Z26 Cipher Decode",
+    "enDescription": "Converts alphabet order numbers into their corresponding  alphabet character.<br><br>e.g. <code>1</code> becomes <code>a</code> and <code>2</code> becomes <code>b</code>."
+  },
+  "A1Z26 密码编码": {
+    "enName": "A1Z26 Cipher Encode",
+    "enDescription": "Converts alphabet characters into their corresponding alphabet order number.<br><br>e.g. <code>a</code> becomes <code>1</code> and <code>b</code> becomes <code>2</code>.<br><br>Non-alphabet characters are dropped."
+  },
+  "ADD": {
+    "enName": "ADD",
+    "enDescription": "ADD the input with the given key (e.g. <code>fe023da5</code>), MOD 255"
+  },
+  "AES 解密": {
+    "enName": "AES Decrypt",
+    "enDescription": "Advanced Encryption Standard (AES) is a U.S. Federal Information Processing Standard (FIPS). It was selected after a 5-year process where 15 competing designs were evaluated.<br><br><b>Key:</b> The following algorithms will be used based on the size of the key:<ul><li>16 bytes = AES-128</li><li>24 bytes = AES-192</li><li>32 bytes = AES-256</li></ul><br><br><b>IV:</b> The Initialization Vector should be 16 bytes long. If not entered, it will default to 16 null bytes.<br><br><b>Padding:</b> In CBC and ECB mode, PKCS#7 padding will be used as a default.<br><br><b>GCM Tag:</b> This field is ignored unless 'GCM' mode is used."
+  },
+  "AES 加密": {
+    "enName": "AES Encrypt",
+    "enDescription": "Advanced Encryption Standard (AES) is a U.S. Federal Information Processing Standard (FIPS). It was selected after a 5-year process where 15 competing designs were evaluated.<br><br><b>Key:</b> The following algorithms will be used based on the size of the key:<ul><li>16 bytes = AES-128</li><li>24 bytes = AES-192</li><li>32 bytes = AES-256</li></ul>You can generate a password-based key using one of the KDF operations.<br><br><b>IV:</b> The Initialization Vector should be 16 bytes long. If not entered, it will default to 16 null bytes.<br><br><b>Padding:</b> In CBC and ECB mode, PKCS#7 padding will be used."
+  },
+  "AES 密钥解包": {
+    "enName": "AES Key Unwrap",
+    "enDescription": "Decryptor for a key wrapping algorithm defined in RFC3394, which is used to protect keys in untrusted storage or communications, using AES.<br><br>This algorithm uses an AES key (KEK: key-encryption key) and a 64-bit IV to decrypt 64-bit blocks."
+  },
+  "AES 密钥包装": {
+    "enName": "AES Key Wrap",
+    "enDescription": "A key wrapping algorithm defined in RFC3394, which is used to protect keys in untrusted storage or communications, using AES.<br><br>This algorithm uses an AES key (KEK: key-encryption key) and a 64-bit IV to encrypt 64-bit blocks."
+  },
+  "AMF 解码": {
+    "enName": "AMF Decode",
+    "enDescription": "Action Message Format (AMF) is a binary format used to serialize object graphs such as ActionScript objects and XML, or send messages between an Adobe Flash client and a remote service, usually a Flash Media Server or third party alternatives."
+  },
+  "AMF 编码": {
+    "enName": "AMF Encode",
+    "enDescription": "Action Message Format (AMF) is a binary format used to serialize object graphs such as ActionScript objects and XML, or send messages between an Adobe Flash client and a remote service, usually a Flash Media Server or third party alternatives."
+  },
+  "AND": {
+    "enName": "AND",
+    "enDescription": "AND the input with the given key.<br>e.g. <code>fe023da5</code>"
+  },
+  "添加行号": {
+    "enName": "Add line numbers",
+    "enDescription": "Adds line numbers to the output."
+  },
+  "添加文字到图像": {
+    "enName": "Add Text To Image",
+    "enDescription": "Adds text onto an image.<br><br>Text can be horizontally or vertically aligned, or the position can be manually specified.<br>Variants of the Roboto font face are available in any size or colour."
+  },
+  "Adler-32 校验和": {
+    "enName": "Adler-32 Checksum",
+    "enDescription": "Adler-32 is a checksum algorithm which was invented by Mark Adler in 1995, and is a modification of the Fletcher checksum. Compared to a cyclic redundancy check of the same length, it trades reliability for speed (preferring the latter).<br><br>Adler-32 is more reliable than Fletcher-16, and slightly less reliable than Fletcher-32."
+  },
+  "仿射密码 解码": {
+    "enName": "Affine Cipher Decode",
+    "enDescription": "The Affine cipher is a type of monoalphabetic substitution cipher. To decrypt, each letter in an alphabet is mapped to its numeric equivalent, decrypted by a mathematical function, and converted back to a letter."
+  },
+  "仿射密码 编码": {
+    "enName": "Affine Cipher Encode",
+    "enDescription": "The Affine cipher is a type of monoalphabetic substitution cipher, wherein each letter in an alphabet is mapped to its numeric equivalent, encrypted using simple mathematical function, <code>(ax + b) % 26</code>, and converted back to a letter."
+  },
+  "交替大小写": {
+    "enName": "Alternating Caps",
+    "enDescription": "Alternating caps, also known as studly caps, sticky caps, or spongecase is a form of text notation in which the capitalization of letters varies by some pattern, or arbitrarily. An example of this would be spelling 'alternative caps' as 'aLtErNaTiNg CaPs'."
+  },
+  "分析哈希": {
+    "enName": "Analyse hash",
+    "enDescription": "Tries to determine information about a given hash and suggests which algorithm may have been used to generate it based on its length."
+  },
+  "分析 UUID": {
+    "enName": "Analyse UUID",
+    "enDescription": "Operation for extracting metadata and detecting the version of a given UUID."
+  },
+  "Argon2": {
+    "enName": "Argon2",
+    "enDescription": "Argon2 is a key derivation function that was selected as the winner of the Password Hashing Competition in July 2015. It was designed by Alex Biryukov, Daniel Dinu, and Dmitry Khovratovich from the University of Luxembourg.<br><br>Enter the password in the input to generate its hash."
+  },
+  "Argon2 比较": {
+    "enName": "Argon2 compare",
+    "enDescription": "Tests whether the input matches the given Argon2 hash. To test multiple possible passwords, use the 'Fork' operation."
+  },
+  "Ascon 解密": {
+    "enName": "Ascon Decrypt",
+    "enDescription": "Ascon-AEAD128 authenticated decryption as standardised in NIST SP 800-232. Decrypts ciphertext and verifies the authentication tag. Decryption will fail if the ciphertext or associated data has been tampered with.<br><br><b>Key:</b> Must be exactly 16 bytes (128 bits).<br><br><b>Nonce:</b> Must be exactly 16 bytes (128 bits). Must match the nonce used during encryption.<br><br><b>Associated Data:</b> Must match the associated data used during encryption. Any mismatch will cause authentication failure."
+  },
+  "Ascon 加密": {
+    "enName": "Ascon Encrypt",
+    "enDescription": "Ascon-AEAD128 authenticated encryption as standardised in NIST SP 800-232. Ascon is a family of lightweight authenticated encryption algorithms designed for constrained devices such as IoT sensors and embedded systems.<br><br><b>Key:</b> Must be exactly 16 bytes (128 bits).<br><br><b>Nonce:</b> Must be exactly 16 bytes (128 bits). Should be unique for each encryption with the same key. Never reuse a nonce with the same key.<br><br><b>Associated Data:</b> Optional additional data that is authenticated but not encrypted. Useful for including metadata like headers or timestamps.<br><br>The output includes both the ciphertext and a 128-bit authentication tag."
+  },
+  "Ascon 哈希": {
+    "enName": "Ascon Hash",
+    "enDescription": "Ascon-Hash256 produces a fixed 256-bit (32-byte) cryptographic hash as standardised in NIST SP 800-232. Ascon is a family of lightweight authenticated encryption and hashing algorithms designed for constrained devices such as IoT sensors and embedded systems.<br><br>The algorithm was selected by NIST in 2023 as the new standard for lightweight cryptography after a multi-year competition."
+  },
+  "Ascon MAC": {
+    "enName": "Ascon MAC",
+    "enDescription": "Ascon-Mac produces a 128-bit (16-byte) message authentication code as part of the Ascon family standardised by NIST in SP 800-232. It provides authentication for messages using a secret key, ensuring both data integrity and authenticity.<br><br>Ascon is designed for lightweight cryptography on constrained devices such as IoT sensors and embedded systems."
+  },
+  "Atbash 密码": {
+    "enName": "Atbash Cipher",
+    "enDescription": "Atbash is a mono-alphabetic substitution cipher originally used to encode the Hebrew alphabet. It has been modified here for use with the Latin alphabet."
+  },
+  "自动化验证测试操作": {
+    "enName": "Automated Validation Test Op",
+    "enDescription": "Operation used specifically to test automated parameter validation."
+  },
+  "Avro 转 JSON": {
+    "enName": "Avro to JSON",
+    "enDescription": "Converts Avro encoded data into JSON."
+  },
+  "BLAKE2b": {
+    "enName": "BLAKE2b",
+    "enDescription": "Performs BLAKE2b hashing on the input.  \n        <br><br> BLAKE2b is a flavour of the BLAKE cryptographic hash function that is optimized for 64-bit platforms and produces digests of any size between 1 and 64 bytes.\n        <br><br> Supports the use of an optional key."
+  },
+  "BLAKE2s": {
+    "enName": "BLAKE2s",
+    "enDescription": "Performs BLAKE2s hashing on the input.  \n        <br><br>BLAKE2s is a flavour of the BLAKE cryptographic hash function that is optimized for 8- to 32-bit platforms and produces digests of any size between 1 and 32 bytes.\n        <br><br>Supports the use of an optional key."
+  },
+  "BLAKE3": {
+    "enName": "BLAKE3",
+    "enDescription": "Hashes the input using BLAKE3 (UTF-8 encoded), with an optional key (also UTF-8), and outputs the result in hexadecimal format."
+  },
+  "BSON 反序列化": {
+    "enName": "BSON deserialise",
+    "enDescription": "BSON is a computer data interchange format used mainly as a data storage and network transfer format in the MongoDB database. It is a binary form for representing simple data structures, associative arrays (called objects or documents in MongoDB), and various data types of specific interest to MongoDB. The name 'BSON' is based on the term JSON and stands for 'Binary JSON'.<br><br>Input data should be in a raw bytes format."
+  },
+  "BSON 序列化": {
+    "enName": "BSON serialise",
+    "enDescription": "BSON is a computer data interchange format used mainly as a data storage and network transfer format in the MongoDB database. It is a binary form for representing simple data structures, associative arrays (called objects or documents in MongoDB), and various data types of specific interest to MongoDB. The name 'BSON' is based on the term JSON and stands for 'Binary JSON'.<br><br>Input data should be valid JSON."
+  },
+  "培根密码 解码": {
+    "enName": "Bacon Cipher Decode",
+    "enDescription": "Bacon's cipher or the Baconian cipher is a method of steganography devised by Francis Bacon in 1605. A message is concealed in the presentation of text, rather than its content."
+  },
+  "培根密码 编码": {
+    "enName": "Bacon Cipher Encode",
+    "enDescription": "Bacon's cipher or the Baconian cipher is a method of steganography devised by Francis Bacon in 1605. A message is concealed in the presentation of text, rather than its content."
+  },
+  "Bcrypt": {
+    "enName": "Bcrypt",
+    "enDescription": "bcrypt is a password hashing function designed by Niels Provos and David Mazières, based on the Blowfish cipher, and presented at USENIX in 1999. Besides incorporating a salt to protect against rainbow table attacks, bcrypt is an adaptive function: over time, the iteration count (rounds) can be increased to make it slower, so it remains resistant to brute-force search attacks even with increasing computation power.<br><br>Enter the password in the input to generate its hash."
+  },
+  "Bcrypt 比较": {
+    "enName": "Bcrypt compare",
+    "enDescription": "Tests whether the input matches the given bcrypt hash. To test multiple possible passwords, use the 'Fork' operation."
+  },
+  "Bcrypt 解析": {
+    "enName": "Bcrypt parse",
+    "enDescription": "Parses a bcrypt hash to determine the number of rounds used, the salt, and the password hash."
+  },
+  "Bifid 密码 解码": {
+    "enName": "Bifid Cipher Decode",
+    "enDescription": "The Bifid cipher is a cipher which uses a Polybius square in conjunction with transposition, which can be fairly difficult to decipher without knowing the alphabet keyword."
+  },
+  "Bifid 密码 编码": {
+    "enName": "Bifid Cipher Encode",
+    "enDescription": "The Bifid cipher is a cipher which uses a Polybius square in conjunction with transposition, which can be fairly difficult to decipher without knowing the alphabet keyword."
+  },
+  "位左移": {
+    "enName": "Bit shift left",
+    "enDescription": "Shifts the bits in each byte towards the left by the specified amount."
+  },
+  "位右移": {
+    "enName": "Bit shift right",
+    "enDescription": "Shifts the bits in each byte towards the right by the specified amount.<br><br><i>Logical shifts</i> replace the leftmost bits with zeros.<br><i>Arithmetic shifts</i> preserve the most significant bit (MSB) of the original byte keeping the sign the same (positive or negative)."
+  },
+  "Blowfish 解密": {
+    "enName": "Blowfish Decrypt",
+    "enDescription": "Blowfish is a symmetric-key block cipher designed in 1993 by Bruce Schneier and included in a large number of cipher suites and encryption products. AES now receives more attention.<br><br><b>IV:</b> The Initialization Vector should be 8 bytes long. If not entered, it will default to 8 null bytes."
+  },
+  "Blowfish 加密": {
+    "enName": "Blowfish Encrypt",
+    "enDescription": "Blowfish is a symmetric-key block cipher designed in 1993 by Bruce Schneier and included in a large number of cipher suites and encryption products. AES now receives more attention.<br><br><b>IV:</b> The Initialization Vector should be 8 bytes long. If not entered, it will default to 8 null bytes."
+  },
+  "模糊图像": {
+    "enName": "Blur Image",
+    "enDescription": "Applies a blur effect to the image.<br><br>Gaussian blur is much slower than fast blur, but produces better results."
+  },
+  "Bombe": {
+    "enName": "Bombe",
+    "enDescription": "Emulation of the Bombe machine used at Bletchley Park to attack Enigma, based on work by Polish and British cryptanalysts.<br><br>To run this you need to have a 'crib', which is some known plaintext for a chunk of the target ciphertext, and know the rotors used. (See the 'Bombe (multiple runs)' operation if you don't know the rotors.) The machine will suggest possible configurations of the Enigma. Each suggestion has the rotor start positions (left to right) and known plugboard pairs.<br><br>Choosing a crib: First, note that Enigma cannot encrypt a letter to itself, which allows you to rule out some positions for possible cribs. Secondly, the Bombe does not simulate the Enigma's middle rotor stepping. The longer your crib, the more likely a step happened within it, which will prevent the attack working. However, other than that, longer cribs are generally better. The attack produces a 'menu' which maps ciphertext letters to plaintext, and the goal is to produce 'loops': for example, with ciphertext ABC and crib CAB, we have the mappings A&lt;-&gt;C, B&lt;-&gt;A, and C&lt;-&gt;B, which produces a loop A-B-C-A. The more loops, the better the crib. The operation will output this: if your menu has too few loops or is too short, a large number of incorrect outputs will usually be produced. Try a different crib. If the menu seems good but the right answer isn't produced, your crib may be wrong, or you may have overlapped the middle rotor stepping - try a different crib.<br><br>Output is not sufficient to fully decrypt the data. You will have to recover the rest of the plugboard settings by inspection. And the ring position is not taken into account: this affects when the middle rotor steps. If your output is correct for a bit, and then goes wrong, adjust the ring and start position on the right-hand rotor together until the output improves. If necessary, repeat for the middle rotor.<br><br>By default this operation runs the checking machine, a manual process to verify the quality of Bombe stops, on each stop, discarding stops which fail. If you want to see how many times the hardware actually stops for a given input, disable the checking machine.<br><br>More detailed descriptions of the Enigma, Typex and Bombe operations <a href='https://github.com/gchq/CyberChef/wiki/Enigma,-the-Bombe,-and-Typex'>can be found here</a>."
+  },
+  "Bzip2 压缩": {
+    "enName": "Bzip2 Compress",
+    "enDescription": "Bzip2 is a compression library developed by Julian Seward (of GHC fame) that uses the Burrows-Wheeler algorithm. It only supports compressing single files and its compression is slow, however is more effective than Deflate (.gz & .zip)."
+  },
+  "Bzip2 解压": {
+    "enName": "Bzip2 Decompress",
+    "enDescription": "Decompresses data using the Bzip2 algorithm."
+  },
+  "CBOR 解码": {
+    "enName": "CBOR Decode",
+    "enDescription": "Concise Binary Object Representation (CBOR) is a binary data serialization format loosely based on JSON. Like JSON it allows the transmission of data objects that contain name–value pairs, but in a more concise manner. This increases processing and transfer speeds at the cost of human readability. It is defined in IETF RFC 8949."
+  },
+  "CBOR 编码": {
+    "enName": "CBOR Encode",
+    "enDescription": "Concise Binary Object Representation (CBOR) is a binary data serialization format loosely based on JSON. Like JSON it allows the transmission of data objects that contain name–value pairs, but in a more concise manner. This increases processing and transfer speeds at the cost of human readability. It is defined in IETF RFC 8949."
+  },
+  "CMAC": {
+    "enName": "CMAC",
+    "enDescription": "CMAC is a block-cipher based message authentication code algorithm.<br><br>RFC4493 defines AES-CMAC that uses AES encryption with a 128-bit key.<br>NIST SP 800-38B suggests usages of AES with other key lengths and Triple DES."
+  },
+  "CRC 校验和": {
+    "enName": "CRC Checksum",
+    "enDescription": "A Cyclic Redundancy Check (<b>CRC</b>) is an error-detecting code commonly used in digital networks and storage devices to detect accidental changes to raw data."
+  },
+  "CSS 美化": {
+    "enName": "CSS Beautify",
+    "enDescription": "Indents and prettifies Cascading Style Sheets (CSS) code."
+  },
+  "CSS 压缩": {
+    "enName": "CSS Minify",
+    "enDescription": "Compresses Cascading Style Sheets (CSS) code."
+  },
+  "CSS 选择器": {
+    "enName": "CSS selector",
+    "enDescription": "Extract information from an HTML document with a CSS selector"
+  },
+  "CSV 转 JSON": {
+    "enName": "CSV to JSON",
+    "enDescription": "Converts a CSV file to JSON format."
+  },
+  "CTPH": {
+    "enName": "CTPH",
+    "enDescription": "Context Triggered Piecewise Hashing, also called Fuzzy Hashing, can match inputs that have homologies. Such inputs have sequences of identical bytes in the same order, although bytes in between these sequences may be different in both content and length.<br><br>CTPH was originally based on the work of Dr. Andrew Tridgell and a spam email detector called SpamSum. This method was adapted by Jesse Kornblum and published at the DFRWS conference in 2006 in a paper 'Identifying Almost Identical Files Using Context Triggered Piecewise Hashing'."
+  },
+  "Caesar Box 密码": {
+    "enName": "Caesar Box Cipher",
+    "enDescription": "Caesar Box is a transposition cipher used in the Roman Empire, in which letters of the message are written in rows in a square (or a rectangle) and then, read by column."
+  },
+  "Caret/M 解码": {
+    "enName": "Caret/M-decode",
+    "enDescription": "Decodes caret or M-encoded strings, i.e. ^M turns into a newline, M-^] turns into 0x9d. Sources such as `cat -v`.\n\nPlease be aware that when using `cat -v` ^_ (caret-underscore) will not be encoded, but represents a valid encoding (namely that of 0x1f)."
+  },
+  "笛卡尔积": {
+    "enName": "Cartesian Product",
+    "enDescription": "Calculates the cartesian product of multiple sets of data, returning all possible combinations."
+  },
+  "鲸语密码 解码": {
+    "enName": "Cetacean Cipher Decode",
+    "enDescription": "Decode Cetacean Cipher input. <br/><br/>e.g. <code>EEEEEEEEEeeEeEEEEEEEEEEEEeeEeEEe</code> becomes <code>hi</code>"
+  },
+  "鲸语密码 编码": {
+    "enName": "Cetacean Cipher Encode",
+    "enDescription": "Converts any input into Cetacean Cipher. <br/><br/>e.g. <code>hi</code> becomes <code>EEEEEEEEEeeEeEEEEEEEEEEEEeeEeEEe</code>"
+  },
+  "ChaCha": {
+    "enName": "ChaCha",
+    "enDescription": "ChaCha is a stream cipher designed by Daniel J. Bernstein. It is a variant of the Salsa stream cipher. Several parameterizations exist; 'ChaCha' may refer to the original construction, or to the variant as described in RFC-8439. ChaCha is often used with Poly1305, in the ChaCha20-Poly1305 AEAD construction.<br><br><b>Key:</b> ChaCha uses a key of 16 or 32 bytes (128 or 256 bits).<br><br><b>Nonce:</b> ChaCha uses a nonce of 8 or 12 bytes (64 or 96 bits).<br><br><b>Counter:</b> ChaCha uses a counter of 4 or 8 bytes (32 or 64 bits); together, the nonce and counter must add up to 16 bytes. The counter starts at zero at the start of the keystream, and is incremented at every 64 bytes."
+  },
+  "转换 IP 格式": {
+    "enName": "Change IP format",
+    "enDescription": "Convert an IP address from one format to another, e.g. <code>172.20.23.54</code> to <code>ac141736</code>"
+  },
+  "卡方检验": {
+    "enName": "Chi Square",
+    "enDescription": "Calculates the Chi Square distribution of values."
+  },
+  "CipherSaber2 解密": {
+    "enName": "CipherSaber2 Decrypt",
+    "enDescription": "CipherSaber is a simple symmetric encryption protocol based on the RC4 stream cipher. It gives reasonably strong protection of message confidentiality, yet it's designed to be simple enough that even novice programmers can memorize the algorithm and implement it from scratch."
+  },
+  "CipherSaber2 加密": {
+    "enName": "CipherSaber2 Encrypt",
+    "enDescription": "CipherSaber is a simple symmetric encryption protocol based on the RC4 stream cipher. It gives reasonably strong protection of message confidentiality, yet it's designed to be simple enough that even novice programmers can memorize the algorithm and implement it from scratch."
+  },
+  "Citrix CTX1 解码": {
+    "enName": "Citrix CTX1 Decode",
+    "enDescription": "Decodes strings in a Citrix CTX1 password format to plaintext."
+  },
+  "Citrix CTX1 编码": {
+    "enName": "Citrix CTX1 Encode",
+    "enDescription": "Encodes strings to Citrix CTX1 password format."
+  },
+  "Colossus": {
+    "enName": "Colossus",
+    "enDescription": "Colossus is the name of the world's first electronic computer. Ten Colossi were designed by Tommy Flowers and built at the Post Office Research Labs at Dollis Hill in 1943 during World War 2. They assisted with the breaking of the German Lorenz cipher attachment, a machine created to encipher communications between Hitler and his generals on the front lines.<br><br>To learn more, Virtual Colossus, an online, browser based simulation of a Colossus computer is available at <a href='https://virtualcolossus.co.uk' target='_blank'>virtualcolossus.co.uk</a>.<br><br>A more detailed description of this operation can be found <a href='https://github.com/gchq/CyberChef/wiki/Colossus' target='_blank'>here</a>."
+  },
+  "注释": {
+    "enName": "Comment",
+    "enDescription": "Provides a place to write comments within the flow of the recipe. This operation has no computational effect."
+  },
+  "比较 CTPH 哈希": {
+    "enName": "Compare CTPH hashes",
+    "enDescription": "Compares two Context Triggered Piecewise Hashing (CTPH) fuzzy hashes to determine the similarity between them on a scale of 0 to 100."
+  },
+  "比较 SSDEEP 哈希": {
+    "enName": "Compare SSDEEP hashes",
+    "enDescription": "Compares two SSDEEP fuzzy hashes to determine the similarity between them on a scale of 0 to 100."
+  },
+  "条件跳转": {
+    "enName": "Conditional Jump",
+    "enDescription": "Conditionally jump forwards or backwards to the specified Label  based on whether the data matches the specified regular expression."
+  },
+  "适应图像": {
+    "enName": "Contain Image",
+    "enDescription": "Scales an image to the specified width and height, maintaining the aspect ratio. The image may be letterboxed."
+  },
+  "转换面积": {
+    "enName": "Convert area",
+    "enDescription": "Converts a unit of area to another format."
+  },
+  "转换坐标格式": {
+    "enName": "Convert co-ordinate format",
+    "enDescription": "Converts geographical coordinates between different formats.<br><br>Supported formats:<ul><li>Degrees Minutes Seconds (DMS)</li><li>Degrees Decimal Minutes (DDM)</li><li>Decimal Degrees (DD)</li><li>Geohash</li><li>Military Grid Reference System (MGRS)</li><li>Ordnance Survey National Grid (OSNG)</li><li>Universal Transverse Mercator (UTM)</li></ul><br>The operation can try to detect the input co-ordinate format and delimiter automatically, but this may not always work correctly."
+  },
+  "转换数据单位": {
+    "enName": "Convert data units",
+    "enDescription": "Converts a unit of data to another format."
+  },
+  "转换距离": {
+    "enName": "Convert distance",
+    "enDescription": "Converts a unit of distance to another format."
+  },
+  "转换图像格式": {
+    "enName": "Convert Image Format",
+    "enDescription": "Converts an image between different formats. Supported formats:<br><ul><li>Joint Photographic Experts Group (JPEG)</li><li>Portable Network Graphics (PNG)</li><li>Bitmap (BMP)</li><li>Tagged Image File Format (TIFF)</li></ul><br>Note: GIF files are supported for input, but cannot be outputted."
+  },
+  "转换 Leet 语": {
+    "enName": "Convert Leet Speak",
+    "enDescription": "Converts to and from Leet Speak."
+  },
+  "转换质量": {
+    "enName": "Convert mass",
+    "enDescription": "Converts a unit of mass to another format."
+  },
+  "转换速度": {
+    "enName": "Convert speed",
+    "enDescription": "Converts a unit of speed to another format."
+  },
+  "转为 NATO 字母表": {
+    "enName": "Convert to NATO alphabet",
+    "enDescription": "Converts characters to their representation in the NATO phonetic alphabet."
+  },
+  "统计出现次数": {
+    "enName": "Count occurrences",
+    "enDescription": "Counts the number of times the provided string occurs in the input."
+  },
+  "覆盖图像": {
+    "enName": "Cover Image",
+    "enDescription": "Scales the image to the given width and height, keeping the aspect ratio. The image may be clipped."
+  },
+  "裁剪图像": {
+    "enName": "Crop Image",
+    "enDescription": "Crops an image to the specified region, or automatically crops edges.<br><br><b><u>Autocrop</u></b><br>Automatically crops same-colour borders from the image.<br><br><u>Autocrop tolerance</u><br>A percentage value for the tolerance of colour difference between pixels.<br><br><u>Only autocrop frames</u><br>Only crop real frames (all sides must have the same border)<br><br><u>Symmetric autocrop</u><br>Force autocrop to be symmetric (top/bottom and left/right are cropped by the same amount)<br><br><u>Autocrop keep border</u><br>The number of pixels of border to leave around the image."
+  },
+  "DES 解密": {
+    "enName": "DES Decrypt",
+    "enDescription": "DES is a previously dominant algorithm for encryption, and was published as an official U.S. Federal Information Processing Standard (FIPS). It is now considered to be insecure due to its small key size.<br><br><b>Key:</b> DES uses a key length of 8 bytes (64 bits).<br><br><b>IV:</b> The Initialization Vector should be 8 bytes long. If not entered, it will default to 8 null bytes.<br><br><b>Padding:</b> In CBC and ECB mode, PKCS#7 padding will be used as a default."
+  },
+  "DES 加密": {
+    "enName": "DES Encrypt",
+    "enDescription": "DES is a previously dominant algorithm for encryption, and was published as an official U.S. Federal Information Processing Standard (FIPS). It is now considered to be insecure due to its small key size.<br><br><b>Key:</b> DES uses a key length of 8 bytes (64 bits).<br><br>You can generate a password-based key using one of the KDF operations.<br><br><b>IV:</b> The Initialization Vector should be 8 bytes long. If not entered, it will default to 8 null bytes.<br><br><b>Padding:</b> In CBC and ECB mode, PKCS#7 padding will be used."
+  },
+  "DNS over HTTPS": {
+    "enName": "DNS over HTTPS",
+    "enDescription": "Takes a single domain name and performs a DNS lookup using DNS over HTTPS.\n<br><br>\nBy default, <a href='https://developers.cloudflare.com/1.1.1.1/dns-over-https/'>Cloudflare</a> and <a href='https://developers.google.com/speed/public-dns/docs/dns-over-https'>Google</a> DNS over HTTPS services are supported.\n<br><br>\nCan be used with any service that supports the GET parameters <code>name</code> and <code>type</code>."
+  },
+  "日期时间差值": {
+    "enName": "DateTime Delta",
+    "enDescription": "Calculates a new DateTime value given an input DateTime value and a time difference (delta) from the input DateTime value."
+  },
+  "去分块 HTTP 响应": {
+    "enName": "Dechunk HTTP response",
+    "enDescription": "Parses an HTTP response transferred using Transfer-Encoding: Chunked"
+  },
+  "解码 NetBIOS 名称": {
+    "enName": "Decode NetBIOS Name",
+    "enDescription": "NetBIOS names as seen across the client interface to NetBIOS are exactly 16 bytes long. Within the NetBIOS-over-TCP protocols, a longer representation is used.<br><br>There are two levels of encoding. The first level maps a NetBIOS name into a domain system name.  The second level maps the domain system name into the 'compressed' representation required for interaction with the domain name system.<br><br>This operation decodes the first level of encoding. See RFC 1001 for full details."
+  },
+  "解码文本": {
+    "enName": "Decode text",
+    "enDescription": "Decodes text from the chosen character encoding.\n<br><br>\nSupported charsets are:\n<ul>\n\n\n</ul>"
+  },
+  "安全化 IP 地址": {
+    "enName": "Defang IP Addresses",
+    "enDescription": "Takes a IPv4 or IPv6 address and 'Defangs' it, meaning the IP becomes invalid, removing the risk of accidentally utilising it as an IP address."
+  },
+  "安全化 URL": {
+    "enName": "Defang URL",
+    "enDescription": "Takes a Universal Resource Locator (URL) and 'Defangs' it; meaning the URL becomes invalid, neutralising the risk of accidentally clicking on a malicious link.<br><br>This is often used when dealing with malicious links or IOCs.<br><br>Works well when combined with the 'Extract URLs' operation."
+  },
+  "派生 EVP 密钥": {
+    "enName": "Derive EVP key",
+    "enDescription": "This operation performs a password-based key derivation function (PBKDF) used extensively in OpenSSL. In many applications of cryptography, user security is ultimately dependent on a password, and because a password usually can't be used directly as a cryptographic key, some processing is required.<br><br>A salt provides a large set of keys for any given password, and an iteration count increases the cost of producing keys from a password, thereby also increasing the difficulty of attack.<br><br>If you leave the salt argument empty, a random salt will be generated."
+  },
+  "派生 HKDF 密钥": {
+    "enName": "Derive HKDF key",
+    "enDescription": "A simple Hashed Message Authenticaton Code (HMAC)-based key derivation function (HKDF), defined in RFC5869."
+  },
+  "派生 PBKDF2 密钥": {
+    "enName": "Derive PBKDF2 key",
+    "enDescription": "PBKDF2 is a password-based key derivation function. It is part of RSA Laboratories' Public-Key Cryptography Standards (PKCS) series, specifically PKCS #5 v2.0, also published as Internet Engineering Task Force's RFC 2898.<br><br>In many applications of cryptography, user security is ultimately dependent on a password, and because a password usually can't be used directly as a cryptographic key, some processing is required.<br><br>A salt provides a large set of keys for any given password, and an iteration count increases the cost of producing keys from a password, thereby also increasing the difficulty of attack.<br><br>If you leave the salt argument empty, a random salt will be generated."
+  },
+  "检测文件类型": {
+    "enName": "Detect File Type",
+    "enDescription": "Attempts to guess the MIME (Multipurpose Internet Mail Extensions) type of the data based on 'magic bytes'.<br><br>Currently supports the following file types: "
+  },
+  "差异比较": {
+    "enName": "Diff",
+    "enDescription": "Compares two inputs (separated by the specified delimiter) and highlights the differences between them."
+  },
+  "ARM 反汇编": {
+    "enName": "Disassemble ARM",
+    "enDescription": "Disassembles ARM machine code into assembly language.<br><br>Supports ARM (32-bit), Thumb, and ARM64 (AArch64) architectures using the Capstone disassembly framework.<br><br>Input should be in hexadecimal."
+  },
+  "x86 反汇编": {
+    "enName": "Disassemble x86",
+    "enDescription": "Disassembly is the process of translating machine language into assembly language.<br><br>This operation supports 64-bit, 32-bit and 16-bit code written for Intel or AMD x86 processors. It is particularly useful for reverse engineering shellcode.<br><br>Input should be in hexadecimal."
+  },
+  "抖动图像": {
+    "enName": "Dither Image",
+    "enDescription": "Apply a dither effect to an image."
+  },
+  "除法": {
+    "enName": "Divide",
+    "enDescription": "Divides a list of numbers. If an item in the string is not a number it is excluded from the list.<br><br>e.g. <code>0x0a 8 .5</code> becomes <code>2.5</code>"
+  },
+  "丢弃字节": {
+    "enName": "Drop bytes",
+    "enDescription": "Cuts a slice of the specified number of bytes out of the data. Negative values are allowed."
+  },
+  "丢弃第 n 个字节": {
+    "enName": "Drop nth bytes",
+    "enDescription": "Drops every nth byte starting with a given byte."
+  },
+  "ECDSA 签名": {
+    "enName": "ECDSA Sign",
+    "enDescription": "Sign a plaintext message with a PEM encoded EC key."
+  },
+  "ECDSA 签名转换": {
+    "enName": "ECDSA Signature Conversion",
+    "enDescription": "Convert an ECDSA signature between hex, asn1 and json."
+  },
+  "ECDSA 验证": {
+    "enName": "ECDSA Verify",
+    "enDescription": "Verify a message against a signature and a public PEM encoded EC key."
+  },
+  "ELF 信息": {
+    "enName": "ELF Info",
+    "enDescription": "Implements readelf-like functionality. This operation will extract the ELF Header, Program Headers, Section Headers and Symbol Table for an ELF file."
+  },
+  "编码 NetBIOS 名称": {
+    "enName": "Encode NetBIOS Name",
+    "enDescription": "NetBIOS names as seen across the client interface to NetBIOS are exactly 16 bytes long. Within the NetBIOS-over-TCP protocols, a longer representation is used.<br><br>There are two levels of encoding. The first level maps a NetBIOS name into a domain system name.  The second level maps the domain system name into the 'compressed' representation required for interaction with the domain name system.<br><br>This operation carries out the first level of encoding. See RFC 1001 for full details."
+  },
+  "编码文本": {
+    "enName": "Encode text",
+    "enDescription": "Encodes text into the chosen character encoding.\n<br><br>\nSupported charsets are:\n<ul>\n\n\n</ul>"
+  },
+  "Enigma": {
+    "enName": "Enigma",
+    "enDescription": "Encipher/decipher with the WW2 Enigma machine.<br><br>Enigma was used by the German military, among others, around the WW2 era as a portable cipher machine to protect sensitive military, diplomatic and commercial communications.<br><br>The standard set of German military rotors and reflectors are provided. To configure the plugboard, enter a string of connected pairs of letters, e.g. <code>AB CD EF</code> connects A to B, C to D, and E to F. This is also used to create your own reflectors. To create your own rotor, enter the letters that the rotor maps A to Z to, in order, optionally followed by <code>&lt;</code> then a list of stepping points.<br>This is deliberately fairly permissive with rotor placements etc compared to a real Enigma (on which, for example, a four-rotor Enigma uses only the thin reflectors and the beta or gamma rotor in the 4th slot).<br><br>More detailed descriptions of the Enigma, Typex and Bombe operations <a href='https://github.com/gchq/CyberChef/wiki/Enigma,-the-Bombe,-and-Typex'>can be found here</a>."
+  },
+  "信息熵": {
+    "enName": "Entropy",
+    "enDescription": "Shannon Entropy, in the context of information theory, is a measure of the rate at which information is produced by a source of data. It can be used, in a broad sense, to detect whether data is likely to be structured or unstructured. 8 is the maximum, representing highly unstructured, 'random' data. English language text usually falls somewhere between 3.5 and 5. Properly encrypted or compressed data should have an entropy of over 7.5."
+  },
+  "转义智能字符": {
+    "enName": "Escape Smart Characters",
+    "enDescription": "Converts smart (typographic) Unicode characters — e.g. smart quotes, em/en dashes, ellipses, ©, ®, ™, arrows — into their plain ASCII equivalents.<br><br>Characters with no ASCII mapping (e.g. <code>☣</code>) are handled according to the 'Unmappable characters' option.<br><br>e.g. <code>“Hello” — world…</code> becomes <code>\"Hello\" -- world...</code>"
+  },
+  "转义字符串": {
+    "enName": "Escape string",
+    "enDescription": "Escapes special characters in a string so that they do not cause conflicts. For example, <code>Don't stop me now</code> becomes <code>Don\\'t stop me now</code>.<br><br>Supports the following escape sequences:<ul><li><code>\\n</code> (Line feed/newline)</li><li><code>\\r</code> (Carriage return)</li><li><code>\\t</code> (Horizontal tab)</li><li><code>\\b</code> (Backspace)</li><li><code>\\f</code> (Form feed)</li><li><code>\\xnn</code> (Hex, where n is 0-f)</li><li><code>\\\\</code> (Backslash)</li><li><code>\\'</code> (Single quote)</li><li><code>\\&quot;</code> (Double quote)</li><li><code>\\unnnn</code> (Unicode character)</li><li><code>\\u{nnnnnn}</code> (Unicode code point)</li></ul>"
+  },
+  "转义 Unicode 字符": {
+    "enName": "Escape Unicode Characters",
+    "enDescription": "Converts characters to their unicode-escaped notations.<br><br>Supports the prefixes:<ul><li><code>\\u</code></li><li><code>%u</code></li><li><code>U+</code></li></ul>e.g. <code>σου</code> becomes <code>\\u03C3\\u03BF\\u03C5</code>"
+  },
+  "展开字母范围": {
+    "enName": "Expand alphabet range",
+    "enDescription": "Expand an alphabet range string into a list of the characters in that range.<br><br>e.g. <code>a-z</code> becomes <code>abcdefghijklmnopqrstuvwxyz</code>."
+  },
+  "扩展 GCD": {
+    "enName": "Extended GCD",
+    "enDescription": "Computes the Extended Euclidean Algorithm for integers <i>a</i> and <i>b</i>.<br><br>"
+  },
+  "提取音频元数据": {
+    "enName": "Extract Audio Metadata",
+    "enDescription": "Extract common audio metadata across MP3 (ID3v2/ID3v1/GEOB), WAV/BWF/BW64 (INFO/bext/iXML/axml), FLAC (Vorbis Comment/Picture), OGG (Vorbis/OpusTags), AAC (ADTS), AC3 (Dolby Digital), WMA (ASF), plus best-effort MP4/M4A and AIFF scanning. Outputs normalized JSON."
+  },
+  "提取日期": {
+    "enName": "Extract dates",
+    "enDescription": "Extracts dates in the following formats<ul><li><code>yyyy-mm-dd</code></li><li><code>dd/mm/yyyy</code></li><li><code>mm/dd/yyyy</code></li></ul>Dividers can be any of /, -, . or space"
+  },
+  "提取域名": {
+    "enName": "Extract domains",
+    "enDescription": "Extracts fully qualified domain names.<br>Note that this will not include paths. Use <strong>Extract URLs</strong> to find entire URLs."
+  },
+  "提取 EXIF": {
+    "enName": "Extract EXIF",
+    "enDescription": "Extracts EXIF data from an image.\n<br><br>\nEXIF data is metadata embedded in images (JPEG, JPG, TIFF) and audio files.\n<br><br>\nEXIF data from photos usually contains information about the image file itself as well as the device used to create it."
+  },
+  "提取电子邮件地址": {
+    "enName": "Extract email addresses",
+    "enDescription": "Extracts all email addresses from the input."
+  },
+  "提取文件路径": {
+    "enName": "Extract file paths",
+    "enDescription": "Extracts anything that looks like a Windows or UNIX file path.<br><br>Note that if UNIX is selected, there will likely be a lot of false positives."
+  },
+  "提取文件": {
+    "enName": "Extract Files",
+    "enDescription": "Performs file carving to attempt to extract files from the input.<br><br>This operation is currently capable of carving out the following formats:\n            <ul>\n                <li>\n                ${supportedExts.join(\"</li><li>\")}\n                </li>\n            </ul>Minimum File Size can be used to prune small false positives."
+  },
+  "提取哈希值": {
+    "enName": "Extract hashes",
+    "enDescription": "Extracts potential hashes based on hash character length"
+  },
+  "提取 ID3": {
+    "enName": "Extract ID3",
+    "enDescription": "This operation extracts ID3 metadata from an MP3 file.<br><br>ID3 is a metadata container most often used in conjunction with the MP3 audio file format. It allows information such as the title, artist, album, track number, and other information about the file to be stored in the file itself."
+  },
+  "提取 IP 地址": {
+    "enName": "Extract IP addresses",
+    "enDescription": "Extracts all IPv4 and IPv6 addresses.<br><br>Warning: Given a string <code>1.2.3.4.5.6.7.8</code>, this will match <code>1.2.3.4 and 5.6.7.8</code> so always check the original input!"
+  },
+  "提取 LSB": {
+    "enName": "Extract LSB",
+    "enDescription": "Extracts the Least Significant Bit data from each pixel in an image. This is a common way to hide data in Steganography."
+  },
+  "提取 MAC 地址": {
+    "enName": "Extract MAC addresses",
+    "enDescription": "Extracts all Media Access Control (MAC) addresses from the input."
+  },
+  "提取 RGBA": {
+    "enName": "Extract RGBA",
+    "enDescription": "Extracts each pixel's RGBA value in an image. These are sometimes used in Steganography to hide text or data."
+  },
+  "提取 URL": {
+    "enName": "Extract URLs",
+    "enDescription": "Extracts Uniform Resource Locators (URLs) from the input. The protocol (http, ftp etc.) is required otherwise there will be far too many false positives."
+  },
+  "还原 URL": {
+    "enName": "Fang URL",
+    "enDescription": "Takes a 'Defanged' Universal Resource Locator (URL) and 'Fangs' it. Meaning, it removes the alterations (defanged) that render it useless so that it can be used again."
+  },
+  "Fernet 解密": {
+    "enName": "Fernet Decrypt",
+    "enDescription": "Fernet is a symmetric encryption method which makes sure that the message encrypted cannot be manipulated/read without the key. It uses URL safe encoding for the keys. Fernet uses 128-bit AES in CBC mode and PKCS7 padding, with HMAC using SHA256 for authentication. The IV is created from os.random().<br><br><b>Key:</b> The key must be 32 bytes (256 bits) encoded with Base64."
+  },
+  "Fernet 加密": {
+    "enName": "Fernet Encrypt",
+    "enDescription": "Fernet is a symmetric encryption method which makes sure that the message encrypted cannot be manipulated/read without the key. It uses URL safe encoding for the keys. Fernet uses 128-bit AES in CBC mode and PKCS7 padding, with HMAC using SHA256 for authentication. The IV is created from os.random().<br><br><b>Key:</b> The key must be 32 bytes (256 bits) encoded with Base64."
+  },
+  "文件树": {
+    "enName": "File Tree",
+    "enDescription": "Creates a file tree from a list of file paths (similar to the tree command in Linux)"
+  },
+  "过滤": {
+    "enName": "Filter",
+    "enDescription": "Splits up the input using the specified delimiter and then filters each branch based on a regular expression."
+  },
+  "查找 / 替换": {
+    "enName": "Find / Replace",
+    "enDescription": "Replaces all occurrences of the first string with the second.<br><br>Includes support for regular expressions (regex), simple strings and extended strings (which support \\n, \\r, \\t, \\b, \\f and escaped hex bytes using \\x notation, e.g. \\x00 for a null byte)."
+  },
+  "Flask Session 解码": {
+    "enName": "Flask Session Decode",
+    "enDescription": "Decodes the payload of a Flask session cookie (itsdangerous) into JSON."
+  },
+  "Flask Session 签名": {
+    "enName": "Flask Session Sign",
+    "enDescription": "Signs a JSON payload to produce a Flask session cookie (itsdangerous HMAC)."
+  },
+  "Flask Session 验证": {
+    "enName": "Flask Session Verify",
+    "enDescription": "Verifies the HMAC signature of a Flask session cookie (itsdangerous) generated."
+  },
+  "Fletcher-16 校验和": {
+    "enName": "Fletcher-16 Checksum",
+    "enDescription": "The Fletcher checksum is an algorithm for computing a position-dependent checksum devised by John Gould Fletcher at Lawrence Livermore Labs in the late 1970s.<br><br>The objective of the Fletcher checksum was to provide error-detection properties approaching those of a cyclic redundancy check but with the lower computational effort associated with summation techniques."
+  },
+  "Fletcher-32 校验和": {
+    "enName": "Fletcher-32 Checksum",
+    "enDescription": "The Fletcher checksum is an algorithm for computing a position-dependent checksum devised by John Gould Fletcher at Lawrence Livermore Labs in the late 1970s.<br><br>The objective of the Fletcher checksum was to provide error-detection properties approaching those of a cyclic redundancy check but with the lower computational effort associated with summation techniques."
+  },
+  "Fletcher-64 校验和": {
+    "enName": "Fletcher-64 Checksum",
+    "enDescription": "The Fletcher checksum is an algorithm for computing a position-dependent checksum devised by John Gould Fletcher at Lawrence Livermore Labs in the late 1970s.<br><br>The objective of the Fletcher checksum was to provide error-detection properties approaching those of a cyclic redundancy check but with the lower computational effort associated with summation techniques."
+  },
+  "Fletcher-8 校验和": {
+    "enName": "Fletcher-8 Checksum",
+    "enDescription": "The Fletcher checksum is an algorithm for computing a position-dependent checksum devised by John Gould Fletcher at Lawrence Livermore Labs in the late 1970s.<br><br>The objective of the Fletcher checksum was to provide error-detection properties approaching those of a cyclic redundancy check but with the lower computational effort associated with summation techniques."
+  },
+  "翻转图像": {
+    "enName": "Flip Image",
+    "enDescription": "Flips an image along its X or Y axis."
+  },
+  "分支": {
+    "enName": "Fork",
+    "enDescription": "Split the input data up based on the specified delimiter and run all subsequent operations on each branch separately.<br><br>For example, to decode multiple Base64 strings, enter them all on separate lines then add the 'Fork' and 'From Base64' operations to the recipe. Each string will be decoded separately."
+  },
+  "格式化 MAC 地址": {
+    "enName": "Format MAC addresses",
+    "enDescription": "Displays given MAC addresses in multiple different formats.<br><br>Expects addresses in a list separated by newlines, spaces or commas.<br><br>WARNING: There are no validity checks."
+  },
+  "频率分布": {
+    "enName": "Frequency distribution",
+    "enDescription": "Displays the distribution of bytes in the data as a graph."
+  },
+  "解码 BCD": {
+    "enName": "From BCD",
+    "enDescription": "Binary-Coded Decimal (BCD) is a class of binary encodings of decimal numbers where each decimal digit is represented by a fixed number of bits, usually four or eight. Special bit patterns are sometimes used for a sign."
+  },
+  "解码进制": {
+    "enName": "From Base",
+    "enDescription": "Converts a number to decimal from a given numerical base."
+  },
+  "解码 Base32": {
+    "enName": "From Base32",
+    "enDescription": "Base32 is a notation for encoding arbitrary byte data using a restricted set of symbols that can be conveniently used by humans and processed by computers. It uses a smaller set of characters than Base64, usually the uppercase alphabet and the numbers 2 to 7."
+  },
+  "解码 Base45": {
+    "enName": "From Base45",
+    "enDescription": "Base45 is a notation for encoding arbitrary byte data using a restricted set of symbols that can be conveniently used by humans and processed by computers. The high number base results in shorter strings than with the decimal or hexadecimal system. Base45 is optimized for usage with QR codes."
+  },
+  "解码 Base58": {
+    "enName": "From Base58",
+    "enDescription": "Base58 (similar to Base64) is a notation for encoding arbitrary byte data. It differs from Base64 by removing easily misread characters (i.e. l, I, 0 and O) to improve human readability.<br><br>This operation decodes data from an ASCII string (with an alphabet of your choosing, presets included) back into its raw form.<br><br>e.g. <code>StV1DL6CwTryKyV</code> becomes <code>hello world</code><br><br>Base58 is commonly used in cryptocurrencies (Bitcoin, Ripple, etc)."
+  },
+  "解码 Base62": {
+    "enName": "From Base62",
+    "enDescription": "Base62 is a notation for encoding arbitrary byte data using a restricted set of symbols that can be conveniently used by humans and processed by computers. The high number base results in shorter strings than with the decimal or hexadecimal system."
+  },
+  "解码 Base64": {
+    "enName": "From Base64",
+    "enDescription": "Base64 is a notation for encoding arbitrary byte data using a restricted set of symbols that can be conveniently used by humans and processed by computers.<br><br>This operation decodes data from an ASCII Base64 string back into its raw format.<br><br>e.g. <code>aGVsbG8=</code> becomes <code>hello</code>"
+  },
+  "解码 Base85": {
+    "enName": "From Base85",
+    "enDescription": "Base85 (also called Ascii85) is a notation for encoding arbitrary byte data. It is usually more efficient that Base64.<br><br>This operation decodes data from an ASCII string (with an alphabet of your choosing, presets included).<br><br>e.g. <code>BOu!rD]j7BEbo7</code> becomes <code>hello world</code><br><br>Base85 is commonly used in Adobe's PostScript and PDF file formats."
+  },
+  "解码 Base92": {
+    "enName": "From Base92",
+    "enDescription": "Base92 is a notation for encoding arbitrary byte data using a restricted set of symbols that can be conveniently used by humans and processed by computers."
+  },
+  "解码 Bech32": {
+    "enName": "From Bech32",
+    "enDescription": "Bech32 is an encoding scheme primarily used for Bitcoin SegWit addresses (BIP-0173). It uses a 32-character alphabet that excludes easily confused characters (1, b, i, o) and includes a checksum for error detection.<br><br>Bech32m (BIP-0350) is an updated version used for Bitcoin Taproot addresses.<br><br>Auto-detect will attempt Bech32 first, then Bech32m if the checksum fails.<br><br>Output format options allow you to see the Human-Readable Part (HRP) along with the decoded data."
+  },
+  "解码二进制": {
+    "enName": "From Binary",
+    "enDescription": "Converts a binary string back into its raw form.<br><br>e.g. <code>01001000 01101001</code> becomes <code>Hi</code>"
+  },
+  "解码 Braille": {
+    "enName": "From Braille",
+    "enDescription": "Converts six-dot braille symbols to text."
+  },
+  "解码 COBS": {
+    "enName": "From COBS",
+    "enDescription": "Decodes COBS encoded bytes"
+  },
+  "解码 Case Insensitive Regex": {
+    "enName": "From Case Insensitive Regex",
+    "enDescription": "Converts a case-insensitive regex string to a case sensitive regex string (no guarantee on it being the proper original casing) in case the i flag wasn't available at the time but now is, or you need it to be case-sensitive again.<br><br>e.g. <code>[mM][oO][zZ][iI][lL][lL][aA]/[0-9].[0-9] .*</code> becomes <code>Mozilla/[0-9].[0-9] .*</code>"
+  },
+  "解码字符编码": {
+    "enName": "From Charcode",
+    "enDescription": "Converts unicode character codes back into text.<br><br>e.g. <code>0393 03b5 03b9 03ac 20 03c3 03bf 03c5</code> becomes <code>Γειά σου</code>"
+  },
+  "解码十进制": {
+    "enName": "From Decimal",
+    "enDescription": "Converts the data from an ordinal integer array back into its raw form.<br><br>e.g. <code>72 101 108 108 111</code> becomes <code>Hello</code>"
+  },
+  "解码浮点数": {
+    "enName": "From Float",
+    "enDescription": "Convert from IEEE754 Floating Point Numbers"
+  },
+  "解码 HTML 实体": {
+    "enName": "From HTML Entity",
+    "enDescription": "Converts HTML entities back to characters<br><br>e.g. <code>&amp;<span>amp;</span></code> becomes <code>&amp;</code>"
+  },
+  "解码 Hex": {
+    "enName": "From Hex",
+    "enDescription": "Converts a hexadecimal byte string back into its raw value.<br><br>e.g. <code>ce 93 ce b5 ce b9 ce ac 20 cf 83 ce bf cf 85 0a</code> becomes the UTF-8 encoded string <code>Γειά σου</code>"
+  },
+  "解码 Hex Content": {
+    "enName": "From Hex Content",
+    "enDescription": "Translates hexadecimal bytes in text back to raw bytes. This format is used by SNORT for representing hex within ASCII text.<br><br>e.g. <code>foo|3d|bar</code> becomes <code>foo=bar</code>."
+  },
+  "解码 Hexdump": {
+    "enName": "From Hexdump",
+    "enDescription": "Attempts to convert a hexdump back into raw data. This operation supports many different hexdump variations, but probably not all. Make sure you verify that the data it gives you is correct before continuing analysis."
+  },
+  "解码 MessagePack": {
+    "enName": "From MessagePack",
+    "enDescription": "Converts MessagePack encoded data to JSON. MessagePack is a computer data interchange format. It is a binary form for representing simple data structures like arrays and associative arrays."
+  },
+  "解码 Modhex": {
+    "enName": "From Modhex",
+    "enDescription": "Converts a modhex byte string back into its raw value."
+  },
+  "解码摩尔斯电码": {
+    "enName": "From Morse Code",
+    "enDescription": "Translates Morse Code into (upper case) alphanumeric characters."
+  },
+  "解码八进制": {
+    "enName": "From Octal",
+    "enDescription": "Converts an octal byte string back into its raw value.<br><br>e.g. <code>316 223 316 265 316 271 316 254 40 317 203 316 277 317 205</code> becomes the UTF-8 encoded string <code>Γειά σου</code>"
+  },
+  "解码 Punycode": {
+    "enName": "From Punycode",
+    "enDescription": "Punycode is a way to represent Unicode with the limited character subset of ASCII supported by the Domain Name System.<br><br>e.g. <code>mnchen-3ya</code> decodes to <code>münchen</code>"
+  },
+  "解码 Quoted Printable": {
+    "enName": "From Quoted Printable",
+    "enDescription": "Converts QP-encoded text back to standard text. This format is a content transfer encoding common in email messages.<br><br>e.g. The quoted-printable encoded string <code>hello=20world</code> becomes <code>hello world</code>"
+  },
+  "解码 UNIX 时间戳": {
+    "enName": "From UNIX Timestamp",
+    "enDescription": "Converts a UNIX timestamp to a datetime string.<br><br>e.g. <code>978346800</code> becomes <code>Mon 1 January 2001 11:00:00 UTC</code><br><br>A UNIX timestamp is a 32-bit value representing the number of seconds since January 1, 1970 UTC (the UNIX epoch)."
+  },
+  "模糊匹配": {
+    "enName": "Fuzzy Match",
+    "enDescription": "Conducts a fuzzy search to find a pattern within the input based on weighted criteria.<br><br>e.g. A search for <code>dpan</code> will match on <code><b>D</b>on't <b>Pan</b>ic</code>"
+  },
+  "GOST 解密": {
+    "enName": "GOST Decrypt",
+    "enDescription": "The GOST block cipher (Magma), defined in the standard GOST 28147-89 (RFC 5830), is a Soviet and Russian government standard symmetric key block cipher with a block size of 64 bits. The original standard, published in 1989, did not give the cipher any name, but the most recent revision of the standard, GOST R 34.12-2015 (RFC 7801, RFC 8891), specifies that it may be referred to as Magma. The GOST hash function is based on this cipher. The new standard also specifies a new 128-bit block cipher called Kuznyechik.<br><br>Developed in the 1970s, the standard had been marked 'Top Secret' and then downgraded to 'Secret' in 1990. Shortly after the dissolution of the USSR, it was declassified and it was released to the public in 1994. GOST 28147 was a Soviet alternative to the United States standard algorithm, DES. Thus, the two are very similar in structure."
+  },
+  "GOST 加密": {
+    "enName": "GOST Encrypt",
+    "enDescription": "The GOST block cipher (Magma), defined in the standard GOST 28147-89 (RFC 5830), is a Soviet and Russian government standard symmetric key block cipher with a block size of 64 bits. The original standard, published in 1989, did not give the cipher any name, but the most recent revision of the standard, GOST R 34.12-2015 (RFC 7801, RFC 8891), specifies that it may be referred to as Magma. The GOST hash function is based on this cipher. The new standard also specifies a new 128-bit block cipher called Kuznyechik.<br><br>Developed in the 1970s, the standard had been marked 'Top Secret' and then downgraded to 'Secret' in 1990. Shortly after the dissolution of the USSR, it was declassified and it was released to the public in 1994. GOST 28147 was a Soviet alternative to the United States standard algorithm, DES. Thus, the two are very similar in structure."
+  },
+  "GOST 哈希": {
+    "enName": "GOST Hash",
+    "enDescription": "The GOST hash function, defined in the standards GOST R 34.11-94 and GOST 34.311-95 is a 256-bit cryptographic hash function. It was initially defined in the Russian national standard GOST R 34.11-94 <i>Information Technology – Cryptographic Information Security – Hash Function</i>. The equivalent standard used by other member-states of the CIS is GOST 34.311-95.<br><br>This function must not be confused with a different Streebog hash function, which is defined in the new revision of the standard GOST R 34.11-2012.<br><br>The GOST hash function is based on the GOST block cipher."
+  },
+  "GOST 密钥解包": {
+    "enName": "GOST Key Unwrap",
+    "enDescription": "A decryptor for keys wrapped using one of the GOST block ciphers."
+  },
+  "GOST 密钥包装": {
+    "enName": "GOST Key Wrap",
+    "enDescription": "A key wrapping algorithm for protecting keys in untrusted storage using one of the GOST block cipers."
+  },
+  "GOST 签名": {
+    "enName": "GOST Sign",
+    "enDescription": "Sign a plaintext message using one of the GOST block ciphers."
+  },
+  "GOST 验证": {
+    "enName": "GOST Verify",
+    "enDescription": "Verify the signature of a plaintext message using one of the GOST block ciphers. Enter the signature in the MAC field."
+  },
+  "生成所有校验和": {
+    "enName": "Generate all checksums",
+    "enDescription": "Generates all available checksums for the input."
+  },
+  "生成所有哈希值": {
+    "enName": "Generate all hashes",
+    "enDescription": "Generates all available hashes and checksums for the input."
+  },
+  "生成 De Bruijn 序列": {
+    "enName": "Generate De Bruijn Sequence",
+    "enDescription": "Generates rolling keycode combinations given a certain alphabet size and key length."
+  },
+  "生成 ECDSA 密钥对": {
+    "enName": "Generate ECDSA Key Pair",
+    "enDescription": "Generate an ECDSA key pair with a given Curve.<br><br>${cryptNotice}"
+  },
+  "生成 HOTP": {
+    "enName": "Generate HOTP",
+    "enDescription": "The HMAC-based One-Time Password algorithm (HOTP) is an algorithm that computes a one-time password from a shared secret key and an incrementing counter. It has been adopted as Internet Engineering Task Force standard RFC 4226, is the cornerstone of Initiative For Open Authentication (OAUTH), and is used in a number of two-factor authentication systems.<br><br>Enter the secret as the input or leave it blank for a random secret to be generated. The secret must be a valid base32 string (characters A–Z and 2–7)."
+  },
+  "生成图像": {
+    "enName": "Generate Image",
+    "enDescription": "Generates an image using the input as pixel values."
+  },
+  "生成 Lorem Ipsum": {
+    "enName": "Generate Lorem Ipsum",
+    "enDescription": "Generate varying length lorem ipsum placeholder text."
+  },
+  "生成 PGP 密钥对": {
+    "enName": "Generate PGP Key Pair",
+    "enDescription": "Generates a new public/private PGP key pair. Supports RSA and Eliptic Curve (EC) keys.<br><br>${cryptNotice}"
+  },
+  "伪随机素数生成器": {
+    "enName": "Pseudo-Random Prime Generator",
+    "enDescription": "Generates a random probable prime number of specified bit length using the Miller-Rabin primality test.<br><br>"
+  },
+  "生成 QR Code": {
+    "enName": "Generate QR Code",
+    "enDescription": "Generates a Quick Response (QR) code from the input text.<br><br>A QR code is a type of matrix barcode (or two-dimensional barcode) first designed in 1994 for the automotive industry in Japan. A barcode is a machine-readable optical label that contains information about the item to which it is attached."
+  },
+  "生成 RSA 密钥对": {
+    "enName": "Generate RSA Key Pair",
+    "enDescription": "Generate an RSA key pair with a given number of bits.<br><br>${cryptNotice}"
+  },
+  "生成 TOTP": {
+    "enName": "Generate TOTP",
+    "enDescription": "The Time-based One-Time Password algorithm (TOTP) is an algorithm that computes a one-time password from a shared secret key and the current time. It has been adopted as Internet Engineering Task Force standard RFC 6238, is the cornerstone of Initiative For Open Authentication (OAUTH), and is used in a number of two-factor authentication systems. A TOTP is an HOTP where the counter is the current time.<br><br>Enter the secret as the input or leave it blank for a random secret to be generated. The secret must be a valid base32 string (characters A–Z and 2–7). T0 and T1 are in seconds."
+  },
+  "生成 UUID": {
+    "enName": "Generate UUID",
+    "enDescription": "Generates an RFC 9562 (formerly RFC 4122) compliant Universally Unique Identifier (UUID), "
+  },
+  "通用代码美化": {
+    "enName": "Generic Code Beautify",
+    "enDescription": "Attempts to pretty print C-style languages such as C, C++, C#, Java, PHP, JavaScript etc.<br><br>This will not do a perfect job, and the resulting code may not work any more. This operation is designed purely to make obfuscated or minified code more easy to read and understand.<br><br>Things which will not work properly:<ul><li>For loop formatting</li><li>Do-While loop formatting</li><li>Switch/Case indentation</li><li>Certain bit shift operators</li></ul>"
+  },
+  "获取所有大小写": {
+    "enName": "Get All Casings",
+    "enDescription": "Outputs all possible casing variations of a string."
+  },
+  "获取时间": {
+    "enName": "Get Time",
+    "enDescription": "Generates a timestamp showing the amount of time since the UNIX epoch (1970-01-01 00:00:00 UTC). Uses the W3C High Resolution Time API."
+  },
+  "分组 IP 地址": {
+    "enName": "Group IP addresses",
+    "enDescription": "Groups a list of IP addresses into subnets. Supports both IPv4 and IPv6 addresses."
+  },
+  "Gzip 解压": {
+    "enName": "Gunzip",
+    "enDescription": "Decompresses data which has been compressed using the deflate algorithm with gzip headers."
+  },
+  "Gzip 压缩": {
+    "enName": "Gzip",
+    "enDescription": "Compresses data using the deflate algorithm with gzip headers."
+  },
+  "HAS-160": {
+    "enName": "HAS-160",
+    "enDescription": "HAS-160 is a cryptographic hash function designed for use with the Korean KCDSA digital signature algorithm. It is derived from SHA-1, with assorted changes intended to increase its security. It produces a 160-bit output.<br><br>HAS-160 is used in the same way as SHA-1. First it divides input in blocks of 512 bits each and pads the final block. A digest function updates the intermediate hash value by processing the input blocks in turn.<br><br>The message digest algorithm consists, by default, of 80 rounds."
+  },
+  "HASSH 客户端指纹": {
+    "enName": "HASSH Client Fingerprint",
+    "enDescription": "Generates a HASSH fingerprint to help identify SSH clients based on hashing together values from the Client Key Exchange Init message.<br><br>Input: A hex stream of the SSH_MSG_KEXINIT packet application layer from Client to Server."
+  },
+  "HASSH 服务器指纹": {
+    "enName": "HASSH Server Fingerprint",
+    "enDescription": "Generates a HASSH fingerprint to help identify SSH servers based on hashing together values from the Server Key Exchange Init message.<br><br>Input: A hex stream of the SSH_MSG_KEXINIT packet application layer from Server to Client."
+  },
+  "HMAC": {
+    "enName": "HMAC",
+    "enDescription": "Keyed-Hash Message Authentication Codes (HMAC) are a mechanism for message authentication using cryptographic hash functions."
+  },
+  "HTML 转文本": {
+    "enName": "HTML To Text",
+    "enDescription": "Converts an HTML output from an operation to a readable string instead of being rendered in the DOM."
+  },
+  "HTTP 请求": {
+    "enName": "HTTP request",
+    "enDescription": "Makes an HTTP request and returns the response.\n<br><br>\nThis operation supports different HTTP verbs like GET, POST, PUT, etc.\n<br><br>\nYou can add headers line by line in the format <code>Key: Value</code>\n<br><br>\nThe status code of the response, along with a limited selection of exposed headers, can be viewed by checking the 'Show response metadata' option. Only a limited set of response headers are exposed by the browser for security reasons."
+  },
+  "Hamming 距离": {
+    "enName": "Hamming Distance",
+    "enDescription": "In information theory, the Hamming distance between two strings of equal length is the number of positions at which the corresponding symbols are different. In other words, it measures the minimum number of substitutions required to change one string into the other, or the minimum number of errors that could have transformed one string into the other. In a more general context, the Hamming distance is one of several string metrics for measuring the edit distance between two sequences."
+  },
+  "Haversine 距离": {
+    "enName": "Haversine distance",
+    "enDescription": "Returns the distance between two pairs of GPS latitude and longitude co-ordinates in metres.<br><br>e.g. <code>51.487263,-0.124323, 38.9517,-77.1467</code>"
+  },
+  "取头部": {
+    "enName": "Head",
+    "enDescription": "Like the UNIX head utility.<br>Gets the first n lines.<br>You can select all but the last n lines by entering a negative value for n.<br>The delimiter can be changed so that instead of lines, fields (i.e. commas) are selected instead."
+  },
+  "Heatmap 图表": {
+    "enName": "Heatmap chart",
+    "enDescription": "A heatmap is a graphical representation of data where the individual values contained in a matrix are represented as colors."
+  },
+  "Hex Density 图表": {
+    "enName": "Hex Density chart",
+    "enDescription": "Hex density charts are used in a similar way to scatter charts, however rather than rendering tens of thousands of points, it groups the points into a few hundred hexagons to show the distribution."
+  },
+  "Hex 转对象标识符": {
+    "enName": "Hex to Object Identifier",
+    "enDescription": "Converts a hexadecimal string into an object identifier (OID)."
+  },
+  "Hex 转 PEM": {
+    "enName": "Hex to PEM",
+    "enDescription": "Converts a hexadecimal DER (Distinguished Encoding Rules) string into PEM (Privacy Enhanced Mail) format."
+  },
+  "IPv6 过渡地址": {
+    "enName": "IPv6 Transition Addresses",
+    "enDescription": "Converts IPv4 addresses to their IPv6 Transition addresses. IPv6 Transition addresses can also be converted back into their original IPv4 address. MAC addresses can also be converted into the EUI-64 format, this can them be appended to your IPv6 /64 range to obtain a full /128 address.<br><br>Transition technologies enable translation between IPv4 and IPv6 addresses or tunneling to allow traffic to pass through the incompatible network, allowing the two standards to coexist.<br><br>Only /24 ranges and currently handled. Remove headers to easily copy out results."
+  },
+  "图像亮度/对比度": {
+    "enName": "Image Brightness / Contrast",
+    "enDescription": "Adjust the brightness or contrast of an image."
+  },
+  "图像滤镜": {
+    "enName": "Image Filter",
+    "enDescription": "Applies a greyscale or sepia filter to an image."
+  },
+  "图像色相/饱和度/亮度": {
+    "enName": "Image Hue/Saturation/Lightness",
+    "enDescription": "Adjusts the hue / saturation / lightness (HSL) values of an image."
+  },
+  "图像不透明度": {
+    "enName": "Image Opacity",
+    "enDescription": "Adjust the opacity of an image."
+  },
+  "重合指数": {
+    "enName": "Index of Coincidence",
+    "enDescription": "Index of Coincidence (IC) is the probability of two randomly selected characters being the same. This can be used to determine whether text is readable or random, with English text having an IC of around 0.066. IC can therefore be a sound method to automate frequency analysis."
+  },
+  "反色图像": {
+    "enName": "Invert Image",
+    "enDescription": "Invert the colours of an image."
+  },
+  "JA3 指纹": {
+    "enName": "JA3 Fingerprint",
+    "enDescription": "Generates a JA3 fingerprint to help identify TLS clients based on hashing together values from the Client Hello.<br><br>Input: A hex stream of the TLS Client Hello packet application layer."
+  },
+  "JA3S 指纹": {
+    "enName": "JA3S Fingerprint",
+    "enDescription": "Generates a JA3S fingerprint to help identify TLS servers based on hashing together values from the Server Hello.<br><br>Input: A hex stream of the TLS Server Hello record application layer."
+  },
+  "JA4 指纹": {
+    "enName": "JA4 Fingerprint",
+    "enDescription": "Generates a JA4 fingerprint to help identify TLS clients based on hashing together values from the Client Hello.<br><br>Input: A hex stream of the TLS or QUIC Client Hello packet application layer."
+  },
+  "JA4Server 指纹": {
+    "enName": "JA4Server Fingerprint",
+    "enDescription": "Generates a JA4Server Fingerprint (JA4S) to help identify TLS servers or sessions based on hashing together values from the Server Hello.<br><br>Input: A hex stream of the TLS or QUIC Server Hello packet application layer."
+  },
+  "JPath 表达式": {
+    "enName": "JPath expression",
+    "enDescription": "Extract information from a JSON object with a JPath query."
+  },
+  "JSON 美化": {
+    "enName": "JSON Beautify",
+    "enDescription": "Indents and pretty prints JavaScript Object Notation (JSON) code.<br><br>Tags: json viewer, prettify, syntax highlighting"
+  },
+  "JSON 压缩": {
+    "enName": "JSON Minify",
+    "enDescription": "Compresses JavaScript Object Notation (JSON) code."
+  },
+  "JSON 转 CSV": {
+    "enName": "JSON to CSV",
+    "enDescription": "Converts JSON data to a CSV based on the definition in RFC 4180."
+  },
+  "JSON 转 YAML": {
+    "enName": "JSON to YAML",
+    "enDescription": "Format a JSON object into YAML"
+  },
+  "JWK 转 PEM": {
+    "enName": "JWK to PEM",
+    "enDescription": "Converts Keys in JSON Web Key format to PEM format (PKCS#8)."
+  },
+  "JWT 解码": {
+    "enName": "JWT Decode",
+    "enDescription": "Decodes a JSON Web Token <b>without</b> checking whether the provided secret / private key is valid. Use 'JWT Verify' to check if the signature is valid as well."
+  },
+  "JWT 签名": {
+    "enName": "JWT Sign",
+    "enDescription": "Signs a JSON object as a JSON Web Token using a provided secret / private key.<br><br>The key should be either the secret for HMAC algorithms or the PEM-encoded private key for RSA and ECDSA."
+  },
+  "JWT 验证": {
+    "enName": "JWT Verify",
+    "enDescription": "Verifies that a JSON Web Token is valid and has been signed with the provided secret / private key.<br><br>The key should be either the secret for HMAC algorithms or the PEM-encoded public key for RSA and ECDSA."
+  },
+  "JavaScript 美化": {
+    "enName": "JavaScript Beautify",
+    "enDescription": "Parses and pretty prints valid JavaScript code. Also works with JavaScript Object Notation (JSON)."
+  },
+  "JavaScript 压缩": {
+    "enName": "JavaScript Minify",
+    "enDescription": "Compresses JavaScript code."
+  },
+  "JavaScript 解析器": {
+    "enName": "JavaScript Parser",
+    "enDescription": "Returns an Abstract Syntax Tree for valid JavaScript code."
+  },
+  "Jq": {
+    "enName": "Jq",
+    "enDescription": "jq is a lightweight and flexible command-line JSON processor."
+  },
+  "Jsonata 查询": {
+    "enName": "Jsonata Query",
+    "enDescription": "Query and transform JSON data with a jsonata query."
+  },
+  "跳转": {
+    "enName": "Jump",
+    "enDescription": "Jump forwards or backwards to the specified Label"
+  },
+  "Keccak": {
+    "enName": "Keccak",
+    "enDescription": "The Keccak hash algorithm was designed by Guido Bertoni, Joan Daemen, Michaël Peeters, and Gilles Van Assche, building upon RadioGatún. It was selected as the winner of the SHA-3 design competition.<br><br>This version of the algorithm is Keccak[c=2d] and differs from the SHA-3 specification."
+  },
+  "LM 哈希": {
+    "enName": "LM Hash",
+    "enDescription": "An LM Hash, or LAN Manager Hash, is a deprecated way of storing passwords on old Microsoft operating systems. It is particularly weak and can be cracked in seconds on modern hardware using rainbow tables."
+  },
+  "LS47 解密": {
+    "enName": "LS47 Decrypt",
+    "enDescription": "This is a slight improvement of the ElsieFour cipher as described by Alan Kaminsky. We use 7x7 characters instead of original (barely fitting) 6x6, to be able to encrypt some structured information. We also describe a simple key-expansion algorithm, because remembering passwords is popular. Similar security considerations as with ElsieFour hold.<br>The LS47 alphabet consists of following characters: <code>_abcdefghijklmnopqrstuvwxyz.0123456789,-+*/:?!'()</code><br>An LS47 key is a permutation of the alphabet that is then represented in a 7x7 grid used for the encryption or decryption."
+  },
+  "LS47 加密": {
+    "enName": "LS47 Encrypt",
+    "enDescription": "This is a slight improvement of the ElsieFour cipher as described by Alan Kaminsky. We use 7x7 characters instead of original (barely fitting) 6x6, to be able to encrypt some structured information. We also describe a simple key-expansion algorithm, because remembering passwords is popular. Similar security considerations as with ElsieFour hold.<br>The LS47 alphabet consists of following characters: <code>_abcdefghijklmnopqrstuvwxyz.0123456789,-+*/:?!'()</code><br>A LS47 key is a permutation of the alphabet that is then represented in a 7x7 grid used for the encryption or decryption."
+  },
+  "LZ4 压缩": {
+    "enName": "LZ4 Compress",
+    "enDescription": "LZ4 is a lossless data compression algorithm that is focused on compression and decompression speed. It belongs to the LZ77 family of byte-oriented compression schemes."
+  },
+  "LZ4 解压": {
+    "enName": "LZ4 Decompress",
+    "enDescription": "LZ4 is a lossless data compression algorithm that is focused on compression and decompression speed. It belongs to the LZ77 family of byte-oriented compression schemes."
+  },
+  "LZMA 压缩": {
+    "enName": "LZMA Compress",
+    "enDescription": "Compresses data using the Lempel–Ziv–Markov chain algorithm. Compression mode determines the speed and effectiveness of the compression: 1 is fastest and less effective, 9 is slowest and most effective"
+  },
+  "LZMA 解压": {
+    "enName": "LZMA Decompress",
+    "enDescription": "Decompresses data using the Lempel-Ziv-Markov chain Algorithm."
+  },
+  "LZNT1 解压": {
+    "enName": "LZNT1 Decompress",
+    "enDescription": "Decompresses data using the LZNT1 algorithm.<br><br>Similar to the Windows API <code>RtlDecompressBuffer</code>."
+  },
+  "LZString 压缩": {
+    "enName": "LZString Compress",
+    "enDescription": "Compress the input with lz-string."
+  },
+  "LZString 解压": {
+    "enName": "LZString Decompress",
+    "enDescription": "Decompresses data that was compressed with lz-string."
+  },
+  "标签": {
+    "enName": "Label",
+    "enDescription": "Provides a location for conditional and fixed jumps to redirect execution to."
+  },
+  "Levenshtein 距离": {
+    "enName": "Levenshtein Distance",
+    "enDescription": "Levenshtein Distance (also known as Edit Distance) is a string metric to measure a difference between two strings that counts operations (insertions, deletions, and substitutions) on single character that are required to change one string to another."
+  },
+  "Lorenz": {
+    "enName": "Lorenz",
+    "enDescription": "The Lorenz SZ40/42 cipher attachment was a WW2 German rotor cipher machine with twelve rotors which attached in-line between remote teleprinters.<br><br>It used the Vernam cipher with two groups of five rotors (named the psi(ψ) wheels and chi(χ) wheels at Bletchley Park) to create two pseudorandom streams of five bits, encoded in ITA2, which were XOR added to the plaintext. Two other rotors, dubbed the mu(μ) or motor wheels, could hold up the stepping of the psi wheels meaning they stepped intermittently.<br><br>Each rotor has a different number of cams/lugs around their circumference which could be set active or inactive changing the key stream.<br><br>Three models of the Lorenz are emulated, SZ40, SZ42a and SZ42b and three example wheel patterns (the lug settings) are included (KH, ZMUG & BREAM) with the option to set a custom set using the letter 'x' for active or '.' for an inactive lug.<br><br>The input can either be plaintext or ITA2 when sending and ITA2 when receiving.<br><br>To learn more, Virtual Lorenz, an online, browser based simulation of the Lorenz SZ40/42 is available at <a href='https://lorenz.virtualcolossus.co.uk' target='_blank'>lorenz.virtualcolossus.co.uk</a>.<br><br>A more detailed description of this operation can be found <a href='https://github.com/gchq/CyberChef/wiki/Lorenz-SZ' target='_blank'>here</a>."
+  },
+  "Luhn 校验和": {
+    "enName": "Luhn Checksum",
+    "enDescription": "The Luhn mod N algorithm using the english alphabet. The Luhn mod N algorithm is an extension to the Luhn algorithm (also known as mod 10 algorithm) that allows it to work with sequences of values in any even-numbered base. This can be useful when a check digit is required to validate an identification string composed of letters, a combination of letters and digits or any arbitrary set of N characters where N is divisible by 2."
+  },
+  "MD2": {
+    "enName": "MD2",
+    "enDescription": "The MD2 (Message-Digest 2) algorithm is a cryptographic hash function developed by Ronald Rivest in 1989. The algorithm is optimized for 8-bit computers.<br><br>Although MD2 is no longer considered secure, even as of 2014, it remains in use in public key infrastructures as part of certificates generated with MD2 and RSA. The message digest algorithm consists, by default, of 18 rounds."
+  },
+  "MD4": {
+    "enName": "MD4",
+    "enDescription": "The MD4 (Message-Digest 4) algorithm is a cryptographic hash function developed by Ronald Rivest in 1990. The digest length is 128 bits. The algorithm has influenced later designs, such as the MD5, SHA-1 and RIPEMD algorithms.<br><br>The security of MD4 has been severely compromised."
+  },
+  "MD5": {
+    "enName": "MD5",
+    "enDescription": "MD5 (Message-Digest 5) is a widely used hash function. It has been used in a variety of security applications and is also commonly used to check the integrity of files.<br><br>However, MD5 is not collision resistant and it isn't suitable for applications like SSL/TLS certificates or digital signatures that rely on this property."
+  },
+  "MD6": {
+    "enName": "MD6",
+    "enDescription": "The MD6 (Message-Digest 6) algorithm is a cryptographic hash function. It uses a Merkle tree-like structure to allow for immense parallel computation of hashes for very long inputs."
+  },
+  "MIME 解码": {
+    "enName": "MIME Decoding",
+    "enDescription": "Enables the decoding of MIME message header extensions for non-ASCII text"
+  },
+  "MOD": {
+    "enName": "MOD",
+    "enDescription": "Computes the modulo of each number in a list with a given modulus value. Numbers are extracted from the input based on the delimiter, and non-numeric values are ignored.<br><br>e.g. <code>15 4 7</code> with modulus <code>3</code> becomes <code>0 1 1</code>"
+  },
+  "Magic 检测": {
+    "enName": "Magic",
+    "enDescription": "The Magic operation attempts to detect various properties of the input data and suggests which operations could help to make more sense of it.<br><br><b>Options</b><br><u>Depth:</u> If an operation appears to match the data, it will be run and the result will be analysed further. This argument controls the maximum number of levels of recursion.<br><br><u>Intensive mode:</u> When this is turned on, various operations like XOR, bit rotates, and character encodings are brute-forced to attempt to detect valid data underneath. To improve performance, only the first 100 bytes of the data is brute-forced.<br><br><u>Extensive language support:</u> At each stage, the relative byte frequencies of the data will be compared to average frequencies for a number of languages. The default set consists of ~40 of the most commonly used languages on the Internet. The extensive list consists of 284 languages and can result in many languages matching the data if their byte frequencies are similar.<br><br>Optionally enter a regular expression to match a string you expect to find to filter results (crib)."
+  },
+  "平均值": {
+    "enName": "Mean",
+    "enDescription": "Computes the mean (average) of a number list. If an item in the string is not a number it is excluded from the list.<br><br>e.g. <code>0x0a 8 .5 .5</code> becomes <code>4.75</code>"
+  },
+  "中位数": {
+    "enName": "Median",
+    "enDescription": "Computes the median of a number list. If an item in the string is not a number it is excluded from the list.<br><br>e.g. <code>0x0a 8 1 .5</code> becomes <code>4.5</code>"
+  },
+  "合并": {
+    "enName": "Merge",
+    "enDescription": "Consolidate all branches back into a single trunk. The opposite of Fork. Unticking the Merge All checkbox will only consolidate all branches up to the nearest Fork/Subsection."
+  },
+  "Microsoft Script 解码器": {
+    "enName": "Microsoft Script Decoder",
+    "enDescription": "Decodes Microsoft Encoded Script files that have been encoded with Microsoft's custom encoding. These are often VBS (Visual Basic Script) files that are encoded and renamed with a '.vbe' extention or JS (JScript) files renamed with a '.jse' extention.<br><br><b>Sample</b><br><br>Encoded:<br><code>#@~^RQAAAA==-mD~sX|:/TP{~J:+dYbxL~@!F@*@!+@*@!&amp;@*eEI@#@&amp;@#@&amp;.jm.raY 214Wv:zms/obI0xEAAA==^#~@</code><br><br>Decoded:<br><code>var my_msg = &#34;Testing <1><2><3>!&#34;;\n\nVScript.Echo(my_msg);</code>"
+  },
+  "模幂运算": {
+    "enName": "Modular Exponentiation",
+    "enDescription": "Performs modular exponentiation, as used in Diffie-Hellman and RSA.<br><br>"
+  },
+  "模逆": {
+    "enName": "Modular Inverse",
+    "enDescription": "Computes the modular multiplicative inverse of <i>a</i> modulo <i>m</i>.<br><br>"
+  },
+  "多重 Bombe": {
+    "enName": "Multiple Bombe",
+    "enDescription": "Emulation of the Bombe machine used to attack Enigma. This version carries out multiple Bombe runs to handle unknown rotor configurations.<br><br>You should test your menu on the single Bombe operation before running it here. See the description of the Bombe operation for instructions on choosing a crib.<br><br>More detailed descriptions of the Enigma, Typex and Bombe operations <a href='https://github.com/gchq/CyberChef/wiki/Enigma,-the-Bombe,-and-Typex'>can be found here</a>."
+  },
+  "乘法": {
+    "enName": "Multiply",
+    "enDescription": "Multiplies a list of numbers. If an item in the string is not a number it is excluded from the list.<br><br>e.g. <code>0x0a 8 .5</code> becomes <code>40</code>"
+  },
+  "MurmurHash3": {
+    "enName": "MurmurHash3",
+    "enDescription": "Generates a MurmurHash v3 for a string input and an optional seed input"
+  },
+  "NOT": {
+    "enName": "NOT",
+    "enDescription": "Returns the inverse of each byte."
+  },
+  "NT 哈希": {
+    "enName": "NT Hash",
+    "enDescription": "An NT Hash, sometimes referred to as an NTLM hash, is a method of storing passwords on Windows systems. It works by running MD4 on UTF-16LE encoded input. NTLM hashes are considered weak because they can be brute-forced very easily with modern hardware."
+  },
+  "规范化图像": {
+    "enName": "Normalise Image",
+    "enDescription": "Normalise the image colours."
+  },
+  "规范化 Unicode": {
+    "enName": "Normalise Unicode",
+    "enDescription": "Transform Unicode characters to one of the Normalisation Forms"
+  },
+  "Numberwang": {
+    "enName": "Numberwang",
+    "enDescription": "Based on the popular gameshow by Mitchell and Webb."
+  },
+  "OR": {
+    "enName": "OR",
+    "enDescription": "OR the input with the given key.<br>e.g. <code>fe023da5</code>"
+  },
+  "对象标识符转 Hex": {
+    "enName": "Object Identifier to Hex",
+    "enDescription": "Converts an object identifier (OID) into a hexadecimal string."
+  },
+  "偏移检查": {
+    "enName": "Offset checker",
+    "enDescription": "Compares multiple inputs (separated by the specified delimiter) and highlights matching characters which appear at the same position in all samples."
+  },
+  "光学字符识别": {
+    "enName": "Optical Character Recognition",
+    "enDescription": "Optical character recognition or optical character reader (OCR) is the mechanical or electronic conversion of images of typed, handwritten or printed text into machine-encoded text.<br><br>Supported image formats: png, jpg, bmp, pbm."
+  },
+  "PEM 转 Hex": {
+    "enName": "PEM to Hex",
+    "enDescription": "Converts PEM (Privacy Enhanced Mail) format to a hexadecimal DER (Distinguished Encoding Rules) string."
+  },
+  "PEM 转 JWK": {
+    "enName": "PEM to JWK",
+    "enDescription": "Converts Keys in PEM format to a JSON Web Key format."
+  },
+  "PGP 解密": {
+    "enName": "PGP Decrypt",
+    "enDescription": "Input: the ASCII-armoured PGP message you want to decrypt.\n<br><br>\nArguments: the ASCII-armoured PGP private key of the recipient, \n(and the private key password if necessary).\n<br><br>\nPretty Good Privacy is an encryption standard (OpenPGP) used for encrypting, decrypting, and signing messages.\n<br><br>\nThis function uses the Keybase implementation of PGP."
+  },
+  "PGP 解密并验证": {
+    "enName": "PGP Decrypt and Verify",
+    "enDescription": "Input: the ASCII-armoured encrypted PGP message you want to verify.\n<br><br>\nArguments: the ASCII-armoured PGP public key of the signer, \nthe ASCII-armoured private key of the recipient (and the private key password if necessary).\n<br><br>\nThis operation uses PGP to decrypt and verify an encrypted digital signature.\n<br><br>\nPretty Good Privacy is an encryption standard (OpenPGP) used for encrypting, decrypting, and signing messages.\n<br><br>\nThis function uses the Keybase implementation of PGP."
+  },
+  "PGP 加密": {
+    "enName": "PGP Encrypt",
+    "enDescription": "Input: the message you want to encrypt.\n<br><br>\nArguments: the ASCII-armoured PGP public key of the recipient.\n<br><br>\nPretty Good Privacy is an encryption standard (OpenPGP) used for encrypting, decrypting, and signing messages.\n<br><br>\nThis function uses the Keybase implementation of PGP."
+  },
+  "PGP 加密并签名": {
+    "enName": "PGP Encrypt and Sign",
+    "enDescription": "Input: the cleartext you want to sign.\n<br><br>\nArguments: the ASCII-armoured private key of the signer (plus the private key password if necessary)\nand the ASCII-armoured PGP public key of the recipient.\n<br><br>\nThis operation uses PGP to produce an encrypted digital signature.\n<br><br>\nPretty Good Privacy is an encryption standard (OpenPGP) used for encrypting, decrypting, and signing messages.\n<br><br>\nThis function uses the Keybase implementation of PGP."
+  },
+  "PGP 签名": {
+    "enName": "PGP Sign",
+    "enDescription": "Input: the message you want to sign\n<br><br>\nArguments: the ASCII-armoured PGP private key of the sender.\n<br><br>\nPretty Good Privacy is an encryption standard (OpenPGP) used for encrypting, decrypting, and signing messages.\n<br><br>\nThis function uses the Keybase implementation of PGP."
+  },
+  "PGP 验证": {
+    "enName": "PGP Verify",
+    "enDescription": "Input: the ASCII-armoured encrypted PGP message you want to verify.\n<br><br>\nArgument: the ASCII-armoured PGP public key of the signer\n<br><br>\nThis operation uses PGP to decrypt a clearsigned message.\n<br><br>\nPretty Good Privacy is an encryption standard (OpenPGP) used for encrypting, decrypting, and signing messages.\n<br><br>\nThis function uses the Keybase implementation of PGP."
+  },
+  "PHP 反序列化": {
+    "enName": "PHP Deserialize",
+    "enDescription": "Deserializes PHP serialized data, outputting keyed arrays as JSON.<br><br>This function does not support <code>object</code> tags.<br><br>Example:<br><code>a:2:{s:1:&quot;a&quot;;i:10;i:0;a:1:{s:2:&quot;ab&quot;;b:1;}}</code><br>becomes<br><code>{&quot;a&quot;: 10,0: {&quot;ab&quot;: true}}</code><br><br><u>Output valid JSON:</u> JSON doesn't support integers as keys, whereas PHP serialization does. Enabling this will cast these integers to strings. This will also escape backslashes."
+  },
+  "PHP 序列化": {
+    "enName": "PHP Serialize",
+    "enDescription": "Performs PHP serialization on JSON data.<br><br>This function does not support <code>object</code> tags.<br><br>Since PHP doesn't distinguish dicts and arrays, this operation is not always symmetric to <code>PHP Deserialize</code>.<br><br>Example:<br><code>[5,&quot;abc&quot;,true]</code><br>becomes<br><code>a:3:{i:0;i:5;i:1;s:3:&quot;abc&quot;;i:2;b:1;}<code>"
+  },
+  "P-list 查看器": {
+    "enName": "P-list Viewer",
+    "enDescription": "In the macOS, iOS, NeXTSTEP, and GNUstep programming frameworks, property list files are files that store serialized objects. Property list files use the filename extension .plist, and thus are often referred to as p-list files.<br><br>This operation displays plist files in a human readable format."
+  },
+  "PRESENT 解密": {
+    "enName": "PRESENT Decrypt",
+    "enDescription": "PRESENT is an ultra-lightweight block cipher designed for constrained environments such as RFID tags and sensor networks. It operates on 64-bit blocks and supports 80-bit or 128-bit keys with 31 rounds. Standardised in ISO/IEC 29192-2:2019.<br><br>When using CBC mode, the PKCS#7 padding scheme is used."
+  },
+  "PRESENT 加密": {
+    "enName": "PRESENT Encrypt",
+    "enDescription": "PRESENT is an ultra-lightweight block cipher designed for constrained environments such as RFID tags and sensor networks. It operates on 64-bit blocks and supports 80-bit or 128-bit keys with 31 rounds. Standardised in ISO/IEC 29192-2:2019.<br><br>When using CBC mode, the PKCS#7 padding scheme is used."
+  },
+  "填充行": {
+    "enName": "Pad lines",
+    "enDescription": "Add the specified number of the specified character to the beginning or end of each line"
+  },
+  "奇偶校验位": {
+    "enName": "Parity Bit",
+    "enDescription": "A parity bit, or check bit, is the simplest form of error detection. It is a bit which is added to a string of bits and represents if the number of 1's in the binary string is an even number or odd number.<br><br>If a delimiter is specified, the parity bit calculation will be performed on each 'block' of the input data, where the blocks are created by slicing the input at each occurrence of the delimiter character"
+  },
+  "解析 ASN.1 十六进制字符串": {
+    "enName": "Parse ASN.1 hex string",
+    "enDescription": "Abstract Syntax Notation One (ASN.1) is a standard and notation that describes rules and structures for representing, encoding, transmitting, and decoding data in telecommunications and computer networking.<br><br>This operation parses arbitrary ASN.1 data (encoded as an hex string: use the 'To Hex' operation if necessary) and presents the resulting tree."
+  },
+  "解析 CSR": {
+    "enName": "Parse CSR",
+    "enDescription": "Parse Certificate Signing Request (CSR) for an X.509 certificate"
+  },
+  "解析颜色代码": {
+    "enName": "Parse colour code",
+    "enDescription": "Converts a colour code in a standard format to other standard formats and displays the colour itself.<br><br><strong>Example inputs</strong><ul><li><code>#d9edf7</code></li><li><code>rgba(217,237,247,1)</code></li><li><code>hsla(200,65%,91%,1)</code></li><li><code>cmyk(0.12, 0.04, 0.00, 0.03)</code></li></ul>"
+  },
+  "解析 DateTime": {
+    "enName": "Parse DateTime",
+    "enDescription": "Parses a DateTime string in your specified format and displays it in whichever timezone you choose with the following information:<ul><li>Date</li><li>Time</li><li>Period (AM/PM)</li><li>Timezone</li><li>UTC offset</li><li>Daylight Saving Time</li><li>Leap year</li><li>Days in this month</li><li>Day of year</li><li>Week number</li><li>Quarter</li></ul>Run with no input to see format string examples if required."
+  },
+  "解析 Ethernet 帧": {
+    "enName": "Parse Ethernet frame",
+    "enDescription": "Parses an Ethernet frame and either shows the deduced values (Source and destination MAC, VLANs) or returns the packet data.<br /><br />Good for use in conjunction with the Parse IPv4, and Parse TCP/UDP recipes."
+  },
+  "解析 IP 范围": {
+    "enName": "Parse IP range",
+    "enDescription": "Given a CIDR range (e.g. <code>10.0.0.0/24</code>), hyphenated range (e.g. <code>10.0.0.0 - 10.0.1.0</code>), or a list of IPs and/or CIDR ranges (separated by a new line), this operation provides network information and enumerates all IP addresses in the range.<br><br>IPv6 is supported but will not be enumerated."
+  },
+  "解析 IPv4 头部": {
+    "enName": "Parse IPv4 header",
+    "enDescription": "Given an IPv4 header, this operations parses and displays each field in an easily readable format."
+  },
+  "解析 IPv6 地址": {
+    "enName": "Parse IPv6 address",
+    "enDescription": "Displays the longhand and shorthand versions of a valid IPv6 address.<br><br>Recognises all reserved ranges and parses encapsulated or tunnelled addresses including Teredo and 6to4."
+  },
+  "解析 ObjectID 时间戳": {
+    "enName": "Parse ObjectID timestamp",
+    "enDescription": "Parse timestamp from MongoDB/BSON ObjectID hex string."
+  },
+  "解析 PGP 密钥": {
+    "enName": "Parse PGP Key",
+    "enDescription": "Parse the contents of a PGP (v4 or v6) Key"
+  },
+  "解析 QR Code": {
+    "enName": "Parse QR Code",
+    "enDescription": "Reads an image file and attempts to detect and read a Quick Response (QR) code from the image.<br><br><u>Normalise Image</u><br>Attempts to normalise the image before parsing it to improve detection of a QR code."
+  },
+  "解析 SSH 主机密钥": {
+    "enName": "Parse SSH Host Key",
+    "enDescription": "Parses a SSH host key and extracts fields from it.<br>The key type can be:<ul><li>ssh-rsa</li><li>ssh-dss</li><li>ecdsa-sha2</li><li>ssh-ed25519</li></ul>The key format can be either Hex or Base64."
+  },
+  "解析 TCP": {
+    "enName": "Parse TCP",
+    "enDescription": "Parses a TCP header and payload (if present)."
+  },
+  "解析 TLS 记录": {
+    "enName": "Parse TLS record",
+    "enDescription": "Parses one or more TLS records"
+  },
+  "解析 TLV": {
+    "enName": "Parse TLV",
+    "enDescription": "Converts a Type-Length-Value (TLV) encoded string into a JSON object.  Can optionally include a <code>Key</code> / <code>Type</code> entry. <br><br>Tags: Key-Length-Value, KLV, Length-Value, LV"
+  },
+  "解析 UDP": {
+    "enName": "Parse UDP",
+    "enDescription": "Parses a UDP header and payload (if present)."
+  },
+  "解析 UNIX 文件权限": {
+    "enName": "Parse UNIX file permissions",
+    "enDescription": "Given a UNIX/Linux file permission string in octal or textual format, this operation explains which permissions are granted to which user groups.<br><br>Input should be in either octal (e.g. <code>755</code>) or textual (e.g. <code>drwxr-xr-x</code>) format."
+  },
+  "解析 URI": {
+    "enName": "Parse URI",
+    "enDescription": "Pretty prints complicated Uniform Resource Identifier (URI) strings for ease of reading. Particularly useful for Uniform Resource Locators (URLs) with a lot of arguments."
+  },
+  "解析用户代理": {
+    "enName": "Parse User Agent",
+    "enDescription": "Attempts to identify and categorise information contained in a user-agent string."
+  },
+  "解析 X.509 CRL": {
+    "enName": "Parse X.509 CRL",
+    "enDescription": "Parse Certificate Revocation List (CRL)"
+  },
+  "解析 X.509 证书": {
+    "enName": "Parse X.509 certificate",
+    "enDescription": "X.509 is an ITU-T standard for a public key infrastructure (PKI) and Privilege Management Infrastructure (PMI). It is commonly involved with SSL/TLS security.<br><br>This operation displays the contents of a certificate in a human readable format, similar to the openssl command line tool.<br><br>Tags: X509, server hello, handshake"
+  },
+  "解析 X.509 证书捆绑包": {
+    "enName": "Parse X.509 certificate bundles",
+    "enDescription": "Parses a PEM file containing one or more X.509 certificates and displays the validity, issuer, subject, extensions and other details of each certificate in order."
+  },
+  "播放媒体": {
+    "enName": "Play Media",
+    "enDescription": "Plays the input as audio or video depending on the type.<br><br>Tags: sound, movie, mp3, mp4, mov, webm, wav, ogg"
+  },
+  "幂集": {
+    "enName": "Power Set",
+    "enDescription": "Calculates all the subsets of a set."
+  },
+  "Protobuf 解码": {
+    "enName": "Protobuf Decode",
+    "enDescription": "Decodes any Protobuf encoded data to a JSON representation of the data using the field number as the field key.<br><br>If a .proto schema is defined, the encoded data will be decoded with reference to the schema. Only one message instance will be decoded. <br><br><u>Show Unknown Fields</u><br>When a schema is used, this option shows fields that are present in the input data but not defined in the schema.<br><br><u>Show Types</u><br>Show the type of a field next to its name. For undefined fields, the wiretype and example types are shown instead."
+  },
+  "Protobuf 编码": {
+    "enName": "Protobuf Encode",
+    "enDescription": "Encodes a valid JSON object into a protobuf byte array using the input .proto schema."
+  },
+  "伪随机整数生成器": {
+    "enName": "Pseudo-Random Integer Generator",
+    "enDescription": "A cryptographically-secure pseudo-random number generator (PRNG).<br><br>Generates random integers within a specified range using the browser's built-in <code>crypto.getRandomValues()</code> method if available.<br><br>The supported range of integers is from <code>-(2^53 - 1)</code> to <code>(2^53 - 1)</code>."
+  },
+  "伪随机数生成器": {
+    "enName": "Pseudo-Random Number Generator",
+    "enDescription": "A cryptographically-secure pseudo-random number generator (PRNG).<br><br>This operation uses the browser's built-in <code>crypto.getRandomValues()</code> method if available. If this cannot be found, it falls back to a Fortuna-based PRNG algorithm."
+  },
+  "从证书提取公钥": {
+    "enName": "Public Key from Certificate",
+    "enDescription": "Extracts the Public Key from a Certificate."
+  },
+  "从私钥提取公钥": {
+    "enName": "Public Key from Private Key",
+    "enDescription": "Extracts the Public Key from a Private Key."
+  },
+  "RAKE": {
+    "enName": "RAKE",
+    "enDescription": "Rapid Keyword Extraction (RAKE)\n<br><br>\nRAKE is a domain-independent keyword extraction algorithm in Natural Language Processing.\n<br><br>\nThe list of stop words are from the NLTK python package"
+  },
+  "RC2 解密": {
+    "enName": "RC2 Decrypt",
+    "enDescription": "RC2 (also known as ARC2) is a symmetric-key block cipher designed by Ron Rivest in 1987. 'RC' stands for 'Rivest Cipher'.<br><br><b>Key:</b> RC2 uses a variable size key.<br><br><b>IV:</b> To run the cipher in CBC mode, the Initialization Vector should be 8 bytes long. If the IV is left blank, the cipher will run in ECB mode.<br><br><b>Padding:</b> In both CBC and ECB mode, PKCS#7 padding will be used."
+  },
+  "RC2 加密": {
+    "enName": "RC2 Encrypt",
+    "enDescription": "RC2 (also known as ARC2) is a symmetric-key block cipher designed by Ron Rivest in 1987. 'RC' stands for 'Rivest Cipher'.<br><br><b>Key:</b> RC2 uses a variable size key.<br><br>You can generate a password-based key using one of the KDF operations.<br><br><b>IV:</b> To run the cipher in CBC mode, the Initialization Vector should be 8 bytes long. If the IV is left blank, the cipher will run in ECB mode.<br><br><b>Padding:</b> In both CBC and ECB mode, PKCS#7 padding will be used."
+  },
+  "RC4": {
+    "enName": "RC4",
+    "enDescription": "RC4 (also known as ARC4) is a widely-used stream cipher designed by Ron Rivest. It is used in popular protocols such as SSL and WEP. Although remarkable for its simplicity and speed, the algorithm's history doesn't inspire confidence in its security."
+  },
+  "RC4 Drop": {
+    "enName": "RC4 Drop",
+    "enDescription": "It was discovered that the first few bytes of the RC4 keystream are strongly non-random and leak information about the key. We can defend against this attack by discarding the initial portion of the keystream. This modified algorithm is traditionally called RC4-drop."
+  },
+  "RC6 解密": {
+    "enName": "RC6 Decrypt",
+    "enDescription": "RC6 is a symmetric key block cipher derived from RC5. It was designed by Ron Rivest, Matt Robshaw, Ray Sidney, and Yiqun Lisa Yin to meet the requirements of the AES competition, and was one of the five finalists.<br><br>RC6 is parameterised as RC6-w/r/b where w is word size in bits (any multiple of 8 from 8-256), r is the number of rounds (1-255), and b is the key length in bytes. The standard AES submission uses w=32, r=20. Common word sizes: 8, 16, 32 (standard), 64, 128.<br><br><b>IV:</b> The Initialisation Vector should be 4*w/8 bytes (e.g. 16 bytes for w=32). If not entered, it will default to null bytes.<br><br><b>Padding:</b> In CBC and ECB mode, the PKCS#7 padding scheme is used."
+  },
+  "RC6 加密": {
+    "enName": "RC6 Encrypt",
+    "enDescription": "RC6 is a symmetric key block cipher derived from RC5. It was designed by Ron Rivest, Matt Robshaw, Ray Sidney, and Yiqun Lisa Yin to meet the requirements of the AES competition, and was one of the five finalists.<br><br>RC6 is parameterised as RC6-w/r/b where w is word size in bits (any multiple of 8 from 8-256), r is the number of rounds (1-255), and b is the key length in bytes. The standard AES submission uses w=32, r=20. Common word sizes: 8, 16, 32 (standard), 64, 128.<br><br><b>IV:</b> The Initialisation Vector should be 4*w/8 bytes (e.g. 16 bytes for w=32). If not entered, it will default to null bytes.<br><br><b>Padding:</b> In CBC and ECB mode, the PKCS#7 padding scheme is used."
+  },
+  "RIPEMD": {
+    "enName": "RIPEMD",
+    "enDescription": "RIPEMD (RACE Integrity Primitives Evaluation Message Digest) is a family of cryptographic hash functions developed in Leuven, Belgium, by Hans Dobbertin, Antoon Bosselaers and Bart Preneel at the COSIC research group at the Katholieke Universiteit Leuven, and first published in 1996.<br><br>RIPEMD was based upon the design principles used in MD4, and is similar in performance to the more popular SHA-1.<br><br>"
+  },
+  "ROR13": {
+    "enName": "ROR13",
+    "enDescription": "Computes a ROR13 hash used in API hashing techniques."
+  },
+  "ROT13": {
+    "enName": "ROT13",
+    "enDescription": "A simple caesar substitution cipher which rotates alphabet characters by the specified amount (default 13)."
+  },
+  "ROT13 暴力破解": {
+    "enName": "ROT13 Brute Force",
+    "enDescription": "Try all meaningful amounts for ROT13.<br><br>Optionally you can enter your known plaintext (crib) to filter the result."
+  },
+  "ROT47": {
+    "enName": "ROT47",
+    "enDescription": "A slightly more complex variation of a caesar cipher, which includes ASCII characters from 33 '!' to 126 '~'. Default rotation: 47."
+  },
+  "ROT47 暴力破解": {
+    "enName": "ROT47 Brute Force",
+    "enDescription": "Try all meaningful amounts for ROT47.<br><br>Optionally you can enter your known plaintext (crib) to filter the result."
+  },
+  "ROT8000": {
+    "enName": "ROT8000",
+    "enDescription": "The simple Caesar-cypher encryption that replaces each Unicode character with the one 0x8000 places forward or back along the alphabet."
+  },
+  "RSA 解密": {
+    "enName": "RSA Decrypt",
+    "enDescription": "Decrypt an RSA encrypted message with a PEM encoded private key."
+  },
+  "RSA 加密": {
+    "enName": "RSA Encrypt",
+    "enDescription": "Encrypt a message with a PEM encoded RSA public key."
+  },
+  "RSA 签名": {
+    "enName": "RSA Sign",
+    "enDescription": "Sign a plaintext message with a PEM encoded RSA key."
+  },
+  "RSA 验证": {
+    "enName": "RSA Verify",
+    "enDescription": "Verify a message against a signature and a public PEM encoded RSA key."
+  },
+  "Rabbit": {
+    "enName": "Rabbit",
+    "enDescription": "Rabbit is a high-speed stream cipher introduced in 2003 and defined in RFC 4503.<br><br>The cipher uses a 128-bit key and an optional 64-bit initialization vector (IV).<br><br>big-endian: based on RFC4503 and RFC3447<br>little-endian: compatible with Crypto++"
+  },
+  "栅栏密码 解码": {
+    "enName": "Rail Fence Cipher Decode",
+    "enDescription": "Decodes Strings that were created using the Rail fence Cipher provided a key and an offset"
+  },
+  "栅栏密码 编码": {
+    "enName": "Rail Fence Cipher Encode",
+    "enDescription": "Encodes Strings using the Rail fence Cipher provided a key and an offset"
+  },
+  "随机调色板": {
+    "enName": "Randomize Colour Palette",
+    "enDescription": "Randomizes each colour in an image's colour palette. This can often reveal text or symbols that were previously a very similar colour to their surroundings, a technique sometimes used in Steganography."
+  },
+  "原始 Deflate 压缩": {
+    "enName": "Raw Deflate",
+    "enDescription": "Compresses data using the deflate algorithm with no headers."
+  },
+  "原始 Deflate 解压": {
+    "enName": "Raw Inflate",
+    "enDescription": "Decompresses data which has been compressed using the deflate algorithm with no headers."
+  },
+  "寄存器": {
+    "enName": "Register",
+    "enDescription": "Extract data from the input and store it in registers which can then be passed into subsequent operations as arguments. Regular expression capture groups are used to select the data to extract.<br><br>To use registers in arguments, refer to them using the notation <code>$Rn</code> where n is the register number, starting at 0.<br><br>For example:<br>Input: <code>Test</code><br>Extractor: <code>(.*)</code><br>Argument: <code>$R0</code> becomes <code>Test</code><br><br>Registers can be escaped in arguments using a backslash. e.g. <code>\\$R0</code> would become <code>$R0</code> rather than <code>Test</code>."
+  },
+  "正则表达式": {
+    "enName": "Regular expression",
+    "enDescription": "Define your own regular expression (regex) to search the input data with, optionally choosing from a list of pre-defined patterns.<br><br>Supports extended regex syntax including the 'dot matches all' flag, named capture groups, full unicode coverage (including <code>\\p{}</code> categories and scripts as well as astral codes) and recursive matching."
+  },
+  "移除 ANSI 转义码": {
+    "enName": "Remove ANSI Escape Codes",
+    "enDescription": "Removes ANSI Escape Codes."
+  },
+  "移除变音符号": {
+    "enName": "Remove Diacritics",
+    "enDescription": "Replaces accented characters with their latin character equivalent. Accented characters are made up of Unicode combining characters, so unicode text formatting such as strikethroughs and underlines will also be removed."
+  },
+  "移除 EXIF": {
+    "enName": "Remove EXIF",
+    "enDescription": "Removes EXIF data from a JPEG image.\n<br><br>\nEXIF data embedded in photos usually contains information about the image file itself as well as the device used to create it."
+  },
+  "移除行号": {
+    "enName": "Remove line numbers",
+    "enDescription": "Removes line numbers from the output if they can be trivially detected."
+  },
+  "移除空字节": {
+    "enName": "Remove null bytes",
+    "enDescription": "Removes all null bytes (<code>0x00</code>) from the input."
+  },
+  "移除空白字符": {
+    "enName": "Remove whitespace",
+    "enDescription": "Optionally removes all spaces, carriage returns, line feeds, tabs and form feeds from the input data.<br><br>This operation also supports the removal of full stops which are sometimes used to represent non-printable bytes in ASCII output."
+  },
+  "渲染图像": {
+    "enName": "Render Image",
+    "enDescription": "Displays the input as an image. Supports the following formats:<br><br><ul><li>jpg/jpeg</li><li>png</li><li>gif</li><li>webp</li><li>bmp</li><li>ico</li></ul>"
+  },
+  "渲染 Markdown": {
+    "enName": "Render Markdown",
+    "enDescription": "Renders input Markdown as HTML. HTML rendering is disabled to avoid XSS."
+  },
+  "渲染 PDF": {
+    "enName": "Render PDF",
+    "enDescription": "Displays the input as a PDF preview. Supports Raw and Base64 input formats."
+  },
+  "调整大小": {
+    "enName": "Resize Image",
+    "enDescription": "Resizes an image to the specified width and height values."
+  },
+  "返回": {
+    "enName": "Return",
+    "enDescription": "End execution of operations at this point in the recipe."
+  },
+  "反转": {
+    "enName": "Reverse",
+    "enDescription": "Reverses the input string."
+  },
+  "Rison 解码": {
+    "enName": "Rison Decode",
+    "enDescription": "Rison, a data serialization format optimized for compactness in URIs. Rison is a slight variation of JSON that looks vastly superior after URI encoding. Rison still expresses exactly the same set of data structures as JSON, so data can be translated back and forth without loss or guesswork."
+  },
+  "Rison 编码": {
+    "enName": "Rison Encode",
+    "enDescription": "Rison, a data serialization format optimized for compactness in URIs. Rison is a slight variation of JSON that looks vastly superior after URI encoding. Rison still expresses exactly the same set of data structures as JSON, so data can be translated back and forth without loss or guesswork."
+  },
+  "旋转图像": {
+    "enName": "Rotate Image",
+    "enDescription": "Rotates an image by the specified number of degrees."
+  },
+  "左旋转": {
+    "enName": "Rotate left",
+    "enDescription": "Rotates each byte to the left by the number of bits specified, optionally carrying the excess bits over to the next byte. Currently only supports 8-bit values."
+  },
+  "右旋转": {
+    "enName": "Rotate right",
+    "enDescription": "Rotates each byte to the right by the number of bits specified, optionally carrying the excess bits over to the next byte. Currently only supports 8-bit values."
+  },
+  "SHA0": {
+    "enName": "SHA0",
+    "enDescription": "SHA-0 is a retronym applied to the original version of the 160-bit hash function published in 1993 under the name 'SHA'. It was withdrawn shortly after publication due to an undisclosed 'significant flaw' and replaced by the slightly revised version SHA-1. The message digest algorithm consists, by default, of 80 rounds."
+  },
+  "SHA1": {
+    "enName": "SHA1",
+    "enDescription": "The SHA (Secure Hash Algorithm) hash functions were designed by the NSA. SHA-1 is the most established of the existing SHA hash functions and it is used in a variety of security applications and protocols.<br><br>However, SHA-1's collision resistance has been weakening as new attacks are discovered or improved. The message digest algorithm consists, by default, of 80 rounds."
+  },
+  "SHA2": {
+    "enName": "SHA2",
+    "enDescription": "The SHA-2 (Secure Hash Algorithm 2) hash functions were designed by the NSA. SHA-2 includes significant changes from its predecessor, SHA-1. The SHA-2 family consists of hash functions with digests (hash values) that are 224, 256, 384 or 512 bits: SHA224, SHA256, SHA384, SHA512.<br><br><ul><li>SHA-512 operates on 64-bit words.</li><li>SHA-256 operates on 32-bit words.</li><li>SHA-384 is largely identical to SHA-512 but is truncated to 384 bits.</li><li>SHA-224 is largely identical to SHA-256 but is truncated to 224 bits.</li><li>SHA-512/224 and SHA-512/256 are truncated versions of SHA-512, but the initial values are generated using the method described in Federal Information Processing Standards (FIPS) PUB 180-4.</li></ul> The message digest algorithm for SHA256 variants consists, by default, of 64 rounds, and for SHA512 variants, it is, by default, 160."
+  },
+  "SHA3": {
+    "enName": "SHA3",
+    "enDescription": "The SHA-3 (Secure Hash Algorithm 3) hash functions were released by NIST on August 5, 2015. Although part of the same series of standards, SHA-3 is internally quite different from the MD5-like structure of SHA-1 and SHA-2.<br><br>SHA-3 is a subset of the broader cryptographic primitive family Keccak designed by Guido Bertoni, Joan Daemen, Michaël Peeters, and Gilles Van Assche, building upon RadioGatún."
+  },
+  "SIGABA": {
+    "enName": "SIGABA",
+    "enDescription": "Encipher/decipher with the WW2 SIGABA machine. <br><br>SIGABA, otherwise known as ECM Mark II, was used by the United States for message encryption during WW2 up to the 1950s. It was developed in the 1930s by the US Army and Navy, and has up to this day never been broken. Consisting of 15 rotors: 5 cipher rotors and 10 rotors (5 control rotors and 5 index rotors) controlling the stepping of the cipher rotors, the rotor stepping for SIGABA is much more complex than other rotor machines of its time, such as Enigma. All example rotor wirings are random example sets.<br><br>To configure rotor wirings, for the cipher and control rotors enter a string of letters which map from A to Z, and for the index rotors enter a sequence of numbers which map from 0 to 9. Note that encryption is not the same as decryption, so first choose the desired mode. <br><br> Note: Whilst this has been tested against other software emulators, it has not been tested against hardware."
+  },
+  "SM2 解密": {
+    "enName": "SM2 Decrypt",
+    "enDescription": "Decrypts a message utilizing the SM2 standard"
+  },
+  "SM2 加密": {
+    "enName": "SM2 Encrypt",
+    "enDescription": "Encrypts a message utilizing the SM2 standard"
+  },
+  "SM3": {
+    "enName": "SM3",
+    "enDescription": "SM3 is a cryptographic hash function used in the Chinese National Standard. SM3 is mainly used in digital signatures, message authentication codes, and pseudorandom number generators. The message digest algorithm consists, by default, of 64 rounds and length of 256."
+  },
+  "SM4 解密": {
+    "enName": "SM4 Decrypt",
+    "enDescription": "SM4 is a 128-bit block cipher, currently established as a national standard (GB/T 32907-2016) of China."
+  },
+  "SM4 加密": {
+    "enName": "SM4 Encrypt",
+    "enDescription": "SM4 is a 128-bit block cipher, currently established as a national standard (GB/T 32907-2016) of China. Multiple block cipher modes are supported. When using CBC or ECB mode, the PKCS#7 padding scheme is used."
+  },
+  "SQL 美化": {
+    "enName": "SQL Beautify",
+    "enDescription": "Indents and prettifies Structured Query Language (SQL) code."
+  },
+  "SQL 压缩": {
+    "enName": "SQL Minify",
+    "enDescription": "Compresses Structured Query Language (SQL) code."
+  },
+  "SSDEEP": {
+    "enName": "SSDEEP",
+    "enDescription": "SSDEEP is a program for computing context triggered piecewise hashes (CTPH). Also called fuzzy hashes, CTPH can match inputs that have homologies. Such inputs have sequences of identical bytes in the same order, although bytes in between these sequences may be different in both content and length.<br><br>SSDEEP hashes are now widely used for simple identification purposes (e.g. the 'Basic Properties' section in VirusTotal). Although 'better' fuzzy hashes are available, SSDEEP is still one of the primary choices because of its speed and being a de facto standard.<br><br>This operation is fundamentally the same as the CTPH operation, however their outputs differ in format."
+  },
+  "SUB": {
+    "enName": "SUB",
+    "enDescription": "SUB the input with the given key (e.g. <code>fe023da5</code>), MOD 255"
+  },
+  "Salsa20": {
+    "enName": "Salsa20",
+    "enDescription": "Salsa20 is a stream cipher designed by Daniel J. Bernstein and submitted to the eSTREAM project; Salsa20/8 and Salsa20/12 are round-reduced variants. It is closely related to the ChaCha stream cipher.<br><br><b>Key:</b> Salsa20 uses a key of 16 or 32 bytes (128 or 256 bits).<br><br><b>Nonce:</b> Salsa20 uses a nonce of 8 bytes (64 bits).<br><br><b>Counter:</b> Salsa uses a counter of 8 bytes (64 bits). The counter starts at zero at the start of the keystream, and is incremented at every 64 bytes."
+  },
+  "扫描嵌入式文件": {
+    "enName": "Scan for Embedded Files",
+    "enDescription": "Scans the data for potential embedded files by looking for magic bytes at all offsets. This operation is prone to false positives.<br><br>WARNING: Files over about 100KB in size will take a VERY long time to process."
+  },
+  "Scatter 图表": {
+    "enName": "Scatter chart",
+    "enDescription": "Plots two-variable data as single points on a graph."
+  },
+  "Scrypt": {
+    "enName": "Scrypt",
+    "enDescription": "scrypt is a password-based key derivation function (PBKDF) created by Colin Percival. The algorithm was specifically designed to make it costly to perform large-scale custom hardware attacks by requiring large amounts of memory. In 2016, the scrypt algorithm was published by IETF as RFC 7914.<br><br>Enter the password in the input to generate its hash."
+  },
+  "Series 图表": {
+    "enName": "Series chart",
+    "enDescription": "A time series graph is a line graph of repeated measurements taken over regular time intervals."
+  },
+  "集合差集": {
+    "enName": "Set Difference",
+    "enDescription": "Calculates the difference, or relative complement, of two sets."
+  },
+  "集合交集": {
+    "enName": "Set Intersection",
+    "enDescription": "Calculates the intersection of two sets."
+  },
+  "集合并集": {
+    "enName": "Set Union",
+    "enDescription": "Calculates the union of two sets."
+  },
+  "Shake": {
+    "enName": "Shake",
+    "enDescription": "Shake is an Extendable Output Function (XOF) of the SHA-3 hash algorithm, part of the Keccak family, allowing for variable output length/size."
+  },
+  "锐化图像": {
+    "enName": "Sharpen Image",
+    "enDescription": "Sharpens an image (Unsharp mask)"
+  },
+  "显示 Base64 偏移量": {
+    "enName": "Show Base64 offsets",
+    "enDescription": "When a string is within a block of data and the whole block is Base64'd, the string itself could be represented in Base64 in three distinct ways depending on its offset within the block.<br><br>This operation shows all possible offsets for a given string so that each possible encoding can be considered."
+  },
+  "地图显示": {
+    "enName": "Show on map",
+    "enDescription": "Displays co-ordinates on a slippy map.<br><br>Co-ordinates will be converted to decimal degrees before being shown on the map.<br><br>Supported formats:<ul><li>Degrees Minutes Seconds (DMS)</li><li>Degrees Decimal Minutes (DDM)</li><li>Decimal Degrees (DD)</li><li>Geohash</li><li>Military Grid Reference System (MGRS)</li><li>Ordnance Survey National Grid (OSNG)</li><li>Universal Transverse Mercator (UTM)</li></ul><br>This operation will not work offline."
+  },
+  "随机排列": {
+    "enName": "Shuffle",
+    "enDescription": "Randomly reorders input elements."
+  },
+  "休眠": {
+    "enName": "Sleep",
+    "enDescription": "Sleep causes the recipe to wait for a specified number of milliseconds before continuing execution."
+  },
+  "Snefru": {
+    "enName": "Snefru",
+    "enDescription": "Snefru is a cryptographic hash function invented by Ralph Merkle in 1990 while working at Xerox PARC. The function supports 128-bit and 256-bit output. It was named after the Egyptian Pharaoh Sneferu, continuing the tradition of the Khufu and Khafre block ciphers.<br><br>The original design of Snefru was shown to be insecure by Eli Biham and Adi Shamir who were able to use differential cryptanalysis to find hash collisions. The design was then modified by increasing the number of iterations of the main pass of the algorithm from two to eight."
+  },
+  "排序": {
+    "enName": "Sort",
+    "enDescription": "Alphabetically sorts strings separated by the specified delimiter.<br><br>The IP address option supports IPv4 only."
+  },
+  "分割": {
+    "enName": "Split",
+    "enDescription": "Splits a string into sections around a given delimiter."
+  },
+  "分离颜色通道": {
+    "enName": "Split Colour Channels",
+    "enDescription": "Splits the given image into its red, green and blue colour channels."
+  },
+  "标准差": {
+    "enName": "Standard Deviation",
+    "enDescription": "Computes the standard deviation of a number list. If an item in the string is not a number it is excluded from the list.<br><br>e.g. <code>0x0a 8 .5</code> becomes <code>4.089281382128433</code>"
+  },
+  "Streebog": {
+    "enName": "Streebog",
+    "enDescription": "Streebog is a cryptographic hash function defined in the Russian national standard GOST R 34.11-2012 <i>Information Technology – Cryptographic Information Security – Hash Function</i>. It was created to replace an obsolete GOST hash function defined in the old standard GOST R 34.11-94, and as an asymmetric reply to SHA-3 competition by the US National Institute of Standards and Technology."
+  },
+  "提取字符串": {
+    "enName": "Strings",
+    "enDescription": "Extracts all strings from the input."
+  },
+  "剥离 HTML 标签": {
+    "enName": "Strip HTML tags",
+    "enDescription": "Removes all HTML tags from the input."
+  },
+  "剥离 HTTP 头部": {
+    "enName": "Strip HTTP headers",
+    "enDescription": "Removes HTTP headers from a request or response by looking for the first instance of a double newline."
+  },
+  "剥离 IPv4 头部": {
+    "enName": "Strip IPv4 header",
+    "enDescription": "Strips the IPv4 header from an IPv4 packet, outputting the payload."
+  },
+  "剥离 TCP 头部": {
+    "enName": "Strip TCP header",
+    "enDescription": "Strips the TCP header from a TCP segment, outputting the payload."
+  },
+  "剥离 UDP 头部": {
+    "enName": "Strip UDP header",
+    "enDescription": "Strips the UDP header from a UDP datagram, outputting the payload."
+  },
+  "子区域": {
+    "enName": "Subsection",
+    "enDescription": "Select a part of the input data using a regular expression (regex), and run all subsequent operations on each match separately.<br><br>You can use up to one capture group, where the recipe will only be run on the data in the capture group. If there's more than one capture group, only the first one will be operated on.<br><br>Use the Merge operation to reset the effects of subsection."
+  },
+  "替换": {
+    "enName": "Substitute",
+    "enDescription": "A substitution cipher allowing you to specify bytes to replace with other byte values. This can be used to create Caesar ciphers but is more powerful as any byte value can be substituted, not just letters, and the substitution values need not be in order.<br><br>Enter the bytes you want to replace in the Plaintext field and the bytes to replace them with in the Ciphertext field.<br><br>Non-printable bytes can be specified using string escape notation. For example, a line feed character can be written as either <code>\\n</code> or <code>\\x0a</code>.<br><br>Byte ranges can be specified using a hyphen. For example, the sequence <code>0123456789</code> can be written as <code>0-9</code>.<br><br>Note that blackslash characters are used to escape special characters, so will need to be escaped themselves if you want to use them on their own (e.g.<code>\\\\</code>)."
+  },
+  "减法": {
+    "enName": "Subtract",
+    "enDescription": "Subtracts a list of numbers. If an item in the string is not a number it is excluded from the list.<br><br>e.g. <code>0x0a 8 .5</code> becomes <code>1.5</code>"
+  },
+  "求和": {
+    "enName": "Sum",
+    "enDescription": "Adds together a list of numbers. If an item in the string is not a number it is excluded from the list.<br><br>e.g. <code>0x0a 8 .5</code> becomes <code>18.5</code>"
+  },
+  "交换大小写": {
+    "enName": "Swap case",
+    "enDescription": "Converts uppercase letters to lowercase ones, and lowercase ones to uppercase ones."
+  },
+  "交换字节序": {
+    "enName": "Swap endianness",
+    "enDescription": "Switches the data from big-endian to little-endian or vice-versa. Data can be read in as hexadecimal or raw bytes. It will be returned in the same format as it is entered."
+  },
+  "对称差集": {
+    "enName": "Symmetric Difference",
+    "enDescription": "Calculates the symmetric difference of two sets."
+  },
+  "语法高亮": {
+    "enName": "Syntax highlighter",
+    "enDescription": "Adds syntax highlighting to a range of source code languages. Note that this will not indent the code. Use one of the 'Beautify' operations for that."
+  },
+  "TCP/IP 校验和": {
+    "enName": "TCP/IP Checksum",
+    "enDescription": "Calculates the checksum for a TCP (Transport Control Protocol) or IP (Internet Protocol) header from an input of raw bytes."
+  },
+  "TEA 解密": {
+    "enName": "TEA Decrypt",
+    "enDescription": "TEA (Tiny Encryption Algorithm) is a block cipher designed by David Wheeler and Roger Needham in 1994. It operates on 64-bit blocks using a 128-bit key and performs 32 cycles (64 Feistel rounds) with the DELTA constant 0x9E3779B9 derived from the golden ratio.<br><br>TEA is notable for its simplicity and compact implementation, making it frequently encountered in malware analysis and CTF challenges. Despite its elegance, TEA has known weaknesses including equivalent keys and susceptibility to related-key attacks, leading to successors XTEA and XXTEA.<br><br><b>Key:</b> Must be exactly 16 bytes (128 bits).<br><br><b>IV:</b> The Initialisation Vector should be 8 bytes (64 bits). If not entered, it will default to null bytes.<br><br><b>Padding:</b> In CBC and ECB mode, the PKCS#5 padding scheme is used."
+  },
+  "TEA 加密": {
+    "enName": "TEA Encrypt",
+    "enDescription": "TEA (Tiny Encryption Algorithm) is a block cipher designed by David Wheeler and Roger Needham in 1994. It operates on 64-bit blocks using a 128-bit key and performs 32 cycles (64 Feistel rounds) with the DELTA constant 0x9E3779B9 derived from the golden ratio.<br><br>TEA is notable for its simplicity and compact implementation, making it frequently encountered in malware analysis and CTF challenges. Despite its elegance, TEA has known weaknesses including equivalent keys and susceptibility to related-key attacks, leading to successors XTEA and XXTEA.<br><br><b>Key:</b> Must be exactly 16 bytes (128 bits).<br><br><b>IV:</b> The Initialisation Vector should be 8 bytes (64 bits). If not entered, it will default to null bytes.<br><br><b>Padding:</b> In CBC and ECB mode, the PKCS#5 padding scheme is used."
+  },
+  "取尾部": {
+    "enName": "Tail",
+    "enDescription": "Like the UNIX tail utility.<br>Gets the last n lines.<br>Optionally you can select all lines after line n by entering a negative value for n.<br>The delimiter can be changed so that instead of lines, fields (i.e. commas) are selected instead."
+  },
+  "取字节": {
+    "enName": "Take bytes",
+    "enDescription": "Takes a slice of the specified number of bytes from the data. Negative values are allowed."
+  },
+  "取第 n 字节": {
+    "enName": "Take nth bytes",
+    "enDescription": "Takes every nth byte starting with a given byte."
+  },
+  "Tar 打包": {
+    "enName": "Tar",
+    "enDescription": "Packs the input into a tarball.<br><br>No support for multiple files at this time."
+  },
+  "模板": {
+    "enName": "Template",
+    "enDescription": "Render a template with Handlebars/Mustache substituting variables using JSON input. Templates will be rendered to plain-text only, to prevent XSS."
+  },
+  "文本编码暴力破解": {
+    "enName": "Text Encoding Brute Force",
+    "enDescription": "Enumerates all supported text encodings for the input, allowing you to quickly spot the correct one.\n<br><br>\nSupported charsets are:\n<ul>\n\n\n</ul>"
+  },
+  "Text-Integer 转换": {
+    "enName": "Text-Integer Conversion",
+    "enDescription": "Converts between text strings and large integers (decimal or hexadecimal).<br><br>"
+  },
+  "转为 BCD": {
+    "enName": "To BCD",
+    "enDescription": "Binary-Coded Decimal (BCD) is a class of binary encodings of decimal numbers where each decimal digit is represented by a fixed number of bits, usually four or eight. Special bit patterns are sometimes used for a sign"
+  },
+  "转为进制": {
+    "enName": "To Base",
+    "enDescription": "Converts a decimal number to a given numerical base."
+  },
+  "转为 Base32": {
+    "enName": "To Base32",
+    "enDescription": "Base32 is a notation for encoding arbitrary byte data using a restricted set of symbols that can be conveniently used by humans and processed by computers. It uses a smaller set of characters than Base64, usually the uppercase alphabet and the numbers 2 to 7."
+  },
+  "转为 Base45": {
+    "enName": "To Base45",
+    "enDescription": "Base45 is a notation for encoding arbitrary byte data using a restricted set of symbols that can be conveniently used by humans and processed by computers. The high number base results in shorter strings than with the decimal or hexadecimal system. Base45 is optimized for usage with QR codes."
+  },
+  "转为 Base58": {
+    "enName": "To Base58",
+    "enDescription": "Base58 (similar to Base64) is a notation for encoding arbitrary byte data. It differs from Base64 by removing easily misread characters (i.e. l, I, 0 and O) to improve human readability.<br><br>This operation encodes data in an ASCII string (with an alphabet of your choosing, presets included).<br><br>e.g. <code>hello world</code> becomes <code>StV1DL6CwTryKyV</code><br><br>Base58 is commonly used in cryptocurrencies (Bitcoin, Ripple, etc)."
+  },
+  "转为 Base62": {
+    "enName": "To Base62",
+    "enDescription": "Base62 is a notation for encoding arbitrary byte data using a restricted set of symbols that can be conveniently used by humans and processed by computers. The high number base results in shorter strings than with the decimal or hexadecimal system."
+  },
+  "转为 Base64": {
+    "enName": "To Base64",
+    "enDescription": "Base64 is a notation for encoding arbitrary byte data using a restricted set of symbols that can be conveniently used by humans and processed by computers.<br><br>This operation encodes raw data into an ASCII Base64 string.<br><br>e.g. <code>hello</code> becomes <code>aGVsbG8=</code>"
+  },
+  "转为 Base85": {
+    "enName": "To Base85",
+    "enDescription": "Base85 (also called Ascii85) is a notation for encoding arbitrary byte data. It is usually more efficient that Base64.<br><br>This operation encodes data in an ASCII string (with an alphabet of your choosing, presets included).<br><br>e.g. <code>hello world</code> becomes <code>BOu!rD]j7BEbo7</code><br><br>Base85 is commonly used in Adobe's PostScript and PDF file formats.<br><br><strong>Options</strong><br><u>Alphabet</u><ul><li>Standard - The standard alphabet, referred to as Ascii85</li><li>Z85 (ZeroMQ) - A string-safe variant of Base85, which avoids quote marks and backslash characters</li><li>IPv6 - A variant of Base85 suitable for encoding IPv6 addresses (RFC 1924)</li></ul><u>Include delimiter</u><br>Adds a '<~' and '~>' delimiter to the start and end of the data. This is standard for Adobe's implementation of Base85."
+  },
+  "转为 Base92": {
+    "enName": "To Base92",
+    "enDescription": "Base92 is a notation for encoding arbitrary byte data using a restricted set of symbols that can be conveniently used by humans and processed by computers."
+  },
+  "转为 Bech32": {
+    "enName": "To Bech32",
+    "enDescription": "Bech32 is an encoding scheme primarily used for Bitcoin SegWit addresses (BIP-0173). It uses a 32-character alphabet that excludes easily confused characters (1, b, i, o) and includes a checksum for error detection.<br><br>Bech32m (BIP-0350) is an updated version that fixes a weakness in the original Bech32 checksum and is used for Bitcoin Taproot addresses.<br><br>The Human-Readable Part (HRP) identifies the network or purpose (e.g., 'bc' for Bitcoin mainnet, 'tb' for testnet, 'age' for AGE encryption keys).<br><br>Maximum output length is 90 characters as per specification."
+  },
+  "转为二进制": {
+    "enName": "To Binary",
+    "enDescription": "Displays the input data as a binary string.<br><br>e.g. <code>Hi</code> becomes <code>01001000 01101001</code>"
+  },
+  "转为 Braille": {
+    "enName": "To Braille",
+    "enDescription": "Converts text to six-dot braille symbols."
+  },
+  "编码 COBS": {
+    "enName": "To COBS",
+    "enDescription": "Encodes bytes in COBS format"
+  },
+  "转为驼峰式": {
+    "enName": "To Camel case",
+    "enDescription": "Converts the input string to camel case.\n<br><br>\nCamel case is all lower case except letters after word boundaries which are uppercase.\n<br><br>\ne.g. thisIsCamelCase\n<br><br>\n'Attempt to be context aware' will make the operation attempt to nicely transform variable and function names."
+  },
+  "转为大小写不敏感正则": {
+    "enName": "To Case Insensitive Regex",
+    "enDescription": "Converts a case-sensitive regex string into a case-insensitive regex string in case the i flag is unavailable to you.<br><br>e.g. <code>Mozilla/[0-9].[0-9] .*</code> becomes <code>[mM][oO][zZ][iI][lL][lL][aA]/[0-9].[0-9] .*</code>"
+  },
+  "转为字符编码": {
+    "enName": "To Charcode",
+    "enDescription": "Converts text to its unicode character code equivalent.<br><br>e.g. <code>Γειά σου</code> becomes <code>0393 03b5 03b9 03ac 20 03c3 03bf 03c5</code>"
+  },
+  "转为十进制": {
+    "enName": "To Decimal",
+    "enDescription": "Converts the input data to an ordinal integer array.<br><br>e.g. <code>Hello</code> becomes <code>72 101 108 108 111</code>"
+  },
+  "转为浮点数": {
+    "enName": "To Float",
+    "enDescription": "Convert to IEEE754 Floating Point Numbers"
+  },
+  "转为 HTML 实体": {
+    "enName": "To HTML Entity",
+    "enDescription": "Converts characters to HTML entities<br><br>e.g. <code>&amp;</code> becomes <code>&amp;<span>amp;</span></code>"
+  },
+  "转为 Hex": {
+    "enName": "To Hex",
+    "enDescription": "Converts the input string to hexadecimal bytes separated by the specified delimiter.<br><br>e.g. The UTF-8 encoded string <code>Γειά σου</code> becomes <code>ce 93 ce b5 ce b9 ce ac 20 cf 83 ce bf cf 85 0a</code>"
+  },
+  "转为 Hex Content": {
+    "enName": "To Hex Content",
+    "enDescription": "Converts special characters in a string to hexadecimal. This format is used by SNORT for representing hex within ASCII text.<br><br>e.g. <code>foo=bar</code> becomes <code>foo|3d|bar</code>."
+  },
+  "转为 Hexdump": {
+    "enName": "To Hexdump",
+    "enDescription": "Creates a hexdump of the input data, displaying both the hexadecimal values of each byte and an ASCII representation alongside.<br><br>The 'UNIX format' argument defines which subset of printable characters are displayed in the preview column."
+  },
+  "转为短横线式": {
+    "enName": "To Kebab case",
+    "enDescription": "Converts the input string to kebab case.\n<br><br>\nKebab case is all lower case with dashes as word boundaries.\n<br><br>\ne.g. this-is-kebab-case\n<br><br>\n'Attempt to be context aware' will make the operation attempt to nicely transform variable and function names."
+  },
+  "转为小写": {
+    "enName": "To Lower case",
+    "enDescription": "Converts every character in the input to lower case."
+  },
+  "转为 MessagePack": {
+    "enName": "To MessagePack",
+    "enDescription": "Converts JSON to MessagePack encoded byte buffer. MessagePack is a computer data interchange format. It is a binary form for representing simple data structures like arrays and associative arrays."
+  },
+  "转为 Modhex": {
+    "enName": "To Modhex",
+    "enDescription": "Converts the input string to modhex bytes separated by the specified delimiter."
+  },
+  "转为摩尔斯电码": {
+    "enName": "To Morse Code",
+    "enDescription": "Translates alphanumeric characters into International Morse Code.<br><br>Ignores non-Morse characters.<br><br>e.g. <code>SOS</code> becomes <code>... --- ...</code>"
+  },
+  "转为八进制": {
+    "enName": "To Octal",
+    "enDescription": "Converts the input string to octal bytes separated by the specified delimiter.<br><br>e.g. The UTF-8 encoded string <code>Γειά σου</code> becomes <code>316 223 316 265 316 271 316 254 40 317 203 316 277 317 205</code>"
+  },
+  "转为 Punycode": {
+    "enName": "To Punycode",
+    "enDescription": "Punycode is a way to represent Unicode with the limited character subset of ASCII supported by the Domain Name System.<br><br>e.g. <code>münchen</code> encodes to <code>mnchen-3ya</code>"
+  },
+  "转为 Quoted Printable": {
+    "enName": "To Quoted Printable",
+    "enDescription": "Quoted-Printable, or QP encoding, is an encoding using printable ASCII characters (alphanumeric and the equals sign '=') to transmit 8-bit data over a 7-bit data path or, generally, over a medium which is not 8-bit clean. It is defined as a MIME content transfer encoding for use in email.<br><br>QP works by using the equals sign '=' as an escape character. It also limits line length to 76, as some software has limits on line length."
+  },
+  "转为蛇形": {
+    "enName": "To Snake case",
+    "enDescription": "Converts the input string to snake case.\n<br><br>\nSnake case is all lower case with underscores as word boundaries.\n<br><br>\ne.g. this_is_snake_case\n<br><br>\n'Attempt to be context aware' will make the operation attempt to nicely transform variable and function names."
+  },
+  "转为表格": {
+    "enName": "To Table",
+    "enDescription": "Data can be split on different characters and rendered as an HTML, ASCII or Markdown table with an optional header row.<br><br>Supports the CSV (Comma Separated Values) file format by default. Change the cell delimiter argument to <code>\\t</code> to support TSV (Tab Separated Values) or <code>|</code> for PSV (Pipe Separated Values).<br><br>You can enter as many delimiters as you like. Each character will be treat as a separate possible delimiter."
+  },
+  "转为 UNIX 时间戳": {
+    "enName": "To UNIX Timestamp",
+    "enDescription": "Parses a datetime string in UTC and returns the corresponding UNIX timestamp.<br><br>e.g. <code>Mon 1 January 2001 11:00:00</code> becomes <code>978346800</code><br><br>A UNIX timestamp is a 32-bit value representing the number of seconds since January 1, 1970 UTC (the UNIX epoch)."
+  },
+  "转为大写": {
+    "enName": "To Upper case",
+    "enDescription": "Converts the input string to upper case, optionally limiting scope to only the first character in each word, sentence or paragraph."
+  },
+  "转换日期时间格式": {
+    "enName": "Translate DateTime Format",
+    "enDescription": "Parses a datetime string in one format and re-writes it in another.<br><br>Run with no input to see the relevant format string examples."
+  },
+  "Triple DES 解密": {
+    "enName": "Triple DES Decrypt",
+    "enDescription": "Triple DES applies DES three times to each block to increase key size.<br><br><b>Key:</b> Triple DES uses a key length of 24 bytes (192 bits).<br><br><b>IV:</b> The Initialization Vector should be 8 bytes long. If not entered, it will default to 8 null bytes.<br><br><b>Padding:</b> In CBC and ECB mode, PKCS#7 padding will be used as a default."
+  },
+  "Triple DES 加密": {
+    "enName": "Triple DES Encrypt",
+    "enDescription": "Triple DES applies DES three times to each block to increase key size.<br><br><b>Key:</b> Triple DES uses a key length of 24 bytes (192 bits).<br><br>You can generate a password-based key using one of the KDF operations.<br><br><b>IV:</b> The Initialization Vector should be 8 bytes long. If not entered, it will default to 8 null bytes.<br><br><b>Padding:</b> In CBC and ECB mode, PKCS#7 padding will be used."
+  },
+  "Twofish 解密": {
+    "enName": "Twofish Decrypt",
+    "enDescription": "Twofish is a symmetric key block cipher designed by Bruce Schneier. It was one of the five AES finalists. Twofish operates on 128-bit blocks and supports key sizes of 128, 192, or 256 bits with 16 rounds of a Feistel network.<br><br>When using CBC or ECB mode, the PKCS#7 padding scheme is used."
+  },
+  "Twofish 加密": {
+    "enName": "Twofish Encrypt",
+    "enDescription": "Twofish is a symmetric key block cipher designed by Bruce Schneier. It was one of the five AES finalists. Twofish operates on 128-bit blocks and supports key sizes of 128, 192, or 256 bits with 16 rounds of a Feistel network.<br><br>When using CBC or ECB mode, the PKCS#7 padding scheme is used."
+  },
+  "Typex": {
+    "enName": "Typex",
+    "enDescription": "Encipher/decipher with the WW2 Typex machine.<br><br>Typex was originally built by the British Royal Air Force prior to WW2, and is based on the Enigma machine with some improvements made, including using five rotors with more stepping points and interchangeable wiring cores. It was used across the British and Commonwealth militaries. A number of later variants were produced; here we simulate a WW2 era Mark 22 Typex with plugboards for the reflector and input. Typex rotors were changed regularly and none are public: a random example set are provided.<br><br>To configure the reflector plugboard, enter a string of connected pairs of letters in the reflector box, e.g. <code>AB CD EF</code> connects A to B, C to D, and E to F (you'll need to connect every letter). There is also an input plugboard: unlike Enigma's plugboard, it's not restricted to pairs, so it's entered like a rotor (without stepping). To create your own rotor, enter the letters that the rotor maps A to Z to, in order, optionally followed by <code>&lt;</code> then a list of stepping points.<br><br>More detailed descriptions of the Enigma, Typex and Bombe operations <a href='https://github.com/gchq/CyberChef/wiki/Enigma,-the-Bombe,-and-Typex'>can be found here</a>."
+  },
+  "UNIX 时间戳转 Windows 文件时间": {
+    "enName": "UNIX Timestamp to Windows Filetime",
+    "enDescription": "Converts a UNIX timestamp to a Windows Filetime value.<br><br>A Windows Filetime is a 64-bit value representing the number of 100-nanosecond intervals since January 1, 1601 UTC.<br><br>A UNIX timestamp is a 32-bit value representing the number of seconds since January 1, 1970 UTC (the UNIX epoch).<br><br>This operation also supports UNIX timestamps in milliseconds, microseconds and nanoseconds."
+  },
+  "URL 解码": {
+    "enName": "URL Decode",
+    "enDescription": "Converts URI/URL percent-encoded characters back to their raw values.<br><br>e.g. <code>%3d</code> becomes <code>=</code>"
+  },
+  "URL 编码": {
+    "enName": "URL Encode",
+    "enDescription": "Encodes problematic characters into percent-encoding, a format supported by URIs/URLs.<br><br>e.g. <code>=</code> becomes <code>%3d</code>"
+  },
+  "反转义字符串": {
+    "enName": "Unescape string",
+    "enDescription": "Unescapes characters in a string that have been escaped. For example, <code>Don\\'t stop me now</code> becomes <code>Don't stop me now</code>.<br><br>Supports the following escape sequences:<ul><li><code>\\n</code> (Line feed/newline)</li><li><code>\\r</code> (Carriage return)</li><li><code>\\t</code> (Horizontal tab)</li><li><code>\\b</code> (Backspace)</li><li><code>\\f</code> (Form feed)</li><li><code>\\nnn</code> (Octal, where n is 0-7)</li><li><code>\\xnn</code> (Hex, where n is 0-f)</li><li><code>\\\\</code> (Backslash)</li><li><code>\\'</code> (Single quote)</li><li><code>\\&quot;</code> (Double quote)</li><li><code>\\unnnn</code> (Unicode character)</li><li><code>\\u{nnnnnn}</code> (Unicode code point)</li></ul>"
+  },
+  "反转义 Unicode 字符": {
+    "enName": "Unescape Unicode Characters",
+    "enDescription": "Converts unicode-escaped character notation back into raw characters.<br><br>Supports the prefixes:<ul><li><code>\\u</code></li><li><code>%u</code></li><li><code>U+</code></li></ul>e.g. <code>\\u03c3\\u03bf\\u03c5</code> becomes <code>σου</code>"
+  },
+  "Unicode 文本格式": {
+    "enName": "Unicode Text Format",
+    "enDescription": "Adds Unicode combining characters to change formatting of plaintext."
+  },
+  "去重": {
+    "enName": "Unique",
+    "enDescription": "Removes duplicate strings from the input."
+  },
+  "Tar 解包": {
+    "enName": "Untar",
+    "enDescription": "Unpacks a tarball and displays it per file."
+  },
+  "Zip 解压": {
+    "enName": "Unzip",
+    "enDescription": "Decompresses data using the PKZIP algorithm and displays it per file, with support for passwords."
+  },
+  "VarInt 解码": {
+    "enName": "VarInt Decode",
+    "enDescription": "Decodes a VarInt encoded integer. VarInt is an efficient way of encoding variable length integers and is commonly used with Protobuf."
+  },
+  "VarInt 编码": {
+    "enName": "VarInt Encode",
+    "enDescription": "Encodes a Vn integer as a VarInt. VarInt is an efficient way of encoding variable length integers and is commonly used with Protobuf."
+  },
+  "查看位平面": {
+    "enName": "View Bit Plane",
+    "enDescription": "Extracts and displays a bit plane of any given image. These show only a single bit from each pixel, and can be used to hide messages in Steganography."
+  },
+  "Vigenère 解码": {
+    "enName": "Vigenère Decode",
+    "enDescription": "The Vigenere cipher is a method of encrypting alphabetic text by using a series of different Caesar ciphers based on the letters of a keyword. It is a simple form of polyalphabetic substitution."
+  },
+  "Vigenère 编码": {
+    "enName": "Vigenère Encode",
+    "enDescription": "The Vigenere cipher is a method of encrypting alphabetic text by using a series of different Caesar ciphers based on the letters of a keyword. It is a simple form of polyalphabetic substitution."
+  },
+  "Whirlpool": {
+    "enName": "Whirlpool",
+    "enDescription": "Whirlpool is a cryptographic hash function designed by Vincent Rijmen (co-creator of AES) and Paulo S. L. M. Barreto, who first described it in 2000.<br><br>Several variants exist:<ul><li>Whirlpool-0 is the original version released in 2000.</li><li>Whirlpool-T is the first revision, released in 2001, improving the generation of the s-box.</li><li>Whirlpool is the latest revision, released in 2003, fixing a flaw in the diffusion matrix.</li></ul>"
+  },
+  "Windows 文件时间转 UNIX 时间戳": {
+    "enName": "Windows Filetime to UNIX Timestamp",
+    "enDescription": "Converts a Windows Filetime value to a UNIX timestamp.<br><br>A Windows Filetime is a 64-bit value representing the number of 100-nanosecond intervals since January 1, 1601 UTC.<br><br>A UNIX timestamp is a 32-bit value representing the number of seconds since January 1, 1970 UTC (the UNIX epoch).<br><br>This operation also supports UNIX timestamps in milliseconds, microseconds and nanoseconds."
+  },
+  "折行": {
+    "enName": "Wrap",
+    "enDescription": "Wraps the input text at a specified number of characters per line."
+  },
+  "XKCD 随机数": {
+    "enName": "XKCD Random Number",
+    "enDescription": "RFC 1149.5 specifies 4 as the standard IEEE-vetted random number."
+  },
+  "XML 美化": {
+    "enName": "XML Beautify",
+    "enDescription": "Indents and prettifies eXtensible Markup Language (XML) code."
+  },
+  "XML 压缩": {
+    "enName": "XML Minify",
+    "enDescription": "Compresses eXtensible Markup Language (XML) code."
+  },
+  "XOR": {
+    "enName": "XOR",
+    "enDescription": "XOR the input with the given key.<br>e.g. <code>fe023da5</code><br><br><strong>Options</strong><br><u>Null preserving:</u> If the current byte is 0x00 or the same as the key, skip it.<br><br><u>Scheme:</u><ul><li>Standard - key is unchanged after each round</li><li>Input differential - key is set to the value of the previous unprocessed byte</li><li>Output differential - key is set to the value of the previous processed byte</li><li>Cascade - key is set to the input byte shifted by one</li></ul>"
+  },
+  "XOR 暴力破解": {
+    "enName": "XOR Brute Force",
+    "enDescription": "Enumerate all possible XOR solutions. Current maximum key length is 2 due to browser performance.<br><br>Optionally enter a string that you expect to find in the plaintext to filter results (crib)."
+  },
+  "XOR 校验和": {
+    "enName": "XOR Checksum",
+    "enDescription": "XOR Checksum splits the input into blocks of a configurable size and performs the XOR operation on these blocks."
+  },
+  "XPRESS 解压": {
+    "enName": "XPRESS Decompress",
+    "enDescription": "Decompresses data using the XPRESS plain LZ77 algorithm (MS-XCA section 2.1).<br><br>Similar to the Windows API <code>RtlDecompressBuffer</code> with <code>COMPRESSION_FORMAT_XPRESS</code>."
+  },
+  "XPRESS LZ77+Huffman 解压": {
+    "enName": "XPRESS LZ77+Huffman Decompress",
+    "enDescription": "Decompresses data using the XPRESS LZ77+Huffman algorithm (MS-XCA section 2.2).<br><br>The uncompressed size must be known in advance, as it is from the WOF chunk table or WIM header, so it is taken as an argument."
+  },
+  "XPath 表达式": {
+    "enName": "XPath expression",
+    "enDescription": "Extract information from an XML document with an XPath query"
+  },
+  "XSalsa20": {
+    "enName": "XSalsa20",
+    "enDescription": "XSalsa20 is a variant of the Salsa20 stream cipher designed by Daniel J. Bernstein; XSalsa uses longer nonces.<br><br><b>Key:</b> XSalsa20 uses a key of 16 or 32 bytes (128 or 256 bits).<br><br><b>Nonce:</b> XSalsa20 uses a nonce of 24 bytes (192 bits).<br><br><b>Counter:</b> XSalsa uses a counter of 8 bytes (64 bits). The counter starts at zero at the start of the keystream, and is incremented at every 64 bytes."
+  },
+  "XTEA 解密": {
+    "enName": "XTEA Decrypt",
+    "enDescription": "XTEA (eXtended Tiny Encryption Algorithm) is a block cipher designed by David Wheeler and Roger Needham in 1997 as a successor to TEA, correcting several weaknesses identified in the original algorithm. It operates on 64-bit blocks using a 128-bit key with an improved key schedule that uses sum-dependent key word selection to resist related-key attacks.<br><br>XTEA retains the simplicity and compact implementation of TEA whilst providing significantly improved security. It is frequently encountered in malware analysis and CTF challenges due to its straightforward implementation.<br><br><b>Key:</b> Must be exactly 16 bytes (128 bits).<br><br><b>IV:</b> The Initialisation Vector should be 8 bytes (64 bits). If not entered, it will default to null bytes.<br><br><b>Rounds:</b> The recommended number of rounds is 32 (default). The reference implementation by Wheeler &amp; Needham accepts a configurable round count.<br><br><b>Padding:</b> In CBC and ECB mode, the PKCS#5 padding scheme is used."
+  },
+  "XTEA 加密": {
+    "enName": "XTEA Encrypt",
+    "enDescription": "XTEA (eXtended Tiny Encryption Algorithm) is a block cipher designed by David Wheeler and Roger Needham in 1997 as a successor to TEA, correcting several weaknesses identified in the original algorithm. It operates on 64-bit blocks using a 128-bit key with an improved key schedule that uses sum-dependent key word selection to resist related-key attacks.<br><br>XTEA retains the simplicity and compact implementation of TEA whilst providing significantly improved security. It is frequently encountered in malware analysis and CTF challenges due to its straightforward implementation.<br><br><b>Key:</b> Must be exactly 16 bytes (128 bits).<br><br><b>IV:</b> The Initialisation Vector should be 8 bytes (64 bits). If not entered, it will default to null bytes.<br><br><b>Rounds:</b> The recommended number of rounds is 32 (default). The reference implementation by Wheeler &amp; Needham accepts a configurable round count.<br><br><b>Padding:</b> In CBC and ECB mode, the PKCS#5 padding scheme is used."
+  },
+  "XXTEA 解密": {
+    "enName": "XXTEA Decrypt",
+    "enDescription": "Corrected Block TEA (often referred to as XXTEA) is a block cipher designed to correct weaknesses in the original Block TEA. XXTEA operates on variable-length blocks that are some arbitrary multiple of 32 bits in size (minimum 64 bits). The number of full cycles depends on the block size, but there are at least six (rising to 32 for small block sizes). The original Block TEA applies the XTEA round function to each word in the block and combines it additively with its leftmost neighbour. Slow diffusion rate of the decryption process was immediately exploited to break the cipher. Corrected Block TEA uses a more involved round function which makes use of both immediate neighbours in processing each word in the block."
+  },
+  "XXTEA 加密": {
+    "enName": "XXTEA Encrypt",
+    "enDescription": "Corrected Block TEA (often referred to as XXTEA) is a block cipher designed to correct weaknesses in the original Block TEA. XXTEA operates on variable-length blocks that are some arbitrary multiple of 32 bits in size (minimum 64 bits). The number of full cycles depends on the block size, but there are at least six (rising to 32 for small block sizes). The original Block TEA applies the XTEA round function to each word in the block and combines it additively with its leftmost neighbour. Slow diffusion rate of the decryption process was immediately exploited to break the cipher. Corrected Block TEA uses a more involved round function which makes use of both immediate neighbours in processing each word in the block."
+  },
+  "YAML 转 JSON": {
+    "enName": "YAML to JSON",
+    "enDescription": "Convert YAML to JSON"
+  },
+  "YARA 规则": {
+    "enName": "YARA Rules",
+    "enDescription": "YARA is a tool developed at VirusTotal, primarily aimed at helping malware researchers to identify and classify malware samples. It matches based on rules specified by the user containing textual or binary patterns and a boolean expression. For help on writing rules, see the <a href='https://yara.readthedocs.io/en/latest/writingrules.html'>YARA documentation.</a>"
+  },
+  "Zip 压缩": {
+    "enName": "Zip",
+    "enDescription": "Compresses data using the PKZIP algorithm with the given filename.<br><br>No support for multiple files at this time."
+  },
+  "Zlib 压缩": {
+    "enName": "Zlib Deflate",
+    "enDescription": "Compresses data using the deflate algorithm adding zlib headers."
+  },
+  "Zlib 解压": {
+    "enName": "Zlib Inflate",
+    "enDescription": "Decompresses data which has been compressed using the deflate algorithm with zlib headers."
+  }
+}

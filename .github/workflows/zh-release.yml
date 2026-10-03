@@ -1,0 +1,75 @@
+name: CyberChef zh-cn Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Release tag
+        required: true
+        default: zh-cn-v1.0.0
+        type: string
+  push:
+    tags:
+      - "zh-cn-v*"
+
+permissions:
+  contents: write
+
+env:
+  RELEASE_TAG: ${{ github.event_name == 'workflow_dispatch' && inputs.tag || github.ref_name }}
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Test
+        run: npm test
+
+      - name: Build
+        env:
+          CYBERCHEF_VERSION: v11.5.5
+        run: npm run build
+
+      - name: Create or update release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          VERSION="${RELEASE_TAG#zh-cn-}"
+          TITLE="CyberChef v11.5.5 zh-cn ${VERSION}"
+          NOTES_FILE="docs/releases/${VERSION}.md"
+
+          if [ ! -f "$NOTES_FILE" ]; then
+            echo "Missing release notes: $NOTES_FILE" >&2
+            exit 1
+          fi
+
+          if gh release view "$RELEASE_TAG" >/dev/null 2>&1; then
+            gh release upload "$RELEASE_TAG" build/prod/*.zip build/prod/sha256digest.txt --clobber
+            gh release edit "$RELEASE_TAG" --title "$TITLE" --notes-file "$NOTES_FILE"
+          elif [[ "$VERSION" == *-* ]]; then
+            gh release create "$RELEASE_TAG" build/prod/*.zip build/prod/sha256digest.txt \
+              --title "$TITLE" \
+              --notes-file "$NOTES_FILE" \
+              --prerelease
+          else
+            gh release create "$RELEASE_TAG" build/prod/*.zip build/prod/sha256digest.txt \
+              --title "$TITLE" \
+              --notes-file "$NOTES_FILE"
+          fi
