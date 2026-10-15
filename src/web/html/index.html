@@ -44,7 +44,7 @@
             // Define loading messages
             var loadingMsgs = [
                 "正在证明 P = NP...",
-                "正在计算 6 x 9...",
+                "正在计算 6 × 9...",
                 "正在挖掘比特币...",
                 "正在除以 0...",
                 "正在初始化天网...",
@@ -56,14 +56,17 @@
                 "正在为 Alice 和 Bob 发放一次性密码本...",
                 "正在挖掘比特币现金...",
                 "试图逃离 vim 以生成密钥材料...",
-                "for i in range(additional): 铁塔()",
+                "正在向领导汇报进度...",
                 "（正在制造悬念...",
                 "正在将 emacs 和 vim 符号链接到 ed...",
                 "正在训练分支预测器...",
                 "正在测量缓存命中...",
                 "正在推测执行流程...",
                 "正在添加 LLM 幻觉...",
-                "正在解压缩恶意软件..."
+                "正在重构祖传代码...",
+                "正在等外卖...",
+                "正在摸鱼...",
+                "正在抢红包..."
             ];
 
             // Shuffle array using Durstenfeld algorithm
@@ -171,7 +174,7 @@
             </div>
             <div id="workspace-wrapper">
                 <div id="operations" class="split split-horizontal no-select">
-                    <div class="title no-select" data-help-title="操作列表" data-help="<p>操作列表包含 CyberChef 中按类别排列的所有操作。部分操作可能出现在多个类别中。您可以使用搜索框搜索操作。</p><p>要使用某个操作，双击它或将其拖入流程面板即可。随后您可以配置它的参数（在 CyberChef 术语中称为“配料”）。</p>">操作 <span class="op-count"></span></div>
+                    <div class="title no-select" data-help-title="操作列表" data-help="<p>操作列表包含 CyberChef 中按类别排列的所有操作。部分操作可能出现在多个类别中。您可以使用搜索框搜索操作。</p><p>要使用某个操作，单击它或将其拖入流程面板即可。随后您可以配置它的参数（在 CyberChef 术语中称为“配料”）。</p>">操作 <span class="op-count"></span></div>
                     <input id="search" type="search" class="form-control" placeholder="搜索..." autocomplete="off" tabindex="0" data-help-title="搜索操作" data-help="<p>使用搜索框查找有用的操作。</p><p>操作名称和描述都会通过模糊匹配算法进行查询。</p>" aria-owns="search-results">
                     <ul id="search-results" class="op-list"></ul>
                     <div id="categories" class="panel-group no-select"></div>
@@ -187,6 +190,9 @@
                             </button>
                             <button type="button" aria-label="加载流程" class="btn btn-primary bmd-btn-icon" id="load" data-toggle="tooltip" title="加载流程" data-help-title="加载流程" data-help="<p>可以通过以下方式之一加载已保存的流程：</p><ul><li>如果您有 CyberChef 深链接，直接访问该链接即可自动填充流程和输入。</li><li>如果您有任意可接受格式的流程字符串，将其粘贴到“加载流程”面板的文本框中并点击“加载”。</li><li>如果您已将流程保存到浏览器本地存储，它应该会出现在“加载流程”面板的下拉菜单中。如果不在其中，可能是您使用的浏览器配置文件不同，或者配置文件已被清理。</li></ul>">
                                 <i class="material-icons" aria-hidden="true">folder</i>
+                            </button>
+                            <button type="button" aria-label="流程模板库" class="btn btn-primary bmd-btn-icon" id="recipe-templates-open" data-toggle="tooltip" title="流程模板库" data-help-title="流程模板库" data-help="<p>内置常用流程模板库：全部为多步骤操作链模板，名称与说明固定显示中文。模板以紧凑列表展示（一行两列），默认仅显示名称，鼠标悬停卡片可弹出气泡查看较详细中文说明与中文操作链。</p><p>卡片右侧星标可即时收藏/取消收藏，也可将模板卡片拖拽到“收藏夹”分类实现收藏；收藏夹标题行右侧提供“恢复默认收藏”按钮。点击模板即可将其加载为当前流程。</p>">
+                                <i class="material-icons" aria-hidden="true">library_books</i>
                             </button>
                             <button type="button" aria-label="清空流程" class="btn btn-primary bmd-btn-icon" id="clr-recipe" data-toggle="tooltip" title="清空流程" data-help-title="清空流程" data-help="点击“清空流程”按钮将移除流程中的所有操作。它不会清空输入，但如果开启了自动执行，将触发一次执行，从而改变输出值。">
                                 <i class="material-icons" aria-hidden="true">delete</i>
@@ -413,6 +419,51 @@
             </div>
         </div>
 
+        <div class="modal fade" id="recipe-templates-modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">流程模板库</h5>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <input id="recipe-templates-search" type="search" class="form-control" placeholder="搜索..." autocomplete="off" aria-label="搜索流程">
+                        </div>
+                        <div id="recipe-templates-list" class="recipe-templates-list"></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="recipe-templates-fav-modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">编辑收藏</h5>
+                    </div>
+                    <div class="modal-body">
+                        <ul>
+                            <li><span style="font-weight: bold">添加：</span>将模板卡片拖到“收藏夹”分类上并放下，或点击卡片右侧星标</li>
+                            <li><span style="font-weight: bold">重新排序：</span>在下方列表中上下拖动</li>
+                            <li><span style="font-weight: bold">删除：</span>点击删除按钮</li>
+                        </ul>
+                        <br>
+                        <ul id="recipe-templates-fav-list" class="fav-manage-list"></ul>
+                        <div class="option-item">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" id="recipe-templates-reset-favs">将收藏重置为默认值</button>
+                        <button type="button" class="btn btn-success" data-dismiss="modal" id="recipe-templates-save-favs">保存</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">取消</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="modal fade" id="options-modal" tabindex="-1" role="dialog">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content" data-help-proxy="#options">
@@ -513,6 +564,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" id="ui-settings-btn">界面设置</button>
                         <button type="button" class="btn btn-secondary" id="reset-options">重置选项为默认值</button>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
                     </div>
@@ -724,6 +776,24 @@
             </div>
         </div>
 
+        <div class="modal fade" id="changelog-modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">更新日志</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="关闭"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <p><strong>官方版：</strong><a href="https://github.com/gchq/CyberChef/blob/master/CHANGELOG.md" target="_blank" rel="noopener">CHANGELOG</a></p>
+                        <p><strong>汉化版：</strong><a href="https://github.com/AnyaWantsStars/CyberChef_zh-cn/blob/main/CHANGELOG.zh-cn.md" target="_blank" rel="noopener">CHANGELOG.zh-cn</a></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="modal fade" id="confirm-modal" tabindex="-1" role="dialog">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
@@ -863,7 +933,7 @@
                         <div>
                             <h6>汉化版 CyberChef <%= htmlWebpackPlugin.options.version %> zh-cn <%= htmlWebpackPlugin.options.zhVersion %></h6>
                             <ul>
-                                <li>在官方版基础上完成界面汉化，汉化项目：<a href="https://github.com/AnyaWantsStars/CyberChef_zh-cn" target="_blank" rel="noopener">CyberChef_zh-cn</a></li>
+                                <li>在官方版<a href="<%= htmlWebpackPlugin.options.upstreamCommitUrl %>" target="_blank" rel="noopener"><%= htmlWebpackPlugin.options.upstreamCommit %></a>提交的基础上完成界面汉化，此版本的更新日志可<a href="https://github.com/<%= htmlWebpackPlugin.options.zhRepoOwner %>/<%= htmlWebpackPlugin.options.zhRepoName %>/blob/<%= htmlWebpackPlugin.options.zhChangelogTag %>/<%= htmlWebpackPlugin.options.zhChangelogFile %>" target="_blank" rel="noopener">在此处</a>查看</li>
                                 <li>构建时间：<%= htmlWebpackPlugin.options.compileTime %></li>
                                 <li>SHA256 哈希：DOWNLOAD_HASH_PLACEHOLDER</li>
                             </ul>
@@ -872,6 +942,69 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- zh-cn 独立「界面设置」窗口：外观（主题）与操作列表 -->
+        <div class="modal fade" id="ui-settings-modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg zh-ui-settings-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">界面设置</h5>
+                    </div>
+                    <div class="modal-body zh-ui-settings-body">
+                        <h6>主题</h6>
+                        <div class="option-item">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="themeMode" value="system" id="ui-theme-mode-system">
+                                <label class="form-check-label" for="ui-theme-mode-system">跟随系统</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="themeMode" value="light" id="ui-theme-mode-light">
+                                <label class="form-check-label" for="ui-theme-mode-light">固定浅色</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="themeMode" value="dark" id="ui-theme-mode-dark">
+                                <label class="form-check-label" for="ui-theme-mode-dark">固定深色</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="ui-theme-pack">配色方案</label>
+                            <select class="form-control" id="ui-theme-pack"></select>
+                        </div>
+                        <div class="form-group">
+                            <label>自定义配色方案</label>
+                            <input type="text" class="form-control" id="ui-custom-name" placeholder="主题名称">
+                            <div id="ui-custom-form" class="mt-2"></div>
+                            <details class="zh-custom-json-wrap mt-2" id="ui-custom-json-wrap">
+                                <summary>高级 JSON</summary>
+                                <textarea class="form-control" id="ui-custom-json" rows="8" spellcheck="false" placeholder="{&#10;  &quot;light&quot;: {&#10;    &quot;--primary-background-colour&quot;: &quot;#ffffff&quot;&#10;  },&#10;  &quot;dark&quot;: {&#10;    &quot;--primary-background-colour&quot;: &quot;#1b201b&quot;&#10;  }&#10;}"></textarea>
+                            </details>
+                            <div class="mt-1 d-flex zh-ui-scheme-actions">
+                                <button type="button" class="btn btn-secondary" id="ui-custom-save">保存方案</button>
+                                <button type="button" class="btn btn-danger d-none" id="ui-custom-delete">删除方案</button>
+                            </div>
+                        </div>
+
+                        <hr>
+                        <h6>操作列表</h6>
+                        <div class="checkbox">
+                            <label for="ui-show-all-ops">
+                                <input type="checkbox" id="ui-show-all-ops">显示全部操作（不隐藏操作）
+                            </label>
+                        </div>
+                        <p class="text-muted zh-hidden-ops-hint">未勾选的操作将会在操作列表隐藏，隐藏的操作仍然可以搜索和使用</p>
+                        <div class="form-group">
+                            <label for="ui-hidden-ops-search">操作搜索</label>
+                            <input type="text" class="form-control" id="ui-hidden-ops-search" placeholder="输入关键词，过滤所有分类下匹配的操作">
+                        </div>
+                        <div id="ui-hidden-ops-list" class="zh-op-cat-list"></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" id="ui-reset-settings">重置界面设置为默认值</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
                     </div>
                 </div>
             </div>

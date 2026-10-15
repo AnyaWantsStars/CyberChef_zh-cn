@@ -467,7 +467,7 @@
     position: absolute;
     bottom: 20px;
     right: 0;
-    background-color: #f1f1f1;
+    background-color: var(--io-status-bar-bg-colour);
     min-width: 200px;
     box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -483,12 +483,12 @@
 
 /* Change color of dropup links on hover */
 .cm-status-bar-select-content a:hover {
-    background-color: #ddd
+    background-color: var(--io-status-bar-hover-bg-colour)
 }
 
 /* Change the background color of the dropup button when the dropup content is shown */
 .cm-status-bar-select:hover .cm-status-bar-select-btn {
-    background-color: #f1f1f1;
+    background-color: var(--io-status-bar-bg-colour);
 }
 
 /* The search field */
@@ -500,7 +500,7 @@
 }
 
 .cm-status-bar-filter-search {
-    border-top: 1px solid #ddd;
+    border-top: 1px solid var(--io-status-bar-border-colour);
 }
 
 /* Show the dropup menu */
@@ -592,7 +592,7 @@
 }
 
 .file-details-error {
-    color: #f00;
+    color: var(--io-error-colour);
 }
 
 .file-details-thumbnail {

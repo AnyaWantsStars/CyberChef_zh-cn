@@ -1,0 +1,312 @@
+/**
+ * zh-cn 界面设置窗口（ui-settings-modal）专用样式：
+ * 隐藏名单分类手风琴 + 自定义主题选项填写表单 + 高级 JSON 折叠区。
+ *
+ * 风格约定：一律使用项目主题 CSS 变量（--primary-* / --secondary-* /
+ * --op-list-operation-* / --btn-default-* / --arg-* 等）与 Bootstrap
+ * 类（form-control / btn / checkbox / text-muted），禁止硬编码色值，
+ * 保证与官方界面观感一致。
+ */
+
+/* ---------- 隐藏名单：搜索框与列表分离、分类手风琴 ---------- */
+#ui-hidden-ops-list.zh-op-cat-list {
+    max-height: 340px;
+    overflow-y: auto;
+    margin-top: 0.5rem;
+    border: 1px solid var(--primary-border-colour);
+    border-radius: 4px;
+    padding: 0.35rem;
+    background-color: var(--secondary-background-colour);
+}
+
+.zh-op-cat {
+    margin-bottom: 0.25rem;
+}
+
+.zh-op-cat-header {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0.5rem;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 3px;
+    color: var(--op-list-operation-font-colour);
+    background-color: var(--op-list-operation-bg-colour);
+    border: 1px solid var(--op-list-operation-border-colour);
+}
+
+/* 与官方操作列表 hover 一致 */
+.zh-op-cat-header:hover {
+    filter: brightness(98%);
+}
+
+.zh-op-cat-arrow {
+    display: inline-block;
+    transition: transform 0.15s ease;
+    font-size: 0.8rem;
+}
+
+.zh-op-cat.open .zh-op-cat-arrow {
+    transform: rotate(90deg);
+}
+
+.zh-op-cat-name {
+    font-weight: 600;
+    flex: 1 1 auto;
+}
+
+.zh-op-cat-count {
+    font-size: 0.78rem;
+    opacity: 0.75;
+    white-space: nowrap;
+}
+
+.zh-op-cat-body {
+    display: none;
+    padding: 0.25rem 0.4rem;
+    /* 不再限制分类内高度/滚动：外层 #ui-hidden-ops-list 已有高度限制，
+       且手风琴互斥保证同时最多展开一个分类，嵌套滚动没有必要 */
+}
+
+.zh-op-cat.open .zh-op-cat-body {
+    /* 稳定四列布局：JS 已按 ceil 均分将操作分组渲染为 4 个 .zh-hidden-op-col，
+       此处用 CSS Grid 强约束固定 4 列（grid-template-columns: repeat(4)），
+       任何时刻最多一个分类展开（手风琴互斥），绝不超过 4 列；
+       列内操作由 JS 分配（先上到下再左到右），列与列数量差不超过 1。 */
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.25rem 0.8rem;
+    align-items: start;
+}
+
+/* 每列纵向排列操作项 */
+.zh-hidden-op-col {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.zh-op-cat-list .zh-hidden-op-item {
+    margin: 0;
+    padding: 0.08rem 0;
+}
+
+.zh-op-cat-list .zh-hidden-op-item label {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin: 0;
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: var(--primary-font-colour);
+    /* 操作名强制单行：超长省略，悬停 title 显示完整名称 */
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.zh-op-cat-list .zh-hidden-op-item input[type=checkbox] {
+    margin: 0;
+    flex: 0 0 auto;
+}
+
+/* 操作名文本：占满剩余宽度，超长省略号 */
+.zh-hidden-op-name {
+    flex: 1 1 auto;
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.zh-hidden-ops-hint {
+    margin: 0.25rem 0 0.5rem;
+    font-size: 0.8rem;
+}
+
+.zh-no-op-match {
+    padding: 0.5rem;
+    margin: 0;
+}
+
+/* ---------- 自定义主题：精简填写表单（4 关键色，浅色/深色各一套） ---------- */
+/* 精简后仅 4 行关键色 + 表头：限高与下方操作列表一致(340px)，内部滚动兜底 */
+#ui-custom-form {
+    display: block;
+    max-height: 340px;
+    overflow-y: auto;
+}
+
+/* 表头行：标明浅色 / 深色各占一半 */
+.zh-key-head {
+    display: grid;
+    grid-template-columns: 8.5rem minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: 0.8rem;
+    padding-bottom: 0.2rem;
+    border-bottom: 1px solid var(--primary-border-colour);
+    margin-bottom: 0.1rem;
+}
+
+.zh-key-head-scheme {
+    font-size: 0.82rem;
+    font-weight: 400;
+    color: var(--subtext-font-colour);
+}
+
+.zh-key-head-label {
+    font-size: 0.82rem;
+    color: var(--subtext-font-colour);
+}
+
+/* 关键色行：字段名共用一套文字，浅色 / 深色各占行内剩余一半 */
+.zh-key-row {
+    display: grid;
+    grid-template-columns: 8.5rem minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: 0.8rem;
+    row-gap: 0.3rem;
+    align-items: center;
+}
+
+.zh-key-row-label {
+    font-size: 0.82rem;
+    font-weight: 400;
+    color: var(--primary-font-colour);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 0.3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.05rem;
+}
+
+/* 关键色作用说明（小灰字，UI 场景提示） */
+.zh-key-row-hint {
+    font-style: normal;
+    font-size: 0.68rem;
+    line-height: 1.15;
+    color: var(--subtext-font-colour);
+    white-space: normal;
+}
+
+/* 浅色 / 深色控件区：各自占行内一半 */
+.zh-key-side {
+    min-width: 0;
+    display: flex;
+    align-items: center;
+}
+
+/* 控件行：取色器 + 文本输入 + 色值预览 */
+.zh-key-field {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    min-width: 0;
+    width: 100%;
+}
+
+.zh-key-field input[type=color] {
+    flex: 0 0 2.2rem;
+    width: 2.2rem;
+    height: 1.6rem;
+    padding: 0;
+    border: 1px solid var(--primary-border-colour);
+    border-radius: 3px;
+    background-color: var(--arg-background);
+    cursor: pointer;
+}
+
+.zh-key-field .zh-key-value {
+    flex: 1 1 auto;
+    min-width: 0;
+    height: 1.6rem;
+    padding: 0 0.4rem;
+    font-size: 0.8rem;
+    font-family: var(--fixed-width-font-family);
+    color: var(--arg-font-colour);
+    background-color: var(--arg-background);
+    border-color: var(--arg-border-colour);
+}
+
+.zh-key-swatch {
+    flex: 0 0 1.4rem;
+    width: 1.4rem;
+    height: 1.4rem;
+    border: 1px solid var(--primary-border-colour);
+    border-radius: 3px;
+    display: inline-block;
+}
+
+/* ---------- 高级 JSON 折叠区 ---------- */
+.zh-custom-json-wrap {
+    border: 1px dashed var(--primary-border-colour);
+    border-radius: 4px;
+    padding: 0.4rem 0.5rem;
+    background-color: var(--secondary-background-colour);
+}
+
+.zh-custom-json-wrap summary {
+    cursor: pointer;
+    /* 去掉蓝色加粗突出：与其它区块标题视觉统一，普通文本样式 */
+    font-weight: 400;
+    font-size: 0.82rem;
+    color: var(--subtext-font-colour);
+}
+
+.zh-custom-json-hint {
+    margin: 0.3rem 0;
+    font-size: 0.78rem;
+}
+
+#ui-custom-json {
+    font-family: var(--fixed-width-font-family);
+    font-size: 0.78rem;
+    resize: vertical;
+    color: var(--arg-font-colour);
+    background-color: var(--arg-background);
+    border-color: var(--arg-border-colour);
+}
+
+/* ---------- 自定义配色方案操作区 ---------- */
+.zh-ui-scheme-actions {
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.zh-ui-scheme-actions .btn {
+    white-space: nowrap;
+}
+
+#ui-custom-name[readonly] {
+    background-color: var(--secondary-background-colour);
+    color: var(--subtext-font-colour);
+}
+
+.zh-ui-custom-name-hint {
+    font-size: 0.78rem;
+    margin: 0.25rem 0 0;
+}
+
+/* zh-cn 删除确认弹窗层级修复：Bootstrap 4 多弹窗 z-index 同为 1050 时按 DOM 顺序叠层，
+   #confirm-modal 位于 #options-modal 与 #ui-settings-modal 之间，会被后打开的后者盖住。
+   仅将确认弹窗面板抬至 1070，即可保证任意组合下确认弹窗始终显示在最顶层。
+   ★ 严禁抬升 .modal-backdrop：Bootstrap 4.6 的 backdrop 全部 append 到 <body> 末尾
+   （位于 #confirm-modal 之后），`#confirm-modal ~ .modal-backdrop:last-of-type` 会命中
+   任意时刻最后插入的 backdrop（包括 options/ui-settings 自己的），将其抬至 1060 后
+   会盖住所有 z-index:1050 的弹窗面板，导致弹窗内容点击被拦截、界面卡死。
+   backdrop 保持 Bootstrap 默认 1040，始终位于各面板之下，不影响交互。 */
+#confirm-modal.modal {
+    z-index: 1070;
+}
+
+/* zh-cn 弹窗内容滚动修复：options/ui-settings 弹窗内容较多（小视口下 modal-body
+   可超 100vh 且无滚动规则，body overflow:hidden 时下方按钮/选项无法滚动触及，
+   表现为"界面卡死"）。为两个弹窗 modal-body 加 max-height + overflow-y:auto，
+   保证小窗口下内容可滚动、按钮可达。 */
+#options-modal .modal-body,
+#ui-settings-modal .modal-body {
+    max-height: calc(100vh - 8rem);
+    overflow-y: auto;
+}

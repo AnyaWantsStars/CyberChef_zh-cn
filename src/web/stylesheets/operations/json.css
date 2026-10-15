@@ -20,7 +20,7 @@
 ul.json-dict, ol.json-array {
     list-style-type: none;
     margin: 0 0 0 1px;
-    border-left: 1px dotted #ccc;
+    border-left: 1px dotted var(--json-dict-border-colour);
     padding-left: 2em;
 }
 .json-string {
@@ -65,14 +65,14 @@ ul.json-dict, ol.json-array {
 /* Show arrows, even in inline mode */
 .json-summary::before {
     content: "\25BC";
-    color: #c0c0c0;
+    color: var(--json-summary-colour);
     margin-left: -12px;
     margin-right: 5px;
     display: inline-block;
     transform: rotate(-90deg);
 }
 .json-summary:hover::before {
-    color: #aaa;
+    color: var(--json-summary-hover-colour);
 }
 .json-details[open] > .json-summary::before {
     transform: rotate(0deg);

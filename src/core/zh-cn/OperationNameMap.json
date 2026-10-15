@@ -1,4 +1,5 @@
 {
+ "_comment": "操作名中英双向映射（zh2en 中文→官方英文、en2zh 官方英文→中文），由 RecipeCompatibility.mjs 用于中英文流程（recipe）互相转换时还原/替换操作名；键为操作名（已汉化操作用中文名、未汉化操作用官方英文名）。1 空格缩进、LF、中文不转义。",
  "zh2en": {
   "A1Z26 密码解密": "A1Z26 Cipher Decode",
   "A1Z26 密码编码": "A1Z26 Cipher Encode",

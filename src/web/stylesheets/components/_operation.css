@@ -18,6 +18,11 @@
     border-right: none;
 }
 
+/* 左侧操作列表单击即可加入流程，使用 pointer 提示可点击 */
+.op-list li.operation {
+    cursor: pointer;
+}
+
 #rec-list .operation {
     padding: 14px;
 }
@@ -239,7 +244,7 @@ input.toggle-string {
 
 .op-icon {
     float: right;
-    color: #f44336;
+    color: var(--op-icon-danger-colour);
     font-size: 18px;
     cursor: pointer;
 }

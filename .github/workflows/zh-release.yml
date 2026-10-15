@@ -6,7 +6,7 @@ on:
       tag:
         description: Release tag
         required: true
-        default: zh-cn-v1.0.0
+        default: zh-cn-v1.1.0
         type: string
   push:
     tags:

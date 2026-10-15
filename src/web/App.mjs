@@ -272,10 +272,16 @@ class App {
         let html = "";
         let i;
 
+        // 不常用操作折叠隐藏：仅常用模式（showAllOps=false）下按当前隐藏名单过滤；
+        // 收藏夹分类（第一个）始终显示全部，避免用户收藏的操作被隐藏
+        const hiddenSet = new Set(this.options.hiddenOps || []);
+        const showAll = !!this.options.showAllOps;
+
         for (i = 0; i < this.categories.length; i++) {
             const catConf = this.categories[i],
                 selected = i === 0,
-                cat = new HTMLCategory(catConf.name, selected);
+                isFavourites = i === 0,
+                cat = new HTMLCategory(catConf.name, selected, hiddenSet, showAll || isFavourites);
 
             for (let j = 0; j < catConf.ops.length; j++) {
                 const opName = catConf.ops[j];
@@ -677,7 +683,7 @@ class App {
 
         // const compareURL = `https://github.com/gchq/CyberChef/compare/v${prev.join(".")}...v${PKG_VERSION}`;
 
-        let compileInfo = `<a href='https://github.com/gchq/CyberChef/blob/master/CHANGELOG.md'>构建日期：${compileDateStr}</a>`;
+        let compileInfo = `<a href="#" data-toggle="modal" data-target="#changelog-modal">构建日期：${compileDateStr}</a>`;
 
         if (window.compileMessage !== "") {
             compileInfo += " - " + window.compileMessage;

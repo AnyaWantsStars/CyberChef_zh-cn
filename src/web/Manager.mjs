@@ -18,6 +18,7 @@ import BindingsWaiter from "./waiters/BindingsWaiter.mjs";
 import BackgroundWorkerWaiter from "./waiters/BackgroundWorkerWaiter.mjs";
 import TabWaiter from "./waiters/TabWaiter.mjs";
 import TimingWaiter from "./waiters/TimingWaiter.mjs";
+import RecipeTemplatesWaiter from "./waiters/RecipeTemplatesWaiter.mjs";
 
 
 /**
@@ -73,6 +74,7 @@ class Manager {
         this.highlighter = new HighlighterWaiter(this.app, this);
         this.seasonal    = new SeasonalWaiter(this.app, this);
         this.bindings    = new BindingsWaiter(this.app, this);
+        this.templates   = new RecipeTemplatesWaiter(this.app, this);
         this.background  = new BackgroundWorkerWaiter(this.app, this);
 
         // Object to store dynamic handlers to fire on elements that may not exist yet
@@ -141,13 +143,17 @@ class Manager {
         document.getElementById("load-delete-button").addEventListener("click", this.controls.loadDeleteClick.bind(this.controls));
         document.getElementById("load-name").addEventListener("change", this.controls.loadNameChange.bind(this.controls));
         document.getElementById("load-button").addEventListener("click", this.controls.loadButtonClick.bind(this.controls));
+        document.getElementById("recipe-templates-open").addEventListener("click", this.templates.open.bind(this.templates));
+        document.getElementById("recipe-templates-search").addEventListener("input", this.templates.searchChange.bind(this.templates));
+        document.getElementById("recipe-templates-list").addEventListener("click", this.templates.itemClick.bind(this.templates));
         document.getElementById("hide-icon").addEventListener("click", this.controls.hideRecipeArgsClick.bind(this.recipe));
         document.getElementById("support").addEventListener("click", this.controls.supportButtonClick.bind(this.controls));
         this.addMultiEventListeners("#save-texts textarea", "keyup paste", this.controls.saveTextChange, this.controls);
 
         // Operations
         this.addMultiEventListener("#search", "keyup paste search", this.ops.searchOperations, this.ops);
-        this.addDynamicListener(".op-list li.operation", "dblclick", this.ops.operationDblclick, this.ops);
+        // 左侧操作列表单击即加入流程，流程区的 li.operation 仍保留双击绑定。
+        this.addDynamicListener(".op-list li.operation", "click", this.ops.operationClick, this.ops);
         document.getElementById("edit-favourites").addEventListener("click", this.ops.editFavouritesClick.bind(this.ops));
         document.getElementById("save-favourites").addEventListener("click", this.ops.saveFavouritesClick.bind(this.ops));
         document.getElementById("reset-favourites").addEventListener("click", this.ops.resetFavouritesClick.bind(this.ops));
@@ -237,6 +243,27 @@ class Manager {
         this.addDynamicListener(".option-item select", "change", this.options.selectChange, this.options);
         document.getElementById("theme").addEventListener("change", this.options.themeChange.bind(this.options));
         document.getElementById("logLevel").addEventListener("change", this.options.logLevelChange.bind(this.options));
+
+        // zh-cn 界面设置窗口（主题区 + 操作列表区）
+        document.getElementById("ui-settings-btn").addEventListener("click", this.options.uiSettingsClick.bind(this.options));
+        // Bootstrap 4 双弹窗滚动锁修复：任一弹窗关闭后，若另一弹窗仍打开则补回 body.modal-open。
+        // 注意：Bootstrap 4 的 modal 事件经由 jQuery 事件系统触发（$.Event('hidden.bs.modal')），
+        // 不会派发原生 DOM 事件，因此必须用 jQuery .on() 绑定，原生 addEventListener 收不到。
+        $("#ui-settings-modal").on("hidden.bs.modal", this.options.modalScrollLockFix.bind(this.options));
+        $("#options-modal").on("hidden.bs.modal", this.options.modalScrollLockFix.bind(this.options));
+        $("#confirm-modal").on("hidden.bs.modal", this.options.modalScrollLockFix.bind(this.options));
+        this.addDynamicListener("#ui-settings-modal input[name=themeMode]", "change", this.options.themeModeChange, this.options);
+        this.addDynamicListener("#ui-theme-pack", "change", this.options.themePackChange, this.options);
+        document.getElementById("ui-show-all-ops").addEventListener("change", this.options.showAllOpsChange.bind(this.options));
+        this.addDynamicListener("#ui-hidden-ops-list input[type=checkbox]", "change", this.options.hiddenOpsChange, this.options);
+        // 手风琴点击已在 renderHiddenOpsList 内对每个 header 直接绑定（dynamic listener
+        // 只匹配点击目标自身，点击 header 内部文字/箭头时不会触发，故不再使用）
+        document.getElementById("ui-hidden-ops-search").addEventListener("input", this.options.hiddenOpsSearch.bind(this.options));
+        document.getElementById("ui-custom-save").addEventListener("click", this.options.customThemeSave.bind(this.options));
+        document.getElementById("ui-custom-delete").addEventListener("click", this.options.deleteCustomTheme.bind(this.options));
+        document.getElementById("ui-reset-settings").addEventListener("click", this.options.resetUISettings.bind(this.options));
+        this.addDynamicListener("#ui-custom-form input[type=color].zh-key-color", "input", this.options.customFormPreview, this.options);
+        this.addDynamicListener("#ui-custom-form input[type=text].zh-key-value", "input", this.options.customFormPreview, this.options);
 
         // Misc
         window.addEventListener("keydown", this.bindings.parseInput.bind(this.bindings));

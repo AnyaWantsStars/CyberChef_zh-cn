@@ -19,6 +19,7 @@ import * as CanvasComponents from "../core/lib/CanvasComponents.mjs";
 import App from "./App.mjs";
 import Categories from "../core/config/Categories.json" with { type: "json" };
 import OperationConfig from "../core/config/OperationConfig.json" with { type: "json" };
+import HiddenOperations from "../core/zh-cn/HiddenOperations.json" with { type: "json" };
 
 
 /**
@@ -54,6 +55,14 @@ function main() {
         syncTabs:            true,
         showCatCount:        false,
         recipeLanguage:      "en",
+        // zh-cn 扩展：主题系统（跟随系统 / 固定浅深 / 自定义配色）
+        themeMode:           "light",
+        lightScheme:         "classic",
+        darkScheme:          "classic-dark",
+        customSchemes:       [],
+        // zh-cn 扩展：不常用操作折叠隐藏（默认隐藏名单来自 HiddenOperations.json，可编辑）
+        showAllOps:          false,
+        hiddenOps:           HiddenOperations.hidden,
     };
 
     document.removeEventListener("DOMContentLoaded", main, false);

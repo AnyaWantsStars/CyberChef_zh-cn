@@ -1,6 +1,7 @@
 "use strict";
 
 const crypto = require("node:crypto");
+const cp = require("node:child_process");
 const fs = require("node:fs");
 const path = require("node:path");
 
@@ -114,9 +115,41 @@ module.exports = function (grunt) {
         pkg = grunt.file.readJSON("package.json"),
         version = process.env.CYBERCHEF_VERSION || process.env.GITHUB_SHA || `v${pkg.version}`,
         officialVersion = "11.5.0", // 官方 GCHQ 最新 release 版本号（不含 v），用于下载弹窗中官方原版的版本展示与链接
-        zhVersion = grunt.option("zh-version") || grunt.file.readJSON("package.json").zhVersion || "v1.0.0",
+        upstreamCommit = (function() {
+            // 取我们实际合并进 zh-cn 的官方提交（最近 merge 提交的 second parent，须属于官方历史），
+            // 而非官方最新 head——官方有新提交但我们没合并时不写错。
+            // 解析失败时回退到 package.json 的 upstreamCommitFallback 字段，再兜底内置默认值，保证构建不失败。
+            /**
+             * 取最近合并进来的官方提交。
+             * @returns {string} 完整 sha；未找到返回空串
+             */
+            function mergedOfficial() {
+                try {
+                    const merges = cp.execSync("git log --merges -10 --format=%P", { encoding: "utf8", stdio: ["ignore", "pipe", "ignore"] }).trim().split(/\r?\n/);
+                    for (const line of merges) {
+                        const parents = line.trim().split(/\s+/);
+                        if (parents.length < 2 || !/^[0-9a-f]{40}$/.test(parents[parents.length - 1])) continue;
+                        const p = parents[parents.length - 1];
+                        try {
+                            cp.execSync("git merge-base --is-ancestor " + p + " upstream/master", { stdio: ["ignore", "ignore", "ignore"] });
+                            return p;
+                        } catch (e) {}
+                    }
+                } catch (e) {}
+                return "";
+            }
+            const full = mergedOfficial() || (pkg.upstreamCommitFallback || "");
+            return /^[0-9a-f]{40}$/.test(full) ?
+                { full: full, short: full.slice(0, 7) } :
+                { full: "609951ac13967da6d497e0600c922f56bfd0b7af", short: "609951a" };
+        })(),
+        zhVersion = grunt.option("zh-version") || grunt.file.readJSON("package.json").zhVersion || "v1.1.0",
         bannerTitle = grunt.option("banner-title") || `CyberChef ${version} zh-cn ${zhVersion}`,
         downloadZipFilename = `CyberChef_${version}_zh-cn_${zhVersion}.zip`,
+        zhRepoOwner = "AnyaWantsStars",
+        zhRepoName = "CyberChef_zh-cn",
+        zhChangelogTag = "zh-cn-" + zhVersion, // 更新日志链接使用的 tag 名（汉化 tag 带 zh-cn- 前缀，升级时只改变量 zhVersion）
+        zhChangelogFile = "CHANGELOG.zh-cn.md",
         webpackConfig = require("./webpack.config.js"),
         BUILD_CONSTANTS = {
             COMPILE_YEAR: JSON.stringify(compileYear),
@@ -160,10 +193,16 @@ module.exports = function (grunt) {
                         compileTime: compileTime,
                         version: version,
                         officialVersion: officialVersion,
+                        upstreamCommit: upstreamCommit.short,
+                        upstreamCommitUrl: "https://github.com/gchq/CyberChef/commit/" + upstreamCommit.full,
                         bannerTitle: bannerTitle,
                         zhVersion: zhVersion,
                         latestReleaseVersion: officialVersion,
                         downloadZipFilename: downloadZipFilename,
+                        zhRepoOwner: zhRepoOwner,
+                        zhRepoName: zhRepoName,
+                        zhChangelogTag: zhChangelogTag,
+                        zhChangelogFile: zhChangelogFile,
                         minify: {
                             removeComments: true,
                             collapseWhitespace: true,

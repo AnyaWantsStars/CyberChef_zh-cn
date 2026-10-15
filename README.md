@@ -31,12 +31,23 @@ npm run build
 
 - 当前项目版本：`11.5.5`
 - 对应上游：官方 `11.5.0` 及后续提交
-- 社区汉化版本：`v1.0.0`
-- 构建文件：`CyberChef_v11.5.5_zh-cn_v1.0.0.zip`
+- 社区汉化版本：`v1.1.0`
+- 构建文件：`CyberChef_v11.5.5_zh-cn_v1.1.0.zip`
 
 汉化版版本号与官方版本号分开维护，相关窗口会分别显示两个版本。
 
-### 功能特性
+### v1.1.0 新增
+
+- 内置流程模板库：122 条多步骤操作链模板，按 4 大分类组织（编码与格式化 28 / 哈希与加解密 8 / CTF 解题 31 / 安全取证 55），支持中文关键词 tags 搜索、星标与收藏夹管理、点击模板即加入流程
+- 操作搜索升级为五级匹配双语搜索：中文名模糊 → 官方英文名模糊 → 中文别名模糊 → 中文描述精确 → 官方英文描述精确；内置 311 条操作的 655 个中文别名
+- 默认隐藏不常用操作（当前 260/506）：可在界面设置中搜索、勾选或取消隐藏项，也可一键显示全部操作；收藏夹分类始终显示全部
+- 内置 9 套汉化版配色方案以及 4 套开源配色方案：Catppuccin / Nord / Dracula / Tokyo Night（各含深色与浅色），另支持自定义主题
+- 新增界面设置窗口，可切换跟随系统、固定浅色和固定深色
+- 操作列表支持单击操作即加入流程，流程区域仍保留双击行为
+- 页眉构建日期可点击打开更新日志弹窗，分别提供官方更新日志和汉化版更新日志入口
+- 下载窗口显示实际合并的官方提交编号
+
+### 基础能力
 
 - 覆盖主要界面、操作名称、参数和错误提示的简体中文翻译
 - 核心算法和执行流程沿用官方实现
@@ -72,6 +83,10 @@ npm run build
 - 源码统一使用 UTF-8 和 LF 换行。不要提交 CRLF 文件，否则 lint 和构建可能失败。
 - 合并上游更新后，需要检查 `Gruntfile.js` 中的 Windows 构建兼容补丁、版本注入逻辑和汉化文本是否仍然有效。
 - 中英文流程（recipe）和 Node.js API 兼容逻辑位于 `src/core/zh-cn/`，修改映射后需要运行 Node.js 和 operation 测试。
+- 新增功能优先落在官方几乎不动的区域，例如流程模板库、别名表、隐藏名单和独立的界面设置窗口，不触碰官方改动频繁的核心逻辑。这样每次合并上游需要处理的冲突很少，后续维护成本最低；代价是官方变动频繁的部分不做额外适配。
+- 流程模板库 `src/core/zh-cn/RecipeTemplates.json` 按 id/category/name/description/tags/流程配置（`recipe`）/source 结构维护，2 空格缩进、LF、中文不转义；新增模板的操作名与参数枚举必须使用官方英文写法。
+- 中文别名 `src/core/zh-cn/OperationAliases.json` 的键为操作名（已汉化操作用中文名、未汉化操作用官方英文名），值为该操作的中文别名（俗称 / 译名），供操作搜索五级匹配兜底使用。
+- 默认隐藏操作名单位于 `src/core/zh-cn/HiddenOperations.json`，设置窗口支持按名称搜索并逐项调整。
 - Windows 构建链保留了 `webpack.config.js` 的双分隔符 Babel exclude 规则，避免 `node_modules` 被误交给 Babel 处理。
 - `.fnt` 和 `bmfonts` 下的 `.png` 必须继续由资源规则处理，否则会被误当作 JavaScript 模块。
 - 上游依赖或 webpack 配置变化后，应重新执行全新 `npm ci` 和生产构建；若再次出现 `core-js-pure` 相关的 `$ is not a function`，需要检查依赖版本和 Babel 范围。
@@ -86,7 +101,7 @@ npm run build
 
 汉化缺失、术语问题、英文流程（recipe）兼容和 Node.js API 问题，请提交到本仓库 [Issues](https://github.com/AnyaWantsStars/CyberChef_zh-cn/issues)。
 
-官方算法、协议或 operation 问题，请优先提交到 [gchq/CyberChef](https://github.com/gchq/CyberChef/issues)。
+官方算法、协议或操作问题，请优先提交到 [gchq/CyberChef](https://github.com/gchq/CyberChef/issues)。
 
 提交问题时请尽量提供：
 
@@ -144,7 +159,17 @@ CyberChef zh-cn is an unofficial, community-maintained Simplified Chinese build 
 
 Try the online version at [GitHub Pages](https://anyawantsstars.github.io/CyberChef_zh-cn/).
 
-### What This Version Provides
+### New in v1.1.0
+
+- A built-in recipe template library: 122 multi-step templates in 4 categories (encoding 28 / crypto 8 / ctf 31 / dfir 55), with Chinese keyword tags, star favourites and a favourites manager, and click-to-load
+- Five-level bilingual operation search (Chinese name / English name / Chinese aliases / Chinese description / English description) backed by 655 Chinese aliases for 311 operations
+- 9 localized colour schemes, plus Catppuccin, Nord, Dracula, and Tokyo Night with light and dark variants
+- A settings window for system, light, dark, and custom colour modes
+- Single-click operation loading while preserving double-click behaviour in the Recipe pane
+- The build date in the header opens a changelog dialog linking to the official and zh-cn changelogs
+- A default hidden-operations list (260 of 506) with search and per-operation toggles in Settings, plus a show-all option; favourites remain visible
+
+### Core Capabilities
 
 - Simplified Chinese translations for the main interface, operation names, descriptions, arguments, and errors
 - The standard CyberChef workflow, including drag-and-drop recipes, Magic detection, breakpoints, URL sharing, and offline use
@@ -182,6 +207,8 @@ Other available commands:
 ### Architecture
 
 The public `main` branch contains this localized build. Upstream English source is tracked from `gchq/CyberChef`, while translations and compatibility handling are maintained in this repository. Upstream changes are merged and reviewed for conflicts.
+
+New features are added in areas upstream rarely touches, such as the recipe template library, the alias table, the hidden-operations list and the separate settings window, rather than in the core logic that upstream edits most often. Merges therefore stay cheap to maintain, at the cost of not adapting features that upstream changes frequently.
 
 The compatibility layer under `src/core/zh-cn/` converts Chinese and English recipes and preserves the official Node.js API shape. It is not a general runtime i18n framework.
 

@@ -79,7 +79,7 @@
 }
 
 p a:focus {
-    color: #0a6ebd;
+    color: var(--modals-link-focus-colour);
     text-decoration: underline;
 }
 
@@ -114,4 +114,241 @@ p a:focus {
     background-image:
         linear-gradient(to top, var(--input-highlight-colour) 2px, rgba(0, 0, 0, 0) 2px),
         linear-gradient(to top, var(--primary-border-colour) 1px, rgba(0, 0, 0, 0) 1px);
+}
+
+/* ===== 流程模板库面板 ===== */
+#recipe-templates-modal .modal-dialog {
+    max-height: 90vh;
+}
+#recipe-templates-modal .modal-body {
+    overflow-y: auto;
+    max-height: calc(90vh - 130px);
+}
+/* 模板库搜索框：覆盖 bootstrap-material-design 库对 .bmd-form-group
+   的默认 padding-top: 1.75rem，仅限模板库面板作用域，不影响其它组件 */
+#recipe-templates-modal .bmd-form-group {
+    padding-top: 0;
+}
+.recipe-templates-list {
+    margin-top: 8px;
+}
+/* 手风琴分类头：仿操作面板分类 */
+.recipe-templates-list .template-category {
+    margin: 6px 0;
+    border-bottom: 1px solid var(--primary-border-colour);
+}
+.recipe-templates-list .category-title {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 8px 6px;
+    margin: 0;
+    font-weight: 600;
+    font-size: 0.95em;
+    color: var(--input-highlight-colour);
+    cursor: pointer;
+    border-radius: 4px;
+    user-select: none;
+}
+.recipe-templates-list .category-title:hover {
+    background-color: var(--op-list-operation-bg-colour);
+}
+.recipe-templates-list .category-title .material-icons {
+    font-size: 1.1em;
+    margin-right: 4px;
+    color: var(--input-highlight-colour);
+}
+.recipe-templates-list .template-cat-count {
+    font-size: 0.8em;
+    opacity: 0.7;
+    margin-left: 6px;
+}
+.recipe-templates-list .panel-collapse {
+    padding: 2px 2px 6px 2px;
+}
+/* 紧凑两列网格：减少空白浪费，一行两张模板卡片 */
+.recipe-templates-list .template-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+}
+/* 紧凑列表式模板卡片：默认仅显示名称，星标位于右侧 */
+.recipe-templates-list .template-item {
+    position: relative;
+    border: 1px solid var(--primary-border-colour);
+    border-radius: 4px;
+    padding: 5px 8px;
+    min-height: 30px;
+    cursor: pointer;
+    transition: background-color 0.12s ease, border-color 0.12s ease;
+}
+/* 卡片内容行：名称与星标同一行，星标固定在行末（不换行到第二行左侧） */
+.recipe-templates-list .template-item-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+/* 修复 hover 看不清：沿用操作列表可读配色（浅/深主题均可读） */
+.recipe-templates-list .template-item:hover {
+    background-color: var(--op-list-operation-bg-colour);
+    border-color: var(--op-list-operation-border-colour);
+}
+.recipe-templates-list .template-item-name {
+    flex: 1 1 auto;
+    min-width: 0;
+    margin-right: 6px;
+    font-weight: 600;
+    font-size: 0.88em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.recipe-templates-list .template-item:hover .template-item-name {
+    color: var(--op-list-operation-font-colour);
+}
+/* 收藏星标：固定在卡片右侧（flex 行末位） */
+.recipe-templates-list .template-item-fav {
+    flex: 0 0 auto;
+    cursor: pointer;
+    color: var(--primary-border-colour);
+    opacity: 0.7;
+    transition: color 0.12s ease, opacity 0.12s ease;
+    z-index: 2;
+}
+.recipe-templates-list .template-item-fav:hover {
+    opacity: 1;
+    color: var(--input-highlight-colour);
+}
+.recipe-templates-list .template-item-fav.active {
+    opacity: 1;
+    color: var(--input-highlight-colour);
+}
+.recipe-templates-list .template-item-fav .material-icons {
+    font-size: 1.15em;
+    vertical-align: middle;
+    display: block;
+}
+/* hover 说明弹窗内容（仿官方操作说明 popover）：由 Bootstrap popover 渲染，
+   弹窗内不加标题行，直接展示较详细中文说明与中文操作链 */
+.recipe-tpl-popover {
+    max-width: 300px;
+    text-align: left;
+}
+.recipe-tpl-popover .template-tip-desc {
+    font-size: 0.85em;
+    opacity: 0.92;
+    margin-bottom: 4px;
+    line-height: 1.4;
+}
+.recipe-tpl-popover .template-tip-ops {
+    font-size: 0.8em;
+    opacity: 0.8;
+    font-family: monospace;
+    word-break: break-all;
+    line-height: 1.35;
+}
+/* 收藏夹分类标题行右侧：星形管理按钮
+   复用官方 #edit-favourites 同款视觉（btn-warning + bmd-btn-icon +
+   material-icons star）；flex 标题行内用 margin-left:auto 实现官方
+   float:right 相同的右置效果，其余样式全部由官方按钮类提供 */
+/* 编辑收藏按钮：绝对定位右置并垂直居中，脱离标题行 flex 流，
+   不再参与行高计算，收藏夹标题行高度与普通分类一致 */
+.recipe-templates-list .template-cat-edit-fav {
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1.5rem;
+    min-width: 1.5rem;
+    height: 1.5rem;
+    padding: 0;
+    font-size: 1rem;
+    line-height: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+/* 覆盖 bmd-btn-icon 的绝对定位与分类标题通用图标规则，让星标精确居中于圆形按钮 */
+.recipe-templates-list .template-cat-edit-fav .material-icons {
+    font-size: 1rem;
+    width: 1rem;
+    line-height: 1;
+    margin: 0;
+    position: static;
+    transform: none;
+    color: var(--input-highlight-colour);
+}
+/* 收藏夹管理弹窗：已收藏模板列表
+   与外部收藏卡片样式对齐（两列网格、名称 + 右侧删除按钮），
+   不再复用官方 #edit-favourites-list 的 .op-list/.operation 样式 */
+#recipe-templates-fav-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    padding: 0;
+    list-style: none;
+    margin: 10px 0;
+}
+#recipe-templates-fav-list .template-item {
+    border: 1px solid var(--primary-border-colour);
+    border-radius: 4px;
+    padding: 5px 8px;
+    min-height: 30px;
+    cursor: grab;
+    transition: background-color 0.12s ease, border-color 0.12s ease;
+}
+#recipe-templates-fav-list .template-item:hover {
+    background-color: var(--op-list-operation-bg-colour);
+    border-color: var(--op-list-operation-border-colour);
+}
+#recipe-templates-fav-list .template-item.dragging {
+    opacity: 0.5;
+    border-style: dashed;
+    cursor: grabbing;
+}
+#recipe-templates-fav-list .template-item-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#recipe-templates-fav-list .template-item-name {
+    flex: 1 1 auto;
+    min-width: 0;
+    margin-right: 6px;
+    font-weight: 600;
+    font-size: 0.88em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+#recipe-templates-fav-list .template-manage-del {
+    flex: 0 0 auto;
+    cursor: pointer;
+    color: var(--primary-border-colour);
+    opacity: 0.75;
+    transition: color 0.12s ease, opacity 0.12s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+#recipe-templates-fav-list .template-manage-del:hover {
+    opacity: 1;
+    color: #f44336;
+}
+#recipe-templates-fav-list .template-manage-del .material-icons {
+    font-size: 1.15em;
+    display: block;
+}
+/* 拖拽模板卡片到收藏夹分类时的高亮 */
+.recipe-templates-list .template-category.drag-over {
+    outline: 1px dashed var(--input-highlight-colour);
+    outline-offset: 2px;
+}
+.recipe-templates-list .template-category.drag-over .template-grid {
+    background-color: var(--op-list-operation-bg-colour);
+}
+.recipe-templates-list .template-empty {
+    padding: 24px 0;
+    text-align: center;
+    opacity: 0.6;
 }

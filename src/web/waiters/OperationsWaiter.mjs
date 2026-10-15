@@ -9,6 +9,7 @@ import Sortable from "sortablejs";
 import {fuzzyMatch, calcMatchRanges} from "../../core/lib/FuzzyMatch.mjs";
 import ParameterNameMap from "../../core/zh-cn/ParameterNameMap.json" with { type: "json" };
 import EnglishDescriptionMap from "../../core/zh-cn/EnglishDescriptionMap.json" with { type: "json" };
+import OperationAliases from "../../core/zh-cn/OperationAliases.json" with { type: "json" };
 
 
 /**
@@ -140,10 +141,34 @@ class OperationsWaiter {
 
             // 兼容官方英文操作名搜索（中文名未命中时回退到官方英文名）
             const enName = ParameterNameMap[opName] && ParameterNameMap[opName].enName || null;
-            if (!nameMatch && enName) {
+            if (!nameMatch && enName && enName !== opName) {
                 [nameMatch, score, idxs] = fuzzyMatch(inStrNWS, enName);
                 // 高亮索引基于英文名，不能映射到中文名，跳过名字高亮
                 idxs = [];
+            }
+
+            // 中文别名模糊匹配（中文名/英文名均未命中时，回退到 OperationAliases 中的中文别名）
+            // 别名涵盖未汉化英文操作的中文译名/俗称（如 ROT13→凯撒密码、XOR→异或），
+            // 以及已汉化操作的常见俗语（如 频率分布→词频统计、Levenshtein 距离→编辑距离）
+            if (!nameMatch) {
+                const aliases = OperationAliases[opName];
+                if (aliases && aliases.length) {
+                    let aliasMatch = false;
+                    let aliasScore = 0;
+                    for (const alias of aliases) {
+                        const [am, asc] = fuzzyMatch(inStrNWS, alias);
+                        if (am && asc > aliasScore) {
+                            aliasMatch = true;
+                            aliasScore = asc;
+                        }
+                    }
+                    if (aliasMatch) {
+                        nameMatch = true;
+                        score = aliasScore;
+                        // 高亮索引基于别名，不能映射到操作名，跳过名字高亮
+                        idxs = [];
+                    }
+                }
             }
 
             // Match description based on exact match
@@ -160,7 +185,13 @@ class OperationsWaiter {
             if (nameMatch || descPos >= 0 || enDescPos >= 0) {
                 const operation = new HTMLOperation(opName, this.app.operations[opName], this.app, this.manager);
                 if (highlight) {
-                    operation.highlightSearchStrings(calcMatchRanges(idxs), descPos >= 0 ? [[descPos, inStr.length]] : []);
+                    let descHighlight = [];
+                    if (descPos >= 0) {
+                        descHighlight = [[descPos, inStr.length]];
+                    } else if (enDescPos >= 0) {
+                        descHighlight = [[enDescPos, inStr.length]];
+                    }
+                    operation.highlightSearchStrings(calcMatchRanges(idxs), descHighlight);
                 }
 
                 if (nameMatch) {
@@ -242,14 +273,18 @@ class OperationsWaiter {
 
 
     /**
-     * Handler for operation doubleclick events.
+     * Handler for operation click events.
      * Adds the operation to the recipe and auto bakes.
      *
      * @param {event} e
      */
-    operationDblclick(e) {
+    // 单击加入：左侧操作列表由双击加入改为单击加入（Manager 中绑定 click），
+    // 点击时直接把列表项文本（中文操作名）加入流程并触发自动执行
+    operationClick(e) {
         const li = e.target;
 
+        // 双击会触发两次 click，第二次（detail > 1）忽略，避免同一操作被加入两次
+        if (e.detail > 1) return;
         this.manager.recipe.addOperation(li.textContent);
     }
 

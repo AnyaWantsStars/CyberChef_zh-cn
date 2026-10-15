@@ -14,10 +14,14 @@ class HTMLCategory {
      *
      * @param {string} name - The name of the category.
      * @param {boolean} selected - Whether this category is pre-selected or not.
+     * @param {Set<string>} [hiddenSet] - 默认隐藏的操作名集合（仅常用模式过滤用）。
+     * @param {boolean} [showAll] - 是否显示全部操作（false 时按 hiddenSet 过滤）。
      */
-    constructor(name, selected) {
+    constructor(name, selected, hiddenSet, showAll) {
         this.name = name;
         this.selected = selected;
+        this.hiddenSet = hiddenSet || new Set();
+        this.showAll = !!showAll;
         this.opList = [];
     }
 
@@ -50,6 +54,8 @@ class HTMLCategory {
             <ul class="op-list">`;
 
         for (let i = 0; i < this.opList.length; i++) {
+            // 仅常用模式下按隐藏名单过滤；分类计数保持全量（op-count 使用 opList.length）
+            if (!this.showAll && this.hiddenSet.has(this.opList[i].name)) continue;
             html += this.opList[i].toStubHtml();
         }
 
