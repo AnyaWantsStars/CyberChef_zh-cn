@@ -45,6 +45,8 @@ jobs:
       - name: Prepare Pages artifact
         run: |
           rm -f build/prod/BundleAnalyzerReport.html
+          # 预压缩副本只对支持预压缩的服务器有意义，GitHub Pages 不会用到，去掉以缩小部署包
+          find build/prod -type f \( -name '*.js.gz' -o -name '*.js.br' -o -name '*.css.gz' -o -name '*.css.br' -o -name '*.html.gz' -o -name '*.html.br' \) -delete
 
       - name: Configure Pages
         uses: actions/configure-pages@v6

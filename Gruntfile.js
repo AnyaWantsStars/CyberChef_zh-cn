@@ -95,7 +95,6 @@ module.exports = function (grunt) {
             .on("error", (err) => done(false));
     });
 
-
     // Load tasks provided by each plugin
     grunt.loadNpmTasks("grunt-eslint");
     grunt.loadNpmTasks("grunt-webpack");
@@ -320,7 +319,18 @@ module.exports = function (grunt) {
                     "build/prod/**/*",
                     "!build/prod/index.html",
                     "!build/prod/BundleAnalyzerReport.html",
+                    // .js / .css / .html 的预压缩副本由 compression-webpack-plugin 产出，
+                    // 只在支持预压缩的服务器上有意义，离线包用不到，还会让 ZIP 体积翻倍。
+                    // 注意 assets/tesseract 下的 *.traineddata.gz 是真实资源，不能一起排除。
+                    "!build/prod/**/*.js.gz",
+                    "!build/prod/**/*.js.br",
+                    "!build/prod/**/*.css.gz",
+                    "!build/prod/**/*.css.br",
+                    "!build/prod/**/*.html.gz",
+                    "!build/prod/**/*.html.br",
                 ],
+                // JSZip 默认不压缩（store），显式启用 DEFLATE
+                compression: "DEFLATE",
                 dest: `build/prod/${downloadZipFilename}`
             }
         },
