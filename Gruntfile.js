@@ -113,7 +113,7 @@ module.exports = function (grunt) {
         compileTime = grunt.template.today("UTC:dd/mm/yyyy HH:MM:ss") + " UTC",
         pkg = grunt.file.readJSON("package.json"),
         version = process.env.CYBERCHEF_VERSION || process.env.GITHUB_SHA || `v${pkg.version}`,
-        officialVersion = "11.5.0", // 官方 GCHQ 最新 release 版本号（不含 v），用于下载弹窗中官方原版的版本展示与链接
+        officialVersion = pkg.version, // 官方原版版本号取自 package.json，与上游 release 对齐，用于下载弹窗展示与链接
         upstreamCommit = (function() {
             // 取我们实际合并进 zh-cn 的官方提交（最近 merge 提交的 second parent，须属于官方历史），
             // 而非官方最新 head——官方有新提交但我们没合并时不写错。
@@ -140,9 +140,9 @@ module.exports = function (grunt) {
             const full = mergedOfficial() || (pkg.upstreamCommitFallback || "");
             return /^[0-9a-f]{40}$/.test(full) ?
                 { full: full, short: full.slice(0, 7) } :
-                { full: "609951ac13967da6d497e0600c922f56bfd0b7af", short: "609951a" };
+                { full: "f464d62c7c943cda9749a765932a7548ba9bfb16", short: "f464d62" };
         })(),
-        zhVersion = grunt.option("zh-version") || grunt.file.readJSON("package.json").zhVersion || "v1.1.0",
+        zhVersion = grunt.option("zh-version") || pkg.zhVersion || "v1.1.1",
         bannerTitle = grunt.option("banner-title") || `CyberChef ${version} zh-cn ${zhVersion}`,
         downloadZipFilename = `CyberChef_${version}_zh-cn_${zhVersion}.zip`,
         zhRepoOwner = "AnyaWantsStars",

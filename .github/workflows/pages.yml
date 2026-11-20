@@ -28,6 +28,12 @@ jobs:
           node-version: 24
           cache: npm
 
+      - name: Read package version
+        id: pkg
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
+
       - name: Install dependencies
         run: npm ci
 
@@ -39,7 +45,7 @@ jobs:
 
       - name: Build
         env:
-          CYBERCHEF_VERSION: v11.6.0
+          CYBERCHEF_VERSION: v${{ steps.pkg.outputs.version }}
         run: npm run build
 
       - name: Prepare Pages artifact
