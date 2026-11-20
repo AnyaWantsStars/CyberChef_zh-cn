@@ -10,11 +10,17 @@ CyberChef 中文版是社区维护的非官方简体中文版本，基于 [gchq/
 
 除 HTTP 请求、DNS over HTTPS 等需要主动访问网络的操作外，数据均在浏览器本地处理，不会上传到本项目服务器，适合离线环境使用。
 
+### 兼容性
+
+官方英文 `#recipe=` 流程链接可直接粘贴打开，中英文流程可互相转换，已有的 `.chef` 文件、分享链接和 Node.js 脚本无需改动。
+
+官方英文流程链接可直接粘贴打开：https://anyawantsstars.github.io/CyberChef_zh-cn/#recipe=From_Base64('A-Za-z0-9%2B/%3D',true)&input=U0dWc2JHOGdWMjl5YkdRaA==
+
 ### 下载与使用
 
-在线使用：[GitHub Pages](https://anyawantsstars.github.io/CyberChef_zh-cn/)
+在线使用（GitHub Pages）：https://anyawantsstars.github.io/CyberChef_zh-cn/
 
-前往 [Releases](https://github.com/AnyaWantsStars/CyberChef_zh-cn/releases) 下载最新的离线包，解压后直接打开 `html`。
+若 Pages 临时不可用，请从 [Releases](https://github.com/AnyaWantsStars/CyberChef_zh-cn/releases) 下载离线包，解压后直接打开 `html`。
 
 如果需要自行构建：
 
@@ -29,14 +35,14 @@ npm run build
 
 ### 版本说明
 
-- 当前项目版本：`11.5.5`
-- 对应上游：官方 `11.5.0` 及后续提交
-- 社区汉化版本：`v1.1.0`
-- 构建文件：`CyberChef_v11.5.5_zh-cn_v1.1.0.zip`
+- 上游基线：官方 `11.6.0`
+- 本包汉化版本：`v1.1.1`
+- 构建文件：`CyberChef_v11.6.0_zh-cn_v1.1.1.zip`
+- zip 命名规则：`CyberChef_v<上游版本>_zh-cn_<汉化版本>.zip`
 
 汉化版版本号与官方版本号分开维护，相关窗口会分别显示两个版本。
 
-### v1.1.0 新增
+### 自 v1.1.0 起的新增功能
 
 - 内置流程模板库：122 条多步骤操作链模板，按 4 大分类组织（编码与格式化 28 / 哈希与加解密 8 / CTF 解题 31 / 安全取证 55），支持中文关键词 tags 搜索、星标与收藏夹管理、点击模板即加入流程
 - 操作搜索升级为五级匹配双语搜索：中文名模糊 → 官方英文名模糊 → 中文别名模糊 → 中文描述精确 → 官方英文描述精确；内置 311 条操作的 655 个中文别名
@@ -90,6 +96,26 @@ npm run build
 - Windows 构建链保留了 `webpack.config.js` 的双分隔符 Babel exclude 规则，避免 `node_modules` 被误交给 Babel 处理。
 - `.fnt` 和 `bmfonts` 下的 `.png` 必须继续由资源规则处理，否则会被误当作 JavaScript 模块。
 - 上游依赖或 webpack 配置变化后，应重新执行全新 `npm ci` 和生产构建；若再次出现 `core-js-pure` 相关的 `$ is not a function`，需要检查依赖版本和 Babel 范围。
+
+### 实测矩阵
+
+以下项目在本仓库内完成过真实验证，验证方式与状态如实列出：
+
+| 已验证项 | 验证方式 | 状态 |
+| --- | --- | --- |
+| 中英文流程（recipe）互转（操作名 / 参数值） | 自动化回归 `tests/zh-cn-compat/run-compat.mjs`（15 用例） | 通过 |
+| 官方英文 `#recipe=` URL 直接打开（单操作 / 多操作链） | 自动化回归 | 通过 |
+| 中文流程（recipe）URL 直接打开 | 自动化回归 | 通过 |
+| `.chef` 导入导出（含多行 pretty 格式） | 自动化回归 | 通过 |
+| URL hash 往返（配置 → 分享链接 → 解析 → 执行，中英文一致） | 自动化回归 | 通过 |
+| Node.js API 英文参数与返回字段 | `npm test`（279 Node API + 2327 operations 全绿） | 通过 |
+| 默认隐藏操作 260 / 506 | 构建验证 + 设置窗口复查 | 通过 |
+| 流程模板库 122 条（28 / 8 / 31 / 55） | 构建验证 + JSON 校验 | 通过 |
+| 操作别名搜索 311 操作 / 655 别名 | 构建验证 + 搜索用例 | 通过 |
+| 发布物可核验（zip sha256 / 版本戳 / package.json / README） | 自动化脚本 `tests/zh-cn-compat/verify-release.py` | 通过 |
+| 不同浏览器与超大数据场景 | 待人工实测 | 部分验证 |
+
+回归脚本：`tests/zh-cn-compat/run-compat.mjs`（15 / 15 通过）；核验脚本：`tests/zh-cn-compat/verify-release.py`。
 
 ### 已知限制
 
@@ -153,13 +179,30 @@ v11.5.0 发布后，原有规则大量失效，需要重新适配。项目评估
 
 本项目采用源码级汉化，并额外维护流程（recipe）中英文兼容层，目标是在保留官方流程互通能力的同时提供完整中文体验。感谢上述项目以及所有 CyberChef 汉化参与者长期积累的经验。
 
+### 作者的其他开源项目
+
+本项目作者还维护了 [dpa](https://github.com/dpa-org/dpa)（Data Processing & Analysis，数据处理与分析工具，Rust 实现）。dpa 定位为命令行下的数据处理与分析工具，欢迎关注和贡献。
+
 ## English
 
 CyberChef zh-cn is an unofficial, community-maintained Simplified Chinese build of [CyberChef](https://github.com/gchq/CyberChef). Processing is client-side by default, and user-facing strings are localized directly in the source code.
 
-Try the online version at [GitHub Pages](https://anyawantsstars.github.io/CyberChef_zh-cn/).
+Official English `#recipe=` links open directly, Chinese and English recipes convert bidirectionally, and existing `.chef` files, shared links and Node.js scripts work unchanged.
 
-### New in v1.1.0
+Official English recipe link (paste into the browser and it opens directly): https://anyawantsstars.github.io/CyberChef_zh-cn/#recipe=From_Base64('A-Za-z0-9%2B/%3D',true)&input=U0dWc2JHOGdWMjl5YkdRaA==
+
+Try the online version at GitHub Pages: https://anyawantsstars.github.io/CyberChef_zh-cn/
+
+If Pages is temporarily unavailable, download the offline package from [Releases](https://github.com/AnyaWantsStars/CyberChef_zh-cn/releases).
+
+### Version Notes
+
+- Upstream baseline: official `11.6.0`
+- This package: `v1.1.1`
+- Build artifact: `CyberChef_v11.6.0_zh-cn_v1.1.1.zip`
+- zip naming rule: `CyberChef_v<upstream version>_zh-cn_<zh-cn version>.zip`
+
+### New Since v1.1.0
 
 - A built-in recipe template library: 122 multi-step templates in 4 categories (encoding 28 / crypto 8 / ctf 31 / dfir 55), with Chinese keyword tags, star favourites and a favourites manager, and click-to-load
 - Five-level bilingual operation search (Chinese name / English name / Chinese aliases / Chinese description / English description) backed by 655 Chinese aliases for 311 operations
@@ -230,7 +273,11 @@ Because translated strings live next to the upstream source and bilingual recipe
 
 ### Compatibility
 
-Chinese and English recipes can be imported and exported. The Node.js API accepts official English argument names and values, and returns the official property names. A small amount of visible text may remain in English, and browser or large-file behavior should still be verified in real use.
+Chinese and English recipes can be imported and exported. The Node.js API accepts official English argument names and values, and returns the official property names. Verified by `tests/zh-cn-compat/run-compat.mjs` (15 / 15 passing) and `npm test` (279 Node API + 2327 operations). Release artifacts are checked by `tests/zh-cn-compat/verify-release.py`. A small amount of visible text may remain in English, and browser or large-file behavior should still be verified in real use.
+
+### Other Open-Source Projects by the Author
+
+The author also maintains [dpa](https://github.com/dpa-org/dpa) (Data Processing & Analysis), a command-line data processing and analysis tool implemented in Rust.
 
 ### Contributing
 

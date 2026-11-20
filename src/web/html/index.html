@@ -164,7 +164,12 @@
                                 alert("不支持 Internet Explorer，请改用 Firefox 或 Chrome");
                             }
                         </script>
-                        <noscript>未启用 JavaScript，祝你好运。</noscript>
+                        <noscript>
+                            本页面需要启用 JavaScript 才能使用。
+                            当前版本：CyberChef v<%= htmlWebpackPlugin.options.version %>（汉化 <%= htmlWebpackPlugin.options.zhVersion %>）。
+                            若无法启用脚本，可从 GitHub Releases 下载离线包：https://github.com/AnyaWantsStars/CyberChef_zh-cn/releases
+                            官方英文 #recipe= 流程链接可直接粘贴打开本页面：https://anyawantsstars.github.io/CyberChef_zh-cn/#recipe=From_Base64('A-Za-z0-9%2B/%3D',true)&input=U0dWc2JHOGdWMjl5YkdRaA==
+                        </noscript>
                     </span>
                 </div>
                 <div class="col" style="text-align: right; padding-right: 0;">

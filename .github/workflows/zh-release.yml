@@ -6,7 +6,7 @@ on:
       tag:
         description: Release tag
         required: true
-        default: zh-cn-v1.1.0
+        default: zh-cn-v1.1.1
         type: string
   push:
     tags:
@@ -44,7 +44,7 @@ jobs:
 
       - name: Build
         env:
-          CYBERCHEF_VERSION: v11.5.5
+          CYBERCHEF_VERSION: v11.6.0
         run: npm run build
 
       - name: Create or update release
@@ -52,7 +52,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           VERSION="${RELEASE_TAG#zh-cn-}"
-          TITLE="CyberChef v11.5.5 zh-cn ${VERSION}"
+          TITLE="CyberChef v11.6.0 zh-cn ${VERSION}"
           NOTES_FILE="docs/releases/${VERSION}.md"
 
           if [ ! -f "$NOTES_FILE" ]; then
